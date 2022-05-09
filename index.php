@@ -56,8 +56,6 @@
 			<br/>
 			<br/>
 			Password: <input class="submittor" type="password" name="passwd" value=""/>
-			<br/>
-			<br/>
 			<input class="submittor okk" type="submit" name="submit" value="OK"/>
 		</form>
 		<a id="creation" href="html/create.html">Create a account</a><br />
