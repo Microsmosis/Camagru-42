@@ -99,8 +99,7 @@
 				VALUES ('$new_email', '$new_user', '$new_pw')"; // created a sql string which will be executed below with the PDO
 				// use exec() because no results are returned
 				$conn->exec($sql);
-				echo "<script language='javascript'>
-				</script>"; // this is here for js testing purpose, might want to use echo instead for concistency
+				echo "User created! Return to log in." . PHP_EOL;
 			}
 			catch(PDOException $e)
 			{
@@ -148,6 +147,3 @@
 		}
 	}
 ?>
-<script language='javascript'>
-alert ("User created! Return to log in.");
-</script>

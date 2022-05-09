@@ -1,12 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "indigochild";
-$dbname = "user_db";
+include("database.php");
 
 try
 {
-	$conn = new PDO("mysql:host=$servername", $username, $password);
+	$conn = new PDO($DB_HOST, $DB_USER, $DB_PASSWORD);
 	// set the PDO error mode to exception
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	$sql = "CREATE DATABASE IF NOT EXISTS user_db";
@@ -22,7 +19,7 @@ $conn = null;
 
 try
 {
-	$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+	$conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
 	// set the PDO error mode to exception
 	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -31,7 +28,7 @@ try
 	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	email VARCHAR(100) NOT NULL,
 	userr_name VARCHAR(20) NOT NULL,
-	pass_word VARCHAR(150) NOT NULL,
+	pass_word VARCHAR(50) NOT NULL,
 	reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 	)";
 
