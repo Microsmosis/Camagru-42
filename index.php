@@ -12,8 +12,8 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rampart+One&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rampart+One&display=swap" rel="stylesheet">
 		<style>
 			body {
 				background: linear-gradient(-25deg, #fffd81, #f9b05c, #88d7f1, #f3aff7);
@@ -23,27 +23,30 @@
 				left: 13.5vw;
 				font-family: 'Rampart One', cursive;
 				font-size: 14vw;
+				text-shadow: 0 0 4px #000;
 			}
 			.daForm {
 				position: absolute;
 				top: 32.5vw;
-				left: 44vw;
+				left: 42vw;
 				font-family: 'Permanent Marker', cursive;
 			}
 			#creation {
 				position: absolute;
-				top: 37vw;
+				top: 38vw;
 				left: 42.5vw;
 				font-family: 'Permanent Marker', cursive;
 				font-size: 2vw;
+				color: purple;
+				text-shadow: 0 0 6px #000;
 			}
 			.submittor {
 				font-family: 'Permanent Marker', cursive;
 			}
 			.okk {
 				position: absolute;
-				top: -0.05vw;
-				left: 11vw;
+				top: 1vw;
+				left: 17vw;
 				width: 3vw;
 				height: 3vw;
 			}
