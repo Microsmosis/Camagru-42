@@ -160,9 +160,9 @@
 			<br/>
 			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PASSWORD: <input class="submittor" type="password" name="passwd" value=""/>
 			<br/>
-			<input class="submittor okk" type="submit" name="submit" value="LOG IN"/>
+			<input class="submittor" type="submit" name="submit" value="LOG IN"/>
 			<br/>
-			<a href="html/create.html"><input class="submittor okk" type="button" name="submit" value="CREATE A ACCOUNT"/></a>
+			<a href="html/create.html"><input class="submittor" type="button" name="submit" value="CREATE A ACCOUNT"/></a>
 		</form>
 	</body>
 </html>
