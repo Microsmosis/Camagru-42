@@ -30,9 +30,10 @@
 				left: 14vw;
 				font-family: 'Rampart One', cursive;
 				font-size: 14vw;
-				text-shadow: 0 10px 2px white;
+				text-shadow: 0 0.5vw 0.15vw white;
 				color: rgba(255, 251, 143, 0.911);
-				animation: fadeInFromNone 2.5s ease-out;
+				animation: fadeInFromNone 3.5s ease-out;
+				opacity: 0.6;
 			}
 			@keyframes fadeInFromNone {
 						0% {
@@ -47,8 +48,20 @@
 
 				100% {
 					display: block;
-					opacity: 1;
+					opacity: 0.6;
 				}
+			}
+			#hLayer {
+				position: absolute;
+				font-family: 'Rampart One', cursive;
+				top: -0.5vw;
+				left: 14vw;
+				color: rgba(248, 141, 47, 0.855);
+				text-shadow: 0 0 0.1vw white;
+				font-size: 13.9vw;
+				animation: fadeInFromNone 2.5s ease-out;
+				opacity: 0.6;
+				
 			}
 			.daForm {
 				position: absolute;
@@ -56,13 +69,15 @@
 				left: 46.2vw;
 				font-family: 'Fredoka One', cursive;
 				color: #caa0ff;
-				text-shadow: 0 0 2px #000;
+				text-shadow: 0.15vw 0.1vw 0.1vw #000;
+				font-size: 0.65vw;
+				opacity: 0.9;
 			}
 			.submittor {
 				font-family: 'Fredoka One', cursive;
-				text-shadow: 0 0 2px #000;
+				text-shadow: 0.15vw 0.1vw 0.1vw #000;
 			}
-			#hole {
+			#wireframe {
 				position: absolute;
 				top: -20vw;
 				left: 0vw;
@@ -96,60 +111,84 @@
 			form * {
 				font-family: 'Poppins',sans-serif;
 				color: #ffffff;
-				letter-spacing: 0.5px;
+				letter-spacing: 0.05vw;
 				outline: none;
 				border: none;
 			}
-			form h3 {
-			font-size: 32px;
+		/* 	form h3 {
+			font-size: 5vw;
 			font-weight: 500;
 			line-height: 42px;
 			text-align: center;
-			}
-			label{
+			} */
+			/* label{
 				display: block;
 				margin-top: 30px;
 				font-size: 16px;
 				font-weight: 500;
-			}
+			} */
 			input{
 				display: block;
-				height: 50px;
-				width: 100%;
+				height: 1.8vw;
+				width: 7.6vw;
 				background-color: rgba(255,255,255,0.07);
-				border-radius: 3px;
-				padding: 0 10px;
-				margin-top: 8px;
-				font-size: 14px;
+				border-radius: 0.7vw;
+				padding: 0 0.4vw;
+				margin-top: 0.4vw;
+				font-size: 0.6vw;
 				font-weight: 300;
-				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.618);
+				box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.618);
 			}
 			::placeholder{
 				color: #e5e5e5;
 			}
 			button{
-				margin-top: 50px;
-				width: 100%;
+				margin-top: 5vw;
+				width: 7.2vw;
 				background-color: #ffffff;
 				color: #080710;
-				padding: 15px 0;
+				padding: 0.6vw 0;
 				font-size: 18px;
 				font-weight: 600;
-				border-radius: 5px;
+				border-radius: 0.7vw;
 				cursor: pointer;
-				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.618);
+				box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.618);
+			}
+			#pillar {
+				position: absolute;
+				background: linear-gradient(-25deg, white, purple);
+				width: 75.95vw;
+				height: 50vw;
+				top: 0vw;
+				left: 11.7vw;
+				opacity: 0.3;
+				border-radius: 15vw;
+			}
+			#sidePillar { 
+				position: absolute;
+				background: white;
+				width: 100vw;
+				height: 14vw;
+				bottom: 22.3vw;
+				left: 0vw;
+				opacity: 0.1;
+				border-radius: 0vw;
+				box-shadow: 0vw 0.1vw 0.5vw white;
 			}
 		</style>
 	</head>
 	<body>
-		<img id="hole" src="images/wow.png">
+		<div id="pillar"></div>
+		<div id="sidePillar"></div>
+		<img id="wireframe" src="images/wow.png">
 		<h1>CAMAGRU</h1>
+		<h1 id="hLayer">CAMAGRU</h1>
 		<form class="daForm" action="php/login.php" method="POST">
 			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp USERNAME: <input class="submittor" type="text" name="login" value=""/>
 			<br/>
 			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PASSWORD: <input class="submittor" type="password" name="passwd" value=""/>
 			<br/>
-			<input class="submittor okk" type="submit" name="submit" value="OK"/>
+			<input class="submittor okk" type="submit" name="submit" value="LOG IN"/>
 			<br/>
 			<a href="html/create.html"><input class="submittor okk" type="button" name="submit" value="CREATE A ACCOUNT"/></a>
 		</form>
