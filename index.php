@@ -141,14 +141,14 @@
 			}
 			#sidePillar { 
 				position: absolute;
-				background: white;
+				background: blue;
 				width: 100vw;
 				height: 14vw;
-				bottom: 22.3vw;
+				bottom: 22vw;
 				left: 0vw;
 				opacity: 0.1;
 				border-radius: 0vw;
-				box-shadow: 0vw 0.1vw 0.5vw white;
+				box-shadow: 0vw 0.1vw 1vw white;
 			}
 		</style>
 	</head>
