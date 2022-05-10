@@ -24,6 +24,7 @@
 				overflow-x: hidden;
 				overflow-y: hidden;
 			}
+			/* header effects and styling */
 			h1 {
 				position: absolute;
 				top: -1vw;
@@ -63,20 +64,7 @@
 				opacity: 0.6;
 				
 			}
-			.daForm {
-				position: absolute;
-				top: 28vw;
-				left: 46.2vw;
-				font-family: 'Fredoka One', cursive;
-				color: #caa0ff;
-				text-shadow: 0.15vw 0.1vw 0.1vw #000;
-				font-size: 0.65vw;
-				opacity: 0.9;
-			}
-			.submittor {
-				font-family: 'Fredoka One', cursive;
-				text-shadow: 0.15vw 0.1vw 0.1vw #000;
-			}
+			/* background animation */
 			#wireframe {
 				position: absolute;
 				top: -20vw;
@@ -92,22 +80,6 @@
 			@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 			@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 			/* log in form */
-
-			form {
-				/* height: 380px;
-				width: 290px;
-				background-color: rgba(255,255,255,0.13);
-				position: absolute;
-				transform: translate(-50%,-50%);
-				top: 55vw;
-				left: 55vw;
-				border-radius: 10px;
-				backdrop-filter: blur(10px);
-				border: 2px solid rgba(255,255,255,0.1);
-				box-shadow: 0 0 40px rgba(8,7,16,0.6);
-				padding: 50px 35px; */
-			}
-
 			form * {
 				font-family: 'Poppins',sans-serif;
 				color: #ffffff;
@@ -115,18 +87,6 @@
 				outline: none;
 				border: none;
 			}
-		/* 	form h3 {
-			font-size: 5vw;
-			font-weight: 500;
-			line-height: 42px;
-			text-align: center;
-			} */
-			/* label{
-				display: block;
-				margin-top: 30px;
-				font-size: 16px;
-				font-weight: 500;
-			} */
 			input{
 				display: block;
 				height: 1.8vw;
@@ -154,6 +114,21 @@
 				cursor: pointer;
 				box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.618);
 			}
+			.daForm {
+				position: absolute;
+				top: 28vw;
+				left: 46.2vw;
+				font-family: 'Fredoka One', cursive;
+				color: #caa0ff;
+				text-shadow: 0.15vw 0.1vw 0.1vw #000;
+				font-size: 0.65vw;
+				opacity: 0.9;
+			}
+			.submittor {
+				font-family: 'Fredoka One', cursive;
+				text-shadow: 0.15vw 0.1vw 0.1vw #000;
+			}
+			/* background effects */
 			#pillar {
 				position: absolute;
 				background: linear-gradient(-25deg, white, purple);
