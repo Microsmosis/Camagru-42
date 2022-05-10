@@ -4,41 +4,39 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Lets go with something for now!</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lacquer&display=swap" rel="stylesheet">
 		<style>
-			html {
-				background-color: #4463edbe;
-			}
-			#underline {
-				position: absolute;
-				left: 17vw;
-				top: 10vw;
-				border-bottom: 3px solid black;
-				width: 65vw;
-			}
-			#headermod {
-				position: absolute;
-				left: 50vw;
-				top: 5vw;
-			}
 			h1 {
-				font-size: 2.5vw;
+				font-family: 'Lacquer', cursive;
+				color: white;
+				font-size: 10vw;
+				position: absolute;
+				left: 10vw;
+			}
+			html {
+				height: 100%;
+				background: linear-gradient(25deg, #000000, #032535, #491253, #2d5385);
 			}
 			#hole {
 				position: absolute;
-				top: 30vw;
-				left: 40vw;
-				width: 20vw;
-				height: 20vw;
+				position: absolute;
+				top: 25vw;
+				left: 46vw;
+				width: 8vw;
+				height: 8vw;
+				-webkit-animation:spin 4s linear infinite;
+				-moz-animation:spin 4s linear infinite;
+				animation:spin 4s linear infinite;
 			}
+			@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+			@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+			@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 		</style>
 	</head>
 	<body>
-		<div>
-			<h1 id="headermod">
-				Donkey Kong & Diddy Kong
-			</h1>
-		</div>
-		<div id="underline"></div>
+		<h1>ENTER THE VOID</h1>
 		<img id="hole" src="../images/hole2.png">
 	</body>
 </html>

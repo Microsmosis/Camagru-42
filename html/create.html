@@ -13,14 +13,36 @@
 		</head>
 		<style>
 			body {
-				background: linear-gradient(-179deg, #fffd81, #f9b05c, #ffffff, #fc7e43);
+				background: linear-gradient(-25deg, #ffffff, #8ad8fc, #ffffff, #c678f7);
 			}
 			h1 {
 				position: absolute;
 				left: 13.5vw;
 				font-family: 'Rampart One', cursive;
 				font-size: 14vw;
-				color: rgba(231, 74, 74, 0.733);
+				color: rgba(255, 255, 255, 0.961);
+				text-shadow: 0 0 2px #000;
+				animation: fadeInFromNone 2.5s ease-out;
+			}
+			@keyframes fadeInFromNone {
+						0% {
+					display: none;
+					opacity: 0;
+				}
+
+				1% {
+					display: block;
+					opacity: 0;
+				}
+
+				100% {
+					display: block;
+					opacity: 1;
+				}
+			}
+			#hLayer {
+				color: rgba(0, 0, 0, 0.977);
+				font-size: 13.8vw;
 			}
 			.daForm {
 				position: absolute;
@@ -30,25 +52,27 @@
 			}
 			#creation {
 				position: absolute;
-				top: 46vw;
+				top: 42vw;
 				left: 46.5vw;
 				font-family: 'Permanent Marker', cursive;
 				font-size: 2vw;
-				color: rgba(250, 0, 0, 0.678);
+				color: rgba(124, 46, 250, 0.721);
 			}
 			.submittor {
 				font-family: 'Permanent Marker', cursive;
 			}
 			.okk {
 				position: absolute;
-				top: 4vw;
-				left: 22vw;
+				top: 2vw;
+				left: 16vw;
 				width: 3vw;
 				height: 3vw;
+				box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.618);
 			}
 		</style>
 	<body>
 		<h1>WELCOME</h1>
+		<h1 id="hLayer">WELCOME</h1>
 		<form class="daForm" action="../php/create.php" method="POST">
 			Valid E-mail: <input class="submittor" type="email" name="email" value=""/>
 			<br/>
