@@ -10,9 +10,6 @@
 		<title>Lets go with something for now!</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rampart+One&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +31,7 @@
 				text-shadow: 0 0.5vw 0.15vw white;
 				color: rgba(255, 251, 143, 0.911);
 				animation: fadeInFromNone 3.5s ease-out;
-				opacity: 0.6;
+				opacity: 0.7;
 			}
 			@keyframes fadeInFromNone {
 						0% {
@@ -49,7 +46,7 @@
 
 				100% {
 					display: block;
-					opacity: 0.6;
+					opacity: 0.7;
 				}
 			}
 			#hLayer {
@@ -61,7 +58,7 @@
 				text-shadow: 0 0 0.1vw white;
 				font-size: 13.9vw;
 				animation: fadeInFromNone 2.5s ease-out;
-				opacity: 0.6;
+				opacity: 0.7;
 				
 			}
 			/* background animation */
