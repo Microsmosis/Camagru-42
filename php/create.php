@@ -105,7 +105,7 @@
 			{
 				echo $sql . "<br>" . $e->getMessage();
 			}
-			$conn = null;
+
 			?>
 			<!DOCTYPE html>
 				<html>
