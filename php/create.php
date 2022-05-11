@@ -105,10 +105,10 @@
 			{
 				echo $sql . "<br>" . $e->getMessage();
 			}
-			/* $conn = null;
-			$to = 'lukelonnroth@windowslive.com';
+			$conn = null;
+			/* $to = 'lukelonnroth@windowslive.com';
 			$subject = 'the subject';
-			$message = 'hello';			this fucker finally works, tomorrow is time to make the activation code email stuff etc. !
+			$message = 'hello';			this fucker finally works, tomorrow is time to make the activation code email stuff etc.
 			mail($to, $subject, $message); */
 			?>
 			<!DOCTYPE html>
