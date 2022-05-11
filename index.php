@@ -25,9 +25,9 @@
 			h1 {
 				position: absolute;
 				top: -1vw;
-				left: 14vw;
+				left: 24vw;
 				font-family: 'Rampart One', cursive;
-				font-size: 14vw;
+				font-size: 10vw;
 				text-shadow: 0 0.5vw 0.15vw white;
 				color: rgba(255, 251, 143, 0.911);
 				animation: fadeInFromNone 3.5s ease-out;
@@ -53,10 +53,10 @@
 				position: absolute;
 				font-family: 'Rampart One', cursive;
 				top: -0.5vw;
-				left: 14vw;
+				left: 24vw;
 				color: rgba(248, 141, 47, 0.855);
 				text-shadow: 0 0 0.1vw white;
-				font-size: 13.9vw;
+				font-size: 9.9vw;
 				animation: fadeInFromNone 2.5s ease-out;
 				opacity: 0.7;
 				
@@ -113,8 +113,8 @@
 			}
 			.daForm {
 				position: absolute;
-				top: 28vw;
-				left: 46.2vw;
+				top: 22vw;
+				left: 45.5vw;
 				font-family: 'Fredoka One', cursive;
 				color: #caa0ff;
 				text-shadow: 0.15vw 0.1vw 0.1vw #000;
@@ -143,6 +143,7 @@
 				height: 14vw;
 				bottom: 22vw;
 				left: 0vw;
+				top: 7vw;
 				opacity: 0.1;
 				border-radius: 0vw;
 				box-shadow: 0vw 0.1vw 1vw white;
@@ -156,9 +157,9 @@
 		<h1>CAMAGRU</h1>
 		<h1 id="hLayer">CAMAGRU</h1>
 		<form class="daForm" action="php/login.php" method="POST">
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp USERNAME: <input class="submittor" type="text" name="login" value=""/>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp USERNAME: <input type="text" name="login" value=""/>
 			<br/>
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PASSWORD: <input class="submittor" type="password" name="passwd" value=""/>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PASSWORD: <input type="password" name="passwd" value=""/>
 			<br/>
 			<input class="submittor" type="submit" name="submit" value="LOG IN"/>
 			<br/>
