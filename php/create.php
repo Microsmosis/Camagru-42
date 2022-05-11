@@ -69,9 +69,9 @@
 		<?php
 		return;
 	}
-	if ($_POST['passwd'] != $_POST['re_passwd'])
+	if ($new_pw != $re_pw)
 	{
-		echo "ERROR, passwords are not identical!" . PHP . EOL;
+		echo "ERROR, passwords are not identical!" . PHP_EOL;
 		?>
 			<!DOCTYPE html>
 			<html>
