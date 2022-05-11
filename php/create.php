@@ -105,7 +105,6 @@
 			{
 				echo $sql . "<br>" . $e->getMessage();
 			}
-
 			?>
 			<!DOCTYPE html>
 				<html>
