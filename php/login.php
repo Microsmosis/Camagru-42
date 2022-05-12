@@ -1,13 +1,34 @@
 <?php
 	include("auth.php");
 	session_start();
-	if (auth($_POST['login'], $_POST['passwd']))
+	$access = auth($_POST['login'], $_POST['passwd']);
+	if ($access == 2)
 	{
 		header('Location: ../html/gallery.html');
 	}
-	else
+	else if ($access == 1)
 	{
 		header('Refresh: 5; ../index.php');
+		?>
+			<!DOCTYPE html>
+				<html>
+					<body>
+						<p id="error">USER EMAIL NOT VERIFIED!</p>
+					</body>
+				</html>
+		<?php
+	}
+	else if ($access == 0)
+	{
+		header('Refresh: 5; ../index.php');
+		?>
+			<!DOCTYPE html>
+				<html>
+					<body>
+						<p id="error">USER DOES NOT EXIST OR PASSWORD IS INCORRECT !</p>
+					</body>
+				</html>
+		<?php
 	}
 ?>
 
@@ -28,14 +49,14 @@
 			}
 			#error {
 				position: absolute;
-				top: 1vw;
-				left: 6vw;
-				font-size: 8vw;
+				top: 2vw;
+				left: 3vw;
+				font-size: 5vw;
 				font-family: 'Fredoka One', cursive;
 			}
 		</style>
 	</head>
 	<body>
-			<p id="error">USER DOES NOT EXIST OR PASSWORD IS INCORRECT !</p>
+
 	</body>
 </html>
