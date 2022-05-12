@@ -1,3 +1,41 @@
+<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Camagru</title>
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+			<style>
+				body {
+					background: linear-gradient(-90deg, #ffffff, #8ad8fc, #ffffff, #c678f7);
+					width: 100%;
+					overflow-x: hidden;
+					overflow-y: hidden;
+				}
+				#error {
+					text-align-last: center;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					height: 30vw;
+					font-size: 6vw;
+					font-family: 'Fredoka One', cursive;
+				}
+				#return {
+					position: absolute;
+					font-size: 4vw;
+					font-family: 'Fredoka One', cursive;
+					top: 36vw;
+					left: 42vw;
+				}
+			</style>
+		</head>
+		<body>
+			
+		</body>
+</html>
+
 <?php
 	include("create_auth.php");
 	session_start();
@@ -13,14 +51,14 @@
 	$acti_code = md5($new_email.time());
 	if($new_email == "")
 	{
-		echo "Email field is empty!" . PHP_EOL;
 		?>
 			<!DOCTYPE html>
 			<html>
 				<body>
+					<p id="error">EMAIL FIELD IS EMPTY!</p>
 					</br>
 					</br>
-					<a href="../html/create.html">Return</a><br />
+					<a id="return" href="../html/create.html">RETURN</a><br />
 				</body>
 			</html>
 		<?php
@@ -28,14 +66,14 @@
 	}
 	if($new_user == "")
 	{
-		echo "Username field is empty!" . PHP_EOL;
 		?>
 			<!DOCTYPE html>
 			<html>
 				<body>
+					<p id="error">USERNAME FIELD IS EMPTY</p>
 					</br>
 					</br>
-					<a href="../html/create.html">Return</a><br />
+					<a id="return" href="../html/create.html">RETURN</a><br />
 				</body>
 			</html>
 		<?php
@@ -43,14 +81,14 @@
 	}
 	if($new_pw == "")
 	{
-		echo "Password field is empty!" . PHP_EOL;
 		?>
 			<!DOCTYPE html>
 			<html>
 				<body>
+				<p id="error">PASSWORD FIELD IS EMPTY!</p>
 					</br>
 					</br>
-					<a href="../html/create.html">Return</a><br />
+					<a id="return" href="../html/create.html">RETURN</a><br />
 				</body>
 			</html>
 		<?php
@@ -58,14 +96,14 @@
 	}
 	if($re_pw == "")
 	{
-		echo "Password verification field is empty!" . PHP_EOL;
 		?>
 			<!DOCTYPE html>
 			<html>
 				<body>
+					<p id="error">PASSWORD VERIFICATION FIELD IS EMPTY!</p>
 					</br>
 					</br>
-					<a href="../html/create.html">Return</a><br />
+					<a id="return" href="../html/create.html">RETURN</a><br />
 				</body>
 			</html>
 		<?php
@@ -73,14 +111,14 @@
 	}
 	if ($new_pw != $re_pw)
 	{
-		echo "ERROR, passwords are not identical!" . PHP_EOL;
 		?>
 			<!DOCTYPE html>
 			<html>
 				<body>
+				<p id="error">PASSWORDS ARE NOT IDENTICAL!</p>
 					</br>
 					</br>
-					<a href="../html/create.html">Return</a><br />
+					<a id="return" href="../html/create.html">RETURN</a><br />
 				</body>
 			</html>
 		<?php
@@ -101,7 +139,6 @@
 				VALUES ('$new_email', '$new_user', '$new_pw', '$acti_code', '$status')"; // created a sql string which will be executed below with the PDO
 				// use exec() because no results are returned
 				$conn->exec($sql);
-				echo "User created! Return to log in." . PHP_EOL;
 			}
 			catch(PDOException $e)
 			{
@@ -116,37 +153,38 @@
 			<!DOCTYPE html>
 				<html>
 					<body>
-						<a href="../index.php">Return</a><br />
+					<p id="error">USER CREATED SUCCESSFULLY!</p>
+						<a id="return" href="../index.php">RETURN</a><br />
 					</body>
 				</html>
 			<?php
 		}
 		else if ($ret == 2)
 		{
-			echo "This username is already in use!" . PHP_EOL;
 			$conn = null;
 			?>
 				<!DOCTYPE html>
 					<html>
 						<body>
+						<p id="error">THIS USERNAME IS ALREADY IN USE!</p>
 							</br>
 							</br>
-							<a href="../html/create.html">Return</a><br />
+							<a id="return" href="../html/create.html">RETURN</a><br />
 						</body>
 					</html>
 			<?php
 		}
 		else if ($ret == 3)
 		{
-			echo "This email is already in use!" . PHP_EOL;
 			$conn = null;
 			?>
 				<!DOCTYPE html>
 					<html>
 						<body>
+							<p id="error">THIS EMAIL IS ALREADY IN USE!</p>
 							</br>
 							</br>
-							<a href="../html/create.html">Return</a><br />
+							<a id="return" href="../html/create.html">RETURN</a><br />
 						</body>
 					</html>
 			<?php
