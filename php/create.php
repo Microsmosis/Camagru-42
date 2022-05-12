@@ -9,6 +9,8 @@
 	$new_user = $_POST['login'];
 	$new_pw = $_POST['passwd'];
 	$re_pw = $_POST['re_passwd'];
+	$status = 0;
+	$acti_code = md5($new_email.time());
 	if($new_email == "")
 	{
 		echo "Email field is empty!" . PHP_EOL;
@@ -95,8 +97,8 @@
 				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password); //creating new php data object
 				// set the PDO error mode to exception
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				$sql = "INSERT INTO user_info (email, userr_name, pass_word)
-				VALUES ('$new_email', '$new_user', '$new_pw')"; // created a sql string which will be executed below with the PDO
+				$sql = "INSERT INTO user_info (email, userr_name, pass_word, activation_code, acti_stat)
+				VALUES ('$new_email', '$new_user', '$new_pw', '$acti_code', '$status')"; // created a sql string which will be executed below with the PDO
 				// use exec() because no results are returned
 				$conn->exec($sql);
 				echo "User created! Return to log in." . PHP_EOL;
@@ -106,10 +108,10 @@
 				echo $sql . "<br>" . $e->getMessage();
 			}
 			$conn = null;
-			/* $to = 'lukelonnroth@windowslive.com';
-			$subject = 'the subject';
-			$message = 'hello';			this fucker finally works, tomorrow is time to make the activation code email stuff etc.
-			mail($to, $subject, $message); */
+			$to = $new_email;
+			$subject = 'E-mail Verification';
+			$message = 'Hello new user! Good to have you with us :) Start your journey in Camagru by verifying your e-mail address by pressing the link below!' . PHP_EOL . "http://localhost:8080/guru2/php/verification.php?code=$acti_code";
+			mail($to, $subject, $message);
 			?>
 			<!DOCTYPE html>
 				<html>

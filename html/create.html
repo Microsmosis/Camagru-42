@@ -3,7 +3,7 @@
 		<head>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>Gateway to Heaven</title>
+			<title>Camagru</title>
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -54,8 +54,8 @@
 			}
 			input{
 				display: block;
-				height: 1vw;
-				width: 6vw;
+				height: 1.8vw;
+				width: 8vw;
 				background-color: rgba(255,255,255,0.07);
 				border-radius: 0.7vw;
 				padding: 0 0.4vw;
@@ -82,7 +82,7 @@
 			.daForm {
 				position: absolute;
 				top: 22vw;
-				left: 46.2vw;
+				left: 45.2vw;
 				font-family: 'Fredoka One', cursive;
 				color: #caa0ff;
 				text-shadow: 0.15vw 0.1vw 0.1vw #000;
@@ -92,11 +92,11 @@
 			.submittor {
 				font-family: 'Fredoka One', cursive;
 				text-shadow: 0.15vw 0.1vw 0.1vw #000;
-				width: 6.8vw;
+				width: 8.8vw;
 			}
-			#creation {
+			#return {
 				position: absolute;
-				top: 37vw;
+				top: 41vw;
 				left: 46.6vw;
 				font-family: 'Fredoka One', cursive;
 				font-size: 1.5vw;
@@ -106,17 +106,17 @@
 	<body>
 		<h1>WELCOME</h1>
 		<form class="daForm" action="../php/create.php" method="POST">
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbspVALID E-MAIL: <input type="email" name="email" value=""/>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspVALID E-MAIL: <input type="email" name="email" value=""/>
 			<br/>
-			&nbsp&nbsp&nbsp&nbspNEW USERNAME: <input type="text" name="login" value=""/>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNEW USERNAME: <input type="text" name="login" value=""/>
 			<br/>
-			&nbsp&nbsp&nbsp&nbspNEW PASSWORD: <input type="password" name="passwd" value=""/>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNEW PASSWORD: <input type="password" name="passwd" value=""/>
 			<br/>
-			&nbspVERIFY PASSWORD: <input type="password" name="re_passwd" value=""/>
+			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspVERIFY PASSWORD: <input type="password" name="re_passwd" value=""/>
 			</br>
 			<input class="submittor" type="submit" name="submit" value="OK"/>
 			<br/>
 		</form>
-		<a id="creation" href="../index.php">RETURN</a>
+		<a id="return" href="../index.php">RETURN</a>
 	</body>
 </html>
