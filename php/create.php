@@ -39,6 +39,7 @@
 <?php
 	require_once("create_auth.php");
 	require_once('connect.php');
+	require_once('send_mail.php');
 	session_start();
 	$new_email = $_POST['email'];
 	$new_user = $_POST['login'];
@@ -139,10 +140,7 @@
 				echo $sql . "<br>" . $e->getMessage();
 			}
 			$conn = null;
-			$to = $new_email;
-			$subject = 'E-mail Verification';
-			$message = 'Hello new user! Good to have you with us :) Start your journey in Camagru by verifying your e-mail address by pressing the link below!' . PHP_EOL . "http://localhost:8080/guru2/php/verification.php?code=$acti_code";
-			mail($to, $subject, $message);
+			sendEmail($new_email, $acti_code);
 			?>
 			<!DOCTYPE html>
 				<html>
