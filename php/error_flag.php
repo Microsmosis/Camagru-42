@@ -30,6 +30,10 @@
 		{
 			return 9;
 		}
+		else if (strlen($new_pw) < 8)
+		{
+			return 12;
+		}
 		return 0;
 	}
 ?>

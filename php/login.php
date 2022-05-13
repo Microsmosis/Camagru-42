@@ -29,7 +29,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 		<style>
 			body {
-				background: linear-gradient(-25deg, #fffd81, #f9b05c, #88d7f1, #f3aff7);
+				background: linear-gradient(-270deg, #fffd81, #f9b05c, #88d7f1, #f3aff7);
 				width: 100%;
 				overflow-x: hidden;
 				overflow-y: hidden;

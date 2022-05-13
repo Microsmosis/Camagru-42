@@ -52,6 +52,10 @@
 			$message = "USER DOES NOT EXIST OR PASSWORD IS INCORRECT!";
 			$return = "";
 		}
+		else if($flag == 12)
+		{
+			$message = "PASSWORD IS TOO SHORT! (MIN 8 CHARACTERS)";
+		}
 		?>
 			<!DOCTYPE html>
 			<html>
