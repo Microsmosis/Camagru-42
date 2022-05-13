@@ -1,5 +1,5 @@
 <?php
-	include("auth.php");
+	require_once("auth.php");
 	session_start();
 	$access = auth($_POST['login'], $_POST['passwd']);
 	if ($access == 2)
