@@ -37,91 +37,19 @@
 </html>
 
 <?php
-	require_once("create_auth.php");
+	require_once('create_auth.php');
 	require_once('connect.php');
 	require_once('send_mail.php');
+	require_once('error_msg.php');
+	require_once('error_flag.php');
 	session_start();
 	$new_email = $_POST['email'];
-	$new_user = $_POST['login'];
+	$new_user = strip_tags($_POST['login']);
 	$new_pw = $_POST['passwd'];
 	$re_pw = $_POST['re_passwd'];
 	$status = 0;
-	$acti_code = md5($new_email.time());
-	if($new_email == "")
-	{
-		?>
-			<!DOCTYPE html>
-			<html>
-				<body>
-					<p id="error">EMAIL FIELD IS EMPTY!</p>
-					</br>
-					</br>
-					<a id="return" href="../html/create.html">RETURN</a><br />
-				</body>
-			</html>
-		<?php
-		return;
-	}
-	if($new_user == "")
-	{
-		?>
-			<!DOCTYPE html>
-			<html>
-				<body>
-					<p id="error">USERNAME FIELD IS EMPTY</p>
-					</br>
-					</br>
-					<a id="return" href="../html/create.html">RETURN</a><br />
-				</body>
-			</html>
-		<?php
-		return;
-	}
-	if($new_pw == "")
-	{
-		?>
-			<!DOCTYPE html>
-			<html>
-				<body>
-				<p id="error">PASSWORD FIELD IS EMPTY!</p>
-					</br>
-					</br>
-					<a id="return" href="../html/create.html">RETURN</a><br />
-				</body>
-			</html>
-		<?php
-		return;
-	}
-	if($re_pw == "")
-	{
-		?>
-			<!DOCTYPE html>
-			<html>
-				<body>
-					<p id="error">PASSWORD VERIFICATION FIELD IS EMPTY!</p>
-					</br>
-					</br>
-					<a id="return" href="../html/create.html">RETURN</a><br />
-				</body>
-			</html>
-		<?php
-		return;
-	}
-	if ($new_pw != $re_pw)
-	{
-		?>
-			<!DOCTYPE html>
-			<html>
-				<body>
-				<p id="error">PASSWORDS ARE NOT IDENTICAL!</p>
-					</br>
-					</br>
-					<a id="return" href="../html/create.html">RETURN</a><br />
-				</body>
-			</html>
-		<?php
-		return;
-	}
+	$acti_code = md5($new_email.time()); // random string for activation code
+	error_msg(error_flag($new_email, $new_user, $new_pw, $re_pw)); // function to check if user input is okay, if not sending out error message and returning to creation page
 	if($_POST['email'] && $_POST['login'] && $_POST['passwd'] === $_POST['re_passwd'] && $_POST['submit'] && $_POST['submit'] === 'OK')
 	{
 		$ret = create_auth($new_email, $new_user);
@@ -131,13 +59,18 @@
 			try
 			{
 				$conn = connect();
-				$sql = "INSERT INTO user_info (email, userr_name, pass_word, activation_code, acti_stat)
-				VALUES ('$new_email', '$new_user', '$new_pw', '$acti_code', '$status')";
-				$conn->exec($sql);
+				$stmt = $conn->prepare("INSERT INTO user_info (email, userr_name, pass_word, activation_code, acti_stat)
+				VALUES (:new_email, :new_user, :new_pw, :acti_code, :acti_stat)");
+				$stmt->bindParam(':new_email', $new_email, PDO::PARAM_STR);
+				$stmt->bindParam(':new_user', $new_user, PDO::PARAM_STR);
+				$stmt->bindParam(':new_pw', $new_pw, PDO::PARAM_STR);
+				$stmt->bindParam(':acti_code', $acti_code, PDO::PARAM_STR);
+				$stmt->bindParam(':acti_stat', $status, PDO::PARAM_STR);
+				$stmt->execute();
 			}
 			catch(PDOException $e)
 			{
-				echo $sql . "<br>" . $e->getMessage();
+				echo $stmt . "<br>" . $e->getMessage();
 			}
 			$conn = null;
 			sendEmail($new_email, $acti_code);

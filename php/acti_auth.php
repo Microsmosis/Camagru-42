@@ -22,7 +22,7 @@
 		}
 		catch(PDOException $e)
 		{
-			echo $sql . "<br>" . $e->getMessage();
+			echo $stmt . "<br>" . $e->getMessage();
 		}
 		$conn = null;
 		return (0);

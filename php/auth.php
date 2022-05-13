@@ -28,7 +28,7 @@
 		}
 		catch(PDOException $e)
 		{
-			echo "\n";
+			echo $stmt . "<br>" . $e->getMessage();
 		}
 		$conn = null;
 		return $ret;
