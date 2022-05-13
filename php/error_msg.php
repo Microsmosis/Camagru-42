@@ -29,6 +29,14 @@
 		{
 			$message = "PASSWORDS ARE NOT IDENTICAL!";
 		}
+		else if($flag == 7)
+		{
+			$message = "THIS USERNAME IS ALREADY IN USE!";
+		}
+		else if($flag == 8)
+		{
+			$message = "THIS EMAIL IS ALREADY IN USE!";
+		}
 		?>
 			<!DOCTYPE html>
 			<html>

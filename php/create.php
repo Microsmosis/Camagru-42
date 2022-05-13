@@ -87,32 +87,12 @@
 		else if ($ret == 2)
 		{
 			$conn = null;
-			?>
-				<!DOCTYPE html>
-					<html>
-						<body>
-						<p id="error">THIS USERNAME IS ALREADY IN USE!</p>
-							</br>
-							</br>
-							<a id="return" href="../html/create.html">RETURN</a><br />
-						</body>
-					</html>
-			<?php
+			error_msg(7);
 		}
 		else if ($ret == 3)
 		{
 			$conn = null;
-			?>
-				<!DOCTYPE html>
-					<html>
-						<body>
-							<p id="error">THIS EMAIL IS ALREADY IN USE!</p>
-							</br>
-							</br>
-							<a id="return" href="../html/create.html">RETURN</a><br />
-						</body>
-					</html>
-			<?php
+			error_msg(8);
 		}
 	}
 ?>
