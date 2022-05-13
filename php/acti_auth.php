@@ -1,14 +1,10 @@
 <?php
+	require_once('connect.php');
 	function acti_auth($code)
 	{
-		$servername = "localhost";
-		$username = "root";
-		$password = "indigochild";
-		$dbname = "user_db";
 		try
 		{
-			$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$conn = connect();
 			$sql = "SELECT activation_code FROM user_info WHERE BINARY activation_code='$code'";
 			$stmt = $conn->query($sql);
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);

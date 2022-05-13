@@ -29,7 +29,7 @@
 	}
 	else
 	{
-		// echo "No activation code was sent. Please contact web minister overlord llonnrot."
+		echo "No activation code was sent. Please contact web minister overlord llonnrot.";
 	}
 	?>
 	<html>

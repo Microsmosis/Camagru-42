@@ -37,12 +37,9 @@
 </html>
 
 <?php
-	include("create_auth.php");
+	require_once("create_auth.php");
+	require_once('connect.php');
 	session_start();
-	$servername = "localhost";
-	$username = "root";
-	$password = "indigochild";
-	$dbname = "user_db";
 	$new_email = $_POST['email'];
 	$new_user = $_POST['login'];
 	$new_pw = $_POST['passwd'];
@@ -132,12 +129,9 @@
 			$new_pw = hash('whirlpool', $new_pw);
 			try
 			{
-				$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password); //creating new php data object
-				// set the PDO error mode to exception
-				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$conn = connect();
 				$sql = "INSERT INTO user_info (email, userr_name, pass_word, activation_code, acti_stat)
-				VALUES ('$new_email', '$new_user', '$new_pw', '$acti_code', '$status')"; // created a sql string which will be executed below with the PDO
-				// use exec() because no results are returned
+				VALUES ('$new_email', '$new_user', '$new_pw', '$acti_code', '$status')";
 				$conn->exec($sql);
 			}
 			catch(PDOException $e)
