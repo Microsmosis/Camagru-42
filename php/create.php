@@ -19,7 +19,7 @@
 					justify-content: center;
 					align-items: center;
 					height: 30vw;
-					font-size: 6vw;
+					font-size: 5vw;
 					font-family: 'Fredoka One', cursive;
 				}
 				#return {
@@ -60,7 +60,7 @@
 			{
 				$conn = connect();
 				$stmt = $conn->prepare("INSERT INTO user_info (email, userr_name, pass_word, activation_code, acti_stat)
-				VALUES (:new_email, :new_user, :new_pw, :acti_code, :acti_stat)");
+										VALUES (:new_email, :new_user, :new_pw, :acti_code, :acti_stat)");
 				$stmt->bindParam(':new_email', $new_email, PDO::PARAM_STR);
 				$stmt->bindParam(':new_user', $new_user, PDO::PARAM_STR);
 				$stmt->bindParam(':new_pw', $new_pw, PDO::PARAM_STR);

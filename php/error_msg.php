@@ -7,7 +7,7 @@
 		}
 		else if($flag == 1)
 		{
-			$message = "USER NAME TOO LONG (MAX 20 CHARACTERS)";
+			$message = "USER NAME TOO LONG (MAX 20) OR TOO SHORT (MIN 4 CHARACTERS)";
 		}
 		else if($flag == 2)
 		{
@@ -36,6 +36,10 @@
 		else if($flag == 8)
 		{
 			$message = "THIS EMAIL IS ALREADY IN USE!";
+		}
+		else if($flag == 9)
+		{
+			$message = "USERNAME CAN CONTAIN ONLY ALPHABETICAL CHARACTERS, NUMBERS OR UNDERSCORES '_'";
 		}
 		?>
 			<!DOCTYPE html>
