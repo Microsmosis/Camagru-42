@@ -24,7 +24,6 @@
 			echo "error error beep boop think about all the edgecases!!!";
 			// if user has already activated account? does this even matter
 			// if activation code does not exist or is wrong
-			
 		}
 	}
 	else
