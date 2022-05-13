@@ -9,14 +9,14 @@
 		{
 			status_update($code);
 			?>
-			<!DOCTYPE html>
-			<html>
-				<body>
-					<p id="success">EMAIL VERIFIED! YOU WILL BE REDIRECTED TO THE LOG IN PAGE.</p>
-					<a id="return" href="../index.php">TO LOG IN</a><br />
-				</body>
-			</html>
-		<?php
+				<!DOCTYPE html>
+				<html>
+					<body>
+						<p id="success">EMAIL VERIFIED! YOU WILL BE REDIRECTED TO THE LOG IN PAGE.</p>
+						<a id="return" href="../index.php">TO LOG IN</a><br />
+					</body>
+				</html>
+			<?php
 			header('Refresh: 5; ../index.php');
 		}
 		else
