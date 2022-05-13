@@ -1,6 +1,7 @@
 <?php
 	function error_msg($flag)
 	{
+		$return = "RETURN";
 		if($flag == 0)
 		{
 			return;
@@ -41,6 +42,16 @@
 		{
 			$message = "USERNAME CAN CONTAIN ONLY ALPHABETICAL CHARACTERS, NUMBERS OR UNDERSCORES '_'";
 		}
+		else if($flag == 10)
+		{
+			$message = "USER EMAIL NOT VERIFIED!";
+			$return = "";
+		}
+		else if($flag == 11)
+		{
+			$message = "USER DOES NOT EXIST OR PASSWORD IS INCORRECT!";
+			$return = "";
+		}
 		?>
 			<!DOCTYPE html>
 			<html>
@@ -48,7 +59,7 @@
 					<p id="error"><?php echo $message;?></p>
 					</br>
 					</br>
-					<a id="return" href="../html/create.html">RETURN</a><br />
+					<a id="return" href="../html/create.html"><?php echo $return;?></a><br />
 				</body>
 			</html>
 		<?php

@@ -1,5 +1,6 @@
 <?php
 	require_once("auth.php");
+	require_once('error_msg.php');
 	session_start();
 	$access = auth($_POST['login'], $_POST['passwd']);
 	if ($access == 2)
@@ -9,26 +10,12 @@
 	else if ($access == 1)
 	{
 		header('Refresh: 5; ../index.php');
-		?>
-			<!DOCTYPE html>
-				<html>
-					<body>
-						<p id="error">USER EMAIL NOT VERIFIED!</p>
-					</body>
-				</html>
-		<?php
+		error_msg(10);
 	}
 	else if ($access == 0)
 	{
 		header('Refresh: 5; ../index.php');
-		?>
-			<!DOCTYPE html>
-				<html>
-					<body>
-						<p id="error">USER DOES NOT EXIST OR PASSWORD IS INCORRECT !</p>
-					</body>
-				</html>
-		<?php
+		error_msg(11);
 	}
 ?>
 
