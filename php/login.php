@@ -5,7 +5,8 @@
 	$access = auth($_POST['login'], $_POST['passwd']);
 	if ($access == 2)
 	{
-		header('Location: ../html/gallery.html');
+		$_SESSION['logged_in_user'] = $_POST['login'];
+		header('Location: ./gallery.php');
 	}
 	else if ($access == 1)
 	{
