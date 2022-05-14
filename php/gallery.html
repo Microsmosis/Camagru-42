@@ -1,0 +1,183 @@
+<!-- <?php
+	session_start();
+	//print $_SESSION['logged_in_user'];
+?>
+ -->
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Camagru</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+		<style>
+			body {
+				overflow-x: hidden;
+				overflow-y: hidden;
+				animation: fadeInFromNone 3s ease-out;
+				/* background: linear-gradient(to bottom, #ffffff, #ffffff, #24ceec1f, #24ceec4d); */
+			}
+			.fotoform {
+				position: absolute;
+				top: 25vw;
+				left: 45vw;
+			}
+			#submittor {
+				width: 9vw;
+				background-color: beige;
+			}
+			#hh {
+				font-family: 'Rubik Glitch', cursive;
+				font-size: 1vw;
+				/* text-shadow: 0 0.5vw 0.15vw black; */
+				color: black;
+				opacity: 0.7;
+			}
+			#hf {
+				position: absolute;
+				top: 48.7vw;
+				font-family: 'Rubik Glitch', cursive;
+				font-size: 1vw;
+				/* text-shadow: 0 0.5vw 0.15vw black; */
+				color: black;
+				opacity: 0.7;
+			}
+			@keyframes fadeInFromNone {
+						0% {
+					display: none;
+					opacity: 0;
+				}
+
+				1% {
+					display: block;
+					opacity: 0;
+				}
+
+				100% {
+					display: block;
+					opacity: 1;
+				}
+			}
+			#sidePillar { 
+				position: absolute;
+				background: linear-gradient(to bottom, #ffffff, #ffffff, #ff9900, #ff950a93);
+				width: 100vw;
+				height: 400vw;
+				left: 0vw;
+				top: -110vw;
+				opacity: 1;
+				border-radius: 0vw;
+			}
+			.login {
+				position: absolute;
+				top: 20vw;
+				left: 1vw;
+				font-family: 'Work Sans', sans-serif;
+				font-size: 1.2vw;
+				color: black;
+				opacity: 0.7;
+				text-decoration: none;
+			}
+			.signup {
+				position: absolute;
+				left: 98vw;
+			}
+			#l1 {
+				position: absolute;
+				top: 19vw;
+			}
+			#l1:hover {
+				-webkit-animation:spin 1s linear infinite;
+				-moz-animation:spin 1s linear infinite;
+				animation:spin 1s linear infinite;
+			}
+			@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+			@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+			@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+			#l2 {
+				position: absolute;
+				top: 21vw;
+			}
+			#l3 {
+				position: absolute;
+				top: 23vw;
+			}
+			#l4 {
+				position: absolute;
+				top: 25vw;
+				left: 1.3vw;
+			}
+			#l5 {
+				position: absolute;
+				top: 27vw;
+			}
+			#l6 {
+				position: absolute;
+				top: 29vw;
+			}
+			#l7 {
+				position: absolute;
+				top: 25vw;
+			}
+			#l8 {
+				position: absolute;
+				top: 21vw;
+				left: 98.2vw;
+			}
+			#s1 {
+				position: absolute;
+				top: 19vw;
+				left: 98.1vw;
+			}
+			#s2 {
+				position: absolute;
+				top: 20.5vw;
+				left: 98.2vw;
+			}
+			#s3 {
+				position: absolute;
+				top: 22.1vw;
+			}
+			#s4 {
+				position: absolute;
+				top: 23.7vw;
+			}
+			#s5 {
+				position: absolute;
+				top: 25.4vw;
+			}
+			#s6 {
+				position: absolute;
+				top: 27.1vw;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="sidePillar"></div>
+		<p id="hh"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
+		<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
+		<a class="login" id="l1" href="../index_og.php">L</a>
+		<a class="login" id="l2" href="../index_og.php">O</a>
+		<a class="login" id="l3" href="../index_og.php">G</a>
+		<a class="login" id="l4" href="../index_og.php">I</a>
+		<a class="login" id="l5" href="../index_og.php">N</a>
+		<a class="login signup" id="s1" href="../html/create.html">S</a>
+		<a class="login signup" id="s2" href="../html/create.html">I</a>
+		<a class="login signup" id="s3" href="../html/create.html">G</a>
+		<a class="login signup" id="s4" href="../html/create.html">N</a>
+		<a class="login signup" id="s5" href="../html/create.html">U</a>
+		<a class="login signup" id="s6" href="../html/create.html">P</a>
+
+
+		<!-- <form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
+			Photo: <input type="file" name="photo">
+			<br>
+			<br>
+			<input id="submittor" type="submit" value="Add">
+		</form> 	THIS IS A FORM TO ADD A PICTURE!!!! DONT DELETE !!! -->
+	</body>
+</html>
