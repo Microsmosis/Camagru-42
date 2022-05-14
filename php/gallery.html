@@ -12,37 +12,34 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
 		<style>
 			body {
-				overflow-x: hidden;
-				overflow-y: hidden;
-				animation: fadeInFromNone 3s ease-out;
-				/* background: linear-gradient(to bottom, #ffffff, #ffffff, #24ceec1f, #24ceec4d); */
+				animation: fadeInFromNone 2s ease-out;
 			}
 			.fotoform {
 				position: absolute;
-				top: 25vw;
-				left: 45vw;
-			}
+				top: 25vw;		}
 			#submittor {
 				width: 9vw;
 				background-color: beige;
 			}
 			#hh {
+				position: fixed;
+				top: 0;
+				left: 1.8%;
 				font-family: 'Rubik Glitch', cursive;
-				font-size: 1vw;
-				/* text-shadow: 0 0.5vw 0.15vw black; */
+				font-size: 0.88vw;
 				color: black;
 				opacity: 0.7;
 			}
 			#hf {
-				position: absolute;
-				top: 48.7vw;
+				position: fixed;
+				bottom: 0;
+				left: 1.8%;
 				font-family: 'Rubik Glitch', cursive;
-				font-size: 1vw;
-				/* text-shadow: 0 0.5vw 0.15vw black; */
+				font-size: 0.88vw;
 				color: black;
 				opacity: 0.7;
 			}
@@ -62,21 +59,13 @@
 					opacity: 1;
 				}
 			}
-			#sidePillar { 
-				position: absolute;
-				background: linear-gradient(to bottom, #ffffff, #ffffff, #ff9900, #ff950a93);
-				width: 100vw;
-				height: 400vw;
-				left: 0vw;
-				top: -110vw;
-				opacity: 1;
-				border-radius: 0vw;
-			}
 			.login {
 				position: absolute;
-				top: 20vw;
-				left: 1vw;
+				left: 1%;
+				top: 50%;
+				transform: translate(-50%, -1%);
 				font-family: 'Work Sans', sans-serif;
+				/* text-shadow: 0.3vw 0.3vw 0.1vw rgba(29, 29, 29, 0.562); */
 				font-size: 1.2vw;
 				color: black;
 				opacity: 0.7;
@@ -84,95 +73,92 @@
 			}
 			.signup {
 				position: absolute;
-				left: 98vw;
+				left: 99%;
+				top: 50%;
+				transform: translate(-50%, -99%);
 			}
 			#l1 {
 				position: absolute;
-				top: 19vw;
+				top: 50%;
 			}
-			#l1:hover {
-				-webkit-animation:spin 1s linear infinite;
-				-moz-animation:spin 1s linear infinite;
-				animation:spin 1s linear infinite;
-			}
-			@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-			@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-			@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 			#l2 {
 				position: absolute;
-				top: 21vw;
+				top: 52%;
 			}
 			#l3 {
 				position: absolute;
-				top: 23vw;
+				top: 54%;
 			}
 			#l4 {
 				position: absolute;
-				top: 25vw;
-				left: 1.3vw;
+				top: 56%;
 			}
 			#l5 {
 				position: absolute;
-				top: 27vw;
-			}
-			#l6 {
-				position: absolute;
-				top: 29vw;
-			}
-			#l7 {
-				position: absolute;
-				top: 25vw;
-			}
-			#l8 {
-				position: absolute;
-				top: 21vw;
-				left: 98.2vw;
+				top: 58%;
 			}
 			#s1 {
 				position: absolute;
-				top: 19vw;
-				left: 98.1vw;
+				top: 50%;
 			}
 			#s2 {
 				position: absolute;
-				top: 20.5vw;
-				left: 98.2vw;
+				top: 52%;
 			}
 			#s3 {
 				position: absolute;
-				top: 22.1vw;
+				top: 54%;
 			}
 			#s4 {
 				position: absolute;
-				top: 23.7vw;
+				top: 56%;
 			}
 			#s5 {
 				position: absolute;
-				top: 25.4vw;
+				top: 58%;
 			}
 			#s6 {
 				position: absolute;
-				top: 27.1vw;
+				top: 60%;
+			}
+			/* Style the header */
+			.header {
+/* 			padding: 10px 16px; */
+			background: rgb(255, 255, 255);
+			color: #f1f1f1;
+			}
+
+			/* The sticky class is added to the header with JS when it reaches its scroll position */
+			.sticky {
+			position: fixed;
+			top: 0;
+			width: 100%
+			}
+
+			/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+			.sticky + .content {
+			padding-top: 102px;
 			}
 		</style>
 	</head>
 	<body>
-		<div id="sidePillar"></div>
-		<p id="hh"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
-		<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
-		<a class="login" id="l1" href="../index_og.php">L</a>
-		<a class="login" id="l2" href="../index_og.php">O</a>
-		<a class="login" id="l3" href="../index_og.php">G</a>
-		<a class="login" id="l4" href="../index_og.php">I</a>
-		<a class="login" id="l5" href="../index_og.php">N</a>
-		<a class="login signup" id="s1" href="../html/create.html">S</a>
-		<a class="login signup" id="s2" href="../html/create.html">I</a>
-		<a class="login signup" id="s3" href="../html/create.html">G</a>
-		<a class="login signup" id="s4" href="../html/create.html">N</a>
-		<a class="login signup" id="s5" href="../html/create.html">U</a>
-		<a class="login signup" id="s6" href="../html/create.html">P</a>
-
-
+		<div class="header" id="myHeader">
+			<p id="hh"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
+			<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
+		</div>
+			<div class="redirects">
+				<a class="login" id="l1" href="../index_og.php">L</a>
+				<a class="login" id="l2" href="../index_og.php">O</a>
+				<a class="login" id="l3" href="../index_og.php">G</a>
+				<a class="login" id="l4" href="../index_og.php">I</a>
+				<a class="login" id="l5" href="../index_og.php">N</a>
+				<a class="login signup" id="s1" href="../html/create.html">S</a>
+				<a class="login signup" id="s2" href="../html/create.html">I</a>
+				<a class="login signup" id="s3" href="../html/create.html">G</a>
+				<a class="login signup" id="s4" href="../html/create.html">N</a>
+				<a class="login signup" id="s5" href="../html/create.html">U</a>
+				<a class="login signup" id="s6" href="../html/create.html">P</a>
+			</div>
 		<!-- <form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
 			Photo: <input type="file" name="photo">
 			<br>
@@ -181,3 +167,22 @@
 		</form> 	THIS IS A FORM TO ADD A PICTURE!!!! DONT DELETE !!! -->
 	</body>
 </html>
+
+<script>// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("myHeader");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>

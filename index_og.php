@@ -10,30 +10,23 @@
 		<title>Camagru</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rampart+One&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-		<style>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+	<style>
 			body {
-				background: linear-gradient(-25deg, #fffd81, #f9b05c, #88d7f1, #f3aff7);
-				width: 100%;
-				overflow-x: hidden;
-				overflow-y: hidden;
-			}
-			/* header effects and styling */
-			h1 {
-				position: absolute;
-				top: -1vw;
-				left: 24vw;
-				font-family: 'Rampart One', cursive;
-				font-size: 10vw;
-				text-shadow: 0 0.5vw 0.15vw white;
-				color: rgba(255, 251, 143, 0.911);
-				animation: fadeInFromNone 3.5s ease-out;
-				opacity: 0.7;
-			}
-			@keyframes fadeInFromNone {
+					overflow-x: hidden;
+					overflow-y: hidden;
+					animation: fadeInFromNone 2s ease-out;
+				}
+				@keyframes fadeInFromNone {
 						0% {
 					display: none;
 					opacity: 0;
@@ -46,37 +39,92 @@
 
 				100% {
 					display: block;
-					opacity: 0.7;
+					opacity: 1;
 				}
 			}
-			#hLayer {
+				.anim {
+					-webkit-animation: fadeOut 2s;
+					animation: fadeOut 6s;
+					animation-fill-mode: forwards;
+				}
+				h1 {
 				position: absolute;
-				font-family: 'Rampart One', cursive;
-				top: -0.5vw;
+				top: 10vw;
 				left: 24vw;
-				color: rgba(248, 141, 47, 0.855);
-				text-shadow: 0 0 0.1vw white;
-				font-size: 9.9vw;
-				animation: fadeInFromNone 2.5s ease-out;
-				opacity: 0.7;
-				
-			}
-			/* background animation */
-			#wireframe {
+				font-family: 'Rubik Glitch', cursive;
+				font-size: 10vw;
+				/* text-shadow: 0 0.5vw 0.15vw black; */
+				color: black;
+				opacity: 0.95;
+				}
+				#h2 {
+					position: absolute;
+					top: 9.1vw;
+					left: 25.3vw;
+					font-size: 9.8vw;
+					text-shadow: 0.4vw 0.2vw 0.2vw black;
+					color: white;
+					opacity: 1;
+				}
+				#h3 {
+					position: absolute;
+					top: 7.5vw;
+					left: 22.8vw;
+					font-size: 10.2vw;
+					/* text-shadow: 0.2vw 0.2vw 0.2vw black; */
+					color: gray;
+					opacity: 0.8;
+				}
+				@-webkit-keyframes fadeOut {
+					0% { opacity: 1;}
+					99% { opacity: 0.01;width: 100%; height: 100%;}
+					100% { opacity: 0;width: 0; height: 0;}
+				}
+				@-moz-keyframes fadeOut {
+					0% { opacity: 1;}
+					99% { opacity: 0.01;width: 100%; height: 100%;}
+					100% { opacity: 0;width: 0; height: 0;}
+				}
+				@keyframes fadeOut {
+					0% { opacity: 1;}
+					99% { opacity: 0.01;width: 100%; height: 100%;}
+					100% { opacity: 0;width: 0; height: 0;}
+				}
+				#wireframe {
+					position: fixed;
+					top: 1;
+					left: 0vw;
+					width: 100vw;
+					height: 100vw;
+					opacity: 0.5;
+					-webkit-animation:spin 60s linear infinite;
+					-moz-animation:spin 60s linear infinite;
+					animation:spin 60s linear infinite;
+				}
+			#wf2 {
+				position: fixed;
+					top: 60vw;
+					width: 100vw;
+					height: 100vw;
+					opacity: 0.5;
+					-webkit-animation:spin 60s linear infinite;
+					-moz-animation:spin 60s linear infinite;
+					animation:spin 60s linear infinite;
+				}
+				@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+				@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+				@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+				#sidePillar { 
 				position: absolute;
-				top: -20vw;
-				left: 0vw;
+				background: linear-gradient(-90deg, #1336cf, #81d7ff, #ab34e2c7, #a908d1be);
 				width: 100vw;
-				height: 100vw;
-				opacity: 0.2;
-				-webkit-animation:spin 60s linear infinite;
-				-moz-animation:spin 60s linear infinite;
-				animation:spin 60s linear infinite;
-			}
-			@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-			@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-			@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-			/* log in form */
+				height: 7vw;
+				left: 0vw;
+				top: 18vw;
+				opacity: 0.3;
+				border-radius: 0vw;
+				box-shadow: 0vw 0.1vw 1vw white;
+				}
 			form * {
 				font-family: 'Poppins',sans-serif;
 				color: #ffffff;
@@ -87,7 +135,7 @@
 			input{
 				display: block;
 				height: 1.8vw;
-				width: 7.6vw;
+				width: 8vw;
 				background-color: rgba(255,255,255,0.07);
 				border-radius: 0.7vw;
 				padding: 0 0.4vw;
@@ -96,10 +144,10 @@
 				font-weight: 300;
 				box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.618);
 			}
-			::placeholder{
+			::placeholder {
 				color: #e5e5e5;
 			}
-			button{
+			button {
 				margin-top: 5vw;
 				width: 7.2vw;
 				background-color: #ffffff;
@@ -112,9 +160,7 @@
 				box-shadow: 0.2vw 0.2vw 0.2vw rgba(0, 0, 0, 0.618);
 			}
 			.daForm {
-				position: absolute;
-				top: 22vw;
-				left: 45.5vw;
+				
 				font-family: 'Fredoka One', cursive;
 				color: #caa0ff;
 				text-shadow: 0.15vw 0.1vw 0.1vw #000;
@@ -124,46 +170,43 @@
 			.submittor {
 				font-family: 'Fredoka One', cursive;
 				text-shadow: 0.15vw 0.1vw 0.1vw #000;
+				width: 8.8vw;
 			}
-			/* background effects */
-			#pillar {
+			#return {
 				position: absolute;
-				background: linear-gradient(-25deg, white, purple);
-				width: 75.95vw;
-				height: 50vw;
-				top: 0vw;
-				left: 11.7vw;
-				opacity: 0.3;
-				border-radius: 15vw;
+				left: 1.2vw;
+				font-family: 'Fredoka One', cursive;
+				font-size: 1.5vw;
+				color: rgba(124, 46, 250, 0.721);
 			}
-			#sidePillar { 
+			.center {
 				position: absolute;
-				background: blue;
-				width: 100vw;
-				height: 14vw;
-				bottom: 22vw;
-				left: 0vw;
-				top: 7vw;
-				opacity: 0.1;
-				border-radius: 0vw;
-				box-shadow: 0vw 0.1vw 1vw white;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
 			}
 		</style>
 	</head>
 	<body>
-		<div id="pillar"></div>
-		<div id="sidePillar"></div>
-		<img id="wireframe" src="images/wow.png">
-		<h1>CAMAGRU</h1>
-		<h1 id="hLayer">CAMAGRU</h1>
-		<form class="daForm" action="php/login.php" method="POST">
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp USERNAME: <input type="text" name="login" value=""/>
-			<br/>
-			&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PASSWORD: <input type="password" name="passwd" value=""/>
-			<br/>
-			<input class="submittor" type="submit" name="submit" value="LOG IN"/>
-			<br/>
-			<a href="html/create.html"><input class="submittor" type="button" name="submit" value="CREATE A ACCOUNT"/></a>
-		</form>
+		<img id="wireframe" src="./images/wow.png">
+		<img id="wf2" src="./images/wow.png">
+		<div class="anim">
+			<div id="sidePillar"></div>
+			<h1 id="h3">CAMAGRU</h1>
+			<h1>CAMAGRU</h1>
+			<h1 id="h2">CAMAGRU</h1>
+		</div>
+		<div class="center">
+			<form class="daForm" action="php/login.php" method="POST">
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp USERNAME: <input type="text" name="login" value=""/>
+				<br/>
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PASSWORD: <input type="password" name="passwd" value=""/>
+				<br/>
+				<input class="submittor" type="submit" name="submit" value="LOG IN"/>
+				<br/>
+				<a href="html/create.html"><input class="submittor" type="button" name="submit" value="CREATE A ACCOUNT"/></a>
+			</form>
+			<a id="return" href="php/gallery.html">RETURN</a>
+		</div>
 	</body>
 </html>

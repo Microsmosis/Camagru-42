@@ -63,12 +63,22 @@
 					100% { opacity: 0;width: 0; height: 0;}
 				}
 				#wireframe {
-					position: absolute;
-					top: -20vw;
+					position: fixed;
+					top: 1;
 					left: 0vw;
 					width: 100vw;
 					height: 100vw;
-					opacity: 0.2;
+					opacity: 0.5;
+					-webkit-animation:spin 60s linear infinite;
+					-moz-animation:spin 60s linear infinite;
+					animation:spin 60s linear infinite;
+				}
+			#wf2 {
+				position: fixed;
+					top: 60vw;
+					width: 100vw;
+					height: 100vw;
+					opacity: 0.5;
 					-webkit-animation:spin 60s linear infinite;
 					-moz-animation:spin 60s linear infinite;
 					animation:spin 60s linear infinite;
@@ -91,6 +101,7 @@
 	</head>
 	<body>
 		<img id="wireframe" src="images/wow.png">
+		<img id="wf2" src="images/wow.png">
 		<div id="sidePillar"></div>
 		<h1 id="h3">CAMAGRU</h1>
 		<h1>CAMAGRU</h1>
