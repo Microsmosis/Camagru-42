@@ -204,7 +204,7 @@
 				<br/>
 				<input class="submittor" type="submit" name="submit" value="LOG IN"/>
 				<br/>
-				<a href="html/create.html"><input class="submittor" type="button" name="submit" value="CREATE A ACCOUNT"/></a>
+				<!-- <a href="html/create.html"><input class="submittor" type="button" name="submit" value="CREATE A ACCOUNT"/></a> -->
 			</form>
 			<a id="return" href="php/gallery.html">RETURN</a>
 		</div>
