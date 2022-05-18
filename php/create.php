@@ -49,7 +49,10 @@
 	$re_pw = $_POST['re_passwd'];
 	$status = 0;
 	$acti_code = md5($new_email.time()); // random string for activation code
-	error_msg(error_flag($new_email, $new_user, $new_pw, $re_pw)); // function to check if user input is okay, if not sending out error message and returning to creation page
+	if(error_msg(error_flag($new_email, $new_user, $new_pw, $re_pw)) !== 420)
+	{
+		return;
+	} // function to check if user input is okay, if not sending out error message and returning to creation page
 	if($_POST['email'] && $_POST['login'] && $_POST['passwd'] === $_POST['re_passwd'] && $_POST['submit'] && $_POST['submit'] === 'OK')
 	{
 		$ret = create_auth($new_email, $new_user);

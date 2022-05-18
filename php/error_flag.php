@@ -30,7 +30,7 @@
 		{
 			return 9;
 		}
-		else if (strlen($new_pw) < 10) // change this something like 8 or similar + maybe do function for checking that the password has numbers and chars ? 
+		else if (strlen($new_pw) < 1) // change this something like 8 or similar + maybe do function for checking that the password has numbers and chars ? 
 		{
 			return 12;
 		}

@@ -1,6 +1,10 @@
 <?php
 	session_start();
-	header('Refresh: 4.8; ./php/gallery.html');
+	require_once("config/setup.php");
+	if ($_SESSION['logged_in_user'] == "")
+		header('Refresh: 3.8; ./php/gallery.php');
+	else
+		header('Refresh: 3.8; ./php/user_gallery.php');
 ?>
 
 <html>
@@ -13,8 +17,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
 		<style>
 				body {
-					-webkit-animation: fadeOut 5s;
-					animation: fadeOut 5s;
+					-webkit-animation: fadeOut 4s;
+					animation: fadeOut 4s;
 					animation-fill-mode: forwards;
 					overflow-x: hidden;
 					overflow-y: hidden;

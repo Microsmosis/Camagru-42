@@ -4,7 +4,7 @@
 		$return = "RETURN";
 		if($flag === 0)
 		{
-			return;
+			return 420;
 		}
 		else if($flag === 1)
 		{

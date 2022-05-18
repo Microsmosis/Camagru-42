@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	require_once("config/setup.php");
 ?>
 
 <html>
@@ -135,7 +134,7 @@
 			input{
 				display: block;
 				height: 1.8vw;
-				width: 8vw;
+				width: 8.8vw;
 				background-color: rgba(255,255,255,0.07);
 				border-radius: 0.7vw;
 				padding: 0 0.4vw;
@@ -206,7 +205,7 @@
 				<br/>
 				<!-- <a href="html/create.html"><input class="submittor" type="button" name="submit" value="CREATE A ACCOUNT"/></a> -->
 			</form>
-			<a id="return" href="php/gallery.html">RETURN</a>
+			<a id="return" href="php/gallery.php">RETURN</a>
 		</div>
 	</body>
 </html>

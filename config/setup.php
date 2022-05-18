@@ -34,4 +34,22 @@
 		echo $sql . "<br>" . $e->getMessage();
 	}
 	$conn = null;
+
+	try
+	{
+		$conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$sql = "CREATE TABLE IF NOT EXISTS `user_images` (
+		id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+		img_path TEXT NOT NULL,
+		img_name TEXT NOT NULL,
+		img_user VARCHAR(50) NOT NULL
+		)";
+		$conn->exec($sql);
+	}
+	catch(PDOException $e)
+	{
+		echo $sql . "<br>" . $e->getMessage();
+	}
+	$conn = null;
 ?>

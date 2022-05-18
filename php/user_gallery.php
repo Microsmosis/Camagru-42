@@ -1,8 +1,43 @@
-<!-- <?php
+<?php
+	require_once('connect.php');
 	session_start();
 	//print $_SESSION['logged_in_user'];
+	try
+		{
+			$conn = connect();
+			$sql = "SELECT img_path, img_name FROM user_images";
+			$stmt = $conn->query($sql);
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			if($result)
+			{
+				foreach($result as $k)
+				{
+					?>
+						<!DOCTYPE html>
+						<html>
+							<body>
+								<img id="mainPic" src=<?php echo $k['img_path'];?>>
+							</body>
+						</html>
+					<?php
+				}
+			}
+		}
+		catch(PDOException $e)
+		{
+			echo $stmt . "<br>" . $e->getMessage();
+		}
+		$conn = null;
+	?>
+		<!DOCTYPE html>
+		<html>
+			<body>
+			<img id="mainPic" src="../images/wassup.png">
+			</body>
+		</html>
+	<?php
 ?>
- -->
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -60,68 +95,6 @@
 					opacity: 1;
 				}
 			}
-			.login {
-				position: absolute;
-				left: 1%;
-				top: 50%;
-				transform: translate(-50%, -1%);
-				font-family: 'Work Sans', sans-serif;
-				/* text-shadow: 0.3vw 0.3vw 0.1vw rgba(29, 29, 29, 0.562); */
-				font-size: 1.2vw;
-				color: black;
-				opacity: 0.7;
-				text-decoration: none;
-			}
-			.signup {
-				position: absolute;
-				left: 99%;
-				top: 50%;
-				transform: translate(-50%, -99%);
-			}
-			#l1 {
-				position: absolute;
-				top: 50%;
-			}
-			#l2 {
-				position: absolute;
-				top: 52%;
-			}
-			#l3 {
-				position: absolute;
-				top: 54%;
-			}
-			#l4 {
-				position: absolute;
-				top: 56%;
-			}
-			#l5 {
-				position: absolute;
-				top: 58%;
-			}
-			#s1 {
-				position: absolute;
-				top: 50%;
-			}
-			#s2 {
-				position: absolute;
-				top: 52%;
-			}
-			#s3 {
-				position: absolute;
-				top: 54%;
-			}
-			#s4 {
-				position: absolute;
-				top: 56%;
-			}
-			#s5 {
-				position: absolute;
-				top: 58%;
-			}
-			#s6 {
-				position: absolute;
-				top: 60%;
-			}
 			/* Style the header */
 			.header {
 /* 			padding: 10px 16px; */
@@ -140,38 +113,39 @@
 			.sticky + .content {
 			padding-top: 102px;
 			}
-			#kceder {
+			#mainPic {
 				position: fixed;
-				bottom: 19%;
-				left: 33%;
+				top: 37%;
+				left: 40%;
+				width: 20vw;
+				height: 20vw;
+			}
+			#profile {
+				position: fixed;
+				top: 95%;
+				left: 4%;
+			}
+			#photo {
+				position: fixed;
+				top: 95%;
+				left: 45%;
+			}
+			#logout {
+				position: fixed;
+				top: 95%;
+				left: 90%;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="header" id="myHeader">
+		<div class="header sticky" id="myHeader">
 			<p id="hh"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
 			<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
 		</div>
-			<div class="redirects">
-				<a class="login" id="l1" href="../index_og.php">L</a>
-				<a class="login" id="l2" href="../index_og.php">O</a>
-				<a class="login" id="l3" href="../index_og.php">G</a>
-				<a class="login" id="l4" href="../index_og.php">I</a>
-				<a class="login" id="l5" href="../index_og.php">N</a>
-				<a class="login signup" id="s1" href="../html/create.html">S</a>
-				<a class="login signup" id="s2" href="../html/create.html">I</a>
-				<a class="login signup" id="s3" href="../html/create.html">G</a>
-				<a class="login signup" id="s4" href="../html/create.html">N</a>
-				<a class="login signup" id="s5" href="../html/create.html">U</a>
-				<a class="login signup" id="s6" href="../html/create.html">P</a>
-			</div>
-		<img id="kceder" src="../images/wassup.png">
-		<!-- <form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
-			Photo: <input type="file" name="photo">
-			<br>
-			<br>
-			<input id="submittor" type="submit" value="Add">
-		</form> 	THIS IS A FORM TO ADD A PICTURE!!!! DONT DELETE !!! -->
+		<img id="mainPic" src="../images/wassup.png">
+		<a id="profile" href="profile_page.php">PROFILE</a>
+		<a id="photo" href="photobooth.php">ADD PHOTO</a>
+		<a id="logout" href="logout.php">LOG OUT</a>
 	</body>
 </html>
 

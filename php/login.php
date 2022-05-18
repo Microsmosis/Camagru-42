@@ -6,16 +6,16 @@
 	if ($access == 2)
 	{
 		$_SESSION['logged_in_user'] = $_POST['login'];
-		header('Location: ./gallery.php');
+		header('Location: ./user_gallery.php');
 	}
 	else if ($access == 1)
 	{
-		header('Refresh: 5; ../index.php');
+		header('Refresh: 5; ../index_og.php');
 		error_msg(10);
 	}
 	else if ($access == 0)
 	{
-		header('Refresh: 5; ../index.php');
+		header('Refresh: 5; ../index_og.php');
 		error_msg(11);
 	}
 ?>
@@ -30,7 +30,7 @@
 		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
 		<style>
 			body {
-				background: linear-gradient(-270deg, #fffd81, #f9b05c, #88d7f1, #f3aff7);
+				background: linear-gradient(-90deg, #ffffff, #8ad8fc, #ffffff, #c678f7);
 				width: 100%;
 				overflow-x: hidden;
 				overflow-y: hidden;

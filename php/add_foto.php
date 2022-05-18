@@ -1,8 +1,9 @@
 <?php
 	require_once('connect.php');
 	session_start();
-
+	$photo_user = $_SESSION['logged_in_user'];
 	$photos_dir = "../uploads/";
+	$photo_name = basename($_FILES["photo"]["name"]);
 	$photo_file = $photos_dir . basename($_FILES["photo"]["name"]);
 	$uploadOk = 1;
 	$file_type = strtolower(pathinfo($photo_file, PATHINFO_EXTENSION));
@@ -51,6 +52,14 @@
 		if(move_uploaded_file($_FILES["photo"]["tmp_name"], $photo_file))
 		{
 			echo "The file ". htmlspecialchars(basename( $_FILES["photo"]["name"])). " has been uploaded.\n";
+			$conn = connect();
+			$stmt = $conn->prepare("INSERT INTO user_images (img_path, img_name, img_user)
+									VALUES (:img_path, :img_name, :img_user)");
+			$stmt->bindParam(':img_path', $photo_file, PDO::PARAM_STR);
+			$stmt->bindParam(':img_name', $photo_name, PDO::PARAM_STR);
+			$stmt->bindParam(':img_user', $photo_user, PDO::PARAM_STR);
+			$stmt->execute();
+			header('Refresh: 2; ./user_gallery.php');
 		}
 		else
 		{
