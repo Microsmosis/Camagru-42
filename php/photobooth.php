@@ -49,7 +49,8 @@
 		let image_data_url = canvas.toDataURL('image/jpeg');
 		// data url of the image
 		//console.log(image_data_url);
-		
+		var image = new Image(); // new stuff here, trying to turn the base64 into image 
+		image.src = image_data_url; // now how do we put this into the uploads dir and info to table ????
 	});
 	
 </script>
