@@ -59,6 +59,7 @@
 			$stmt->bindParam(':img_name', $photo_name, PDO::PARAM_STR);
 			$stmt->bindParam(':img_user', $photo_user, PDO::PARAM_STR);
 			$stmt->execute();
+			$conn = null;
 			header('Refresh: 2; ./user_gallery.php');
 		}
 		else

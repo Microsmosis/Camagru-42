@@ -20,6 +20,10 @@
 			<video id="video" width="320" height="240" autoplay></video>
 			<button id="click-photo">Take Photo</button>
 			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
+			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
+				<input id="submittor" type="submit" value="Add">
+				<input type="hidden" id="crazy" name="new_pic" value="">
+			</form>
 		</form>
 		<br>
 		<br>
@@ -38,6 +42,7 @@
 	let video = document.querySelector("#video");
 	let click_button = document.querySelector("#click-photo");
 	let canvas = document.querySelector("#canvas");
+	let new_pic = document.querySelector("#crazy");
 
 	camera_button.addEventListener('click', async function() {
 		let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
@@ -47,10 +52,11 @@
 	click_button.addEventListener('click', function() {
 		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
 		let image_data_url = canvas.toDataURL('image/jpeg');
+		new_pic.value = image_data_url;
 		// data url of the image
 		//console.log(image_data_url);
-		var image = new Image(); // new stuff here, trying to turn the base64 into image 
-		image.src = image_data_url; // now how do we put this into the uploads dir and info to table ????
+		// var image = new Image();
+		// image.src = image_data_url;
 	});
 	
 </script>
