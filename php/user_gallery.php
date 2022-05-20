@@ -16,7 +16,9 @@
 						<!DOCTYPE html>
 						<html>
 							<body>
-								<img id="mainPic" src=<?php echo $k['img_path'];?>>
+								<div class="mainPic">
+									<img id="gallery" src=<?php echo $k['img_path'];?>>
+								</div>
 							</body>
 						</html>
 					<?php
@@ -28,14 +30,6 @@
 			echo $stmt . "<br>" . $e->getMessage();
 		}
 		$conn = null;
-	?>
-		<!DOCTYPE html>
-		<html>
-			<body>
-			<img id="mainPic" src="../images/wassup.png">
-			</body>
-		</html>
-	<?php
 ?>
 
 <html>
@@ -97,8 +91,8 @@
 			}
 			/* Style the header */
 			.header {
-/* 			padding: 10px 16px; */
-			background: rgb(255, 255, 255);
+			padding: 1vw 1.8vw;
+			background: white;
 			color: #f1f1f1;
 			}
 
@@ -109,30 +103,42 @@
 			width: 100%
 			}
 
+			.sticky2 {
+			position: fixed;
+			bottom: 0;
+			width: 100%
+			}
+
 			/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 			.sticky + .content {
 			padding-top: 102px;
 			}
-			#mainPic {
-				position: fixed;
-				top: 37%;
-				left: 40%;
+			.mainPic {
+				position: relative;
+				margin-bottom: 23vw;
+				margin-left: 41vw;
+			}
+			#gallery {
+				margin-top: 12vw;
+				display: table-cell;
+    			vertical-align: middle;
+    			text-align:center
 				width: 20vw;
 				height: 20vw;
 			}
 			#profile {
 				position: fixed;
-				top: 95%;
+				top: 5%;
 				left: 4%;
 			}
 			#photo {
 				position: fixed;
-				top: 95%;
+				top: 5%;
 				left: 45%;
 			}
 			#logout {
 				position: fixed;
-				top: 95%;
+				top: 5%;
 				left: 90%;
 			}
 		</style>
@@ -140,9 +146,10 @@
 	<body>
 		<div class="header sticky" id="myHeader">
 			<p id="hh"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
+		</div>
+		<div class="header sticky2" id="myHeader">
 			<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
 		</div>
-		<img id="mainPic" src="../images/wassup.png">
 		<a id="profile" href="profile_page.php">PROFILE</a>
 		<a id="photo" href="photobooth.php">ADD PHOTO</a>
 		<a id="logout" href="logout.php">LOG OUT</a>

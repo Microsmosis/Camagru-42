@@ -20,5 +20,5 @@
 	$stmt->bindParam(':img_user', $photo_user, PDO::PARAM_STR);
 	$stmt->execute();
 	$conn = null;
-	header('Refresh: 2; ../user_gallery.php');
+	header('Refresh: 2; user_gallery.php');
 ?>
