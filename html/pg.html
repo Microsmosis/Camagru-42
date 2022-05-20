@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			
+			.cropped1 {
+				width: 200px; 
+				height: 200px; 
+				object-fit: cover;
+				border: 5px solid black;
+			}
+				.cropped2 {
+				width: 200px; 
+				height: 200px; 
+				object-fit: cover;
+				object-position: 20% 10%; 
+				border: 5px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h3> Original image: </h3>
+			<img src="https://tinyurl.com/k764en3w">
+			<h3> Cropped image using object-fit: </h3>
+			<img
+			class="cropped1" src="https://tinyurl.com/k764en3w">
+			<h3> Cropped image adjusted with object-position: </h3>
+			<img
+			class="cropped2" src="https://tinyurl.com/k764en3w"> 
+			</div>
+	</body>
+</html>

@@ -16,9 +16,15 @@
 						<!DOCTYPE html>
 						<html>
 							<body>
+								<div id="backPanel"></div>
 								<div class="mainPic">
-									<img id="gallery" src=<?php echo $k['img_path'];?>>
+									<img class="gallery cropped1" src=<?php echo $k['img_path'];?>>
+									<!-- <input type="text" id="comment-box" placeholder="Enter comment">
+									<button id="post">Post</button>
+									<div id="unordered"></div> -->
 								</div>
+								
+								<!-- <script src="code.js"></script> -->
 							</body>
 						</html>
 					<?php
@@ -116,15 +122,19 @@
 			.mainPic {
 				position: relative;
 				margin-bottom: 23vw;
-				margin-left: 41vw;
+				margin-left: 43vw;
 			}
-			#gallery {
+			.gallery {
 				margin-top: 12vw;
 				display: table-cell;
     			vertical-align: middle;
     			text-align:center
-				width: 20vw;
-				height: 20vw;
+			}
+			.cropped1 {
+				width: 14vw; 
+				height: 14vw; 
+				object-fit: cover;
+				border: 0.1vw white;
 			}
 			#profile {
 				position: fixed;
@@ -140,6 +150,24 @@
 				position: fixed;
 				top: 5%;
 				left: 90%;
+			}
+			#comment-box, #post {
+				border: none;
+				border-radius: 1vw;
+			}
+			#post:hover{
+				background-color: lightblue;
+			}
+			#backPanel {
+				position: relative;
+				margin-top: 12vw;
+				margin-bottom: -35vw;
+				margin-left: 42vw;
+				background: rgb(246, 246, 246);
+				width: 16vw;
+				height: 24vw;
+				border-radius: 0.1vw;
+				box-shadow: 0.2vw 0.4vw 0.4vw hsl(0deg 0% 0% / 0.44);
 			}
 		</style>
 	</head>
@@ -168,9 +196,20 @@ var sticky = header.offsetTop;
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
   if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
+	header.classList.add("sticky");
   } else {
-    header.classList.remove("sticky");
+	header.classList.remove("sticky");
   }
 }
+// script for the comment box
+var post= document.getElementById("post");
+post.addEventListener("click", function(){
+	var commentBoxValue= document.getElementById("comment-box").value;
+ 
+	var li = document.createElement("p");
+	var text = document.createTextNode(commentBoxValue);
+	li.appendChild(text);
+	document.getElementById("unordered").appendChild(li);
+ 
+});
 </script>

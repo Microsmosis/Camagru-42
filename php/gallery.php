@@ -166,7 +166,6 @@
 				<a class="login signup" id="s4" href="../html/create.html">N</a>
 				<a class="login signup" id="s5" href="../html/create.html">U</a>
 				<a class="login signup" id="s6" href="../html/create.html">P</a>
-				<img id="mainPic" src="../images/wassup.png">
 			</div>
 	<!-- 	<form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
 			Photo: <input type="file" name="photo">
