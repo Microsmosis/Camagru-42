@@ -19,7 +19,7 @@
 								<div id="backPanel"></div>
 								<div class="mainPic">
 									<img class="gallery cropped1" src=<?php echo $k['img_path'];?>>
-									<!-- <input type="text" id="comment-box" placeholder="Enter comment">
+									<!-- input type="text" id="comment-box" placeholder="Enter comment">
 									<button id="post">Post</button>
 									<div id="unordered"></div> -->
 								</div>
@@ -123,6 +123,10 @@
 				position: relative;
 				margin-bottom: 23vw;
 				margin-left: 43vw;
+				
+			}
+			img {
+				box-shadow: 0.1vw 0.2vw 0.2vw hsl(0deg 0% 0% / 0.44);
 			}
 			.gallery {
 				margin-top: 12vw;
@@ -166,8 +170,13 @@
 				background: rgb(246, 246, 246);
 				width: 16vw;
 				height: 24vw;
-				border-radius: 0.1vw;
-				box-shadow: 0.2vw 0.4vw 0.4vw hsl(0deg 0% 0% / 0.44);
+				border-radius: 0.2vw;
+				/* box-shadow: 0.15vw 0.3vw 0.3vw hsl(0deg 0% 0% / 0.44); */
+				box-shadow: 0 0.05vw 0.05vw hsl(0deg 0% 0% / 0.075),
+    				0 0.1vw 0.1vw hsl(0deg 0% 0% / 0.075),
+    				0 0.2vw 0.2vw hsl(0deg 0% 0% / 0.075),
+   					0 0.4vw 0.4vw hsl(0deg 0% 0% / 0.075),
+    				0 0.8vw 0.8vw hsl(0deg 0% 0% / 0.075)
 			}
 		</style>
 	</head>
