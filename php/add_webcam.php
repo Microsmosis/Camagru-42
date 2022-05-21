@@ -1,10 +1,10 @@
 <?php
 	require_once('connect.php');
+	/* require_once('add_stamp.php'); */
 	session_start();
 	// print $_SESSION['logged_in_user'];
 	$webcam_photo = $_POST['new_pic'];
 	$photo_user = $_SESSION['logged_in_user'];
-	print_r($webcam_photo);
 
 	$webcam_photo = str_replace('data:image/jpeg;base64,', '', $webcam_photo);
 	$webcam_photo = str_replace(' ', '+', $webcam_photo);
@@ -20,5 +20,18 @@
 	$stmt->bindParam(':img_user', $photo_user, PDO::PARAM_STR);
 	$stmt->execute();
 	$conn = null;
-	header('Refresh: 2; user_gallery.php');
+	$stamp = imagecreatefrompng('../images/wow.png');
+		$img = imagecreatefromjpeg($file);
+	
+		$margin_r = 10;
+		$margin_b = 10;
+	
+		$sx = imagesx($stamp);
+		$sy = imagesy($stamp);
+	
+		imagecopy($img, $stamp, imagesx($img) - $sx - $margin_r, imagesy($img) - $sy - $margin_b, 0, 0, imagesx($stamp), imagesy($stamp));
+		header('Content-type: image/png');
+		imagepng($img);
+		imagedestroy($img);
+	/* header('Refresh: 2; user_gallery.php'); */
 ?>
