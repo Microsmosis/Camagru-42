@@ -35,6 +35,10 @@
 			<br>
 			<input id="submittor" type="submit" value="Add">
 		</form>
+		<br>
+		<br>
+		<br>
+		<br>
 	</body>
 </html>
 <script> 

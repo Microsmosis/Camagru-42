@@ -122,21 +122,21 @@
 			.mainPic {
 				position: relative;
 				margin-bottom: 23vw;
-				margin-left: 43vw;
-				
+				margin-left: 38.7vw;
 			}
 			img {
 				box-shadow: 0.1vw 0.2vw 0.2vw hsl(0deg 0% 0% / 0.44);
+				border-radius: 0.1vw;
 			}
 			.gallery {
-				margin-top: 12vw;
+				margin-top: 0vw;
 				display: table-cell;
     			vertical-align: middle;
     			text-align:center
 			}
 			.cropped1 {
-				width: 14vw; 
-				height: 14vw; 
+				width: 23vw; 
+				height: 23vw; 
 				object-fit: cover;
 				border: 0.1vw white;
 			}
@@ -166,11 +166,11 @@
 				position: relative;
 				margin-top: 12vw;
 				margin-bottom: -35vw;
-				margin-left: 42vw;
+				margin-left: 38vw;
 				background: rgb(246, 246, 246);
-				width: 16vw;
-				height: 24vw;
-				border-radius: 0.2vw;
+				width: 24.5vw;
+				height: 36vw;
+				border-radius: 0.3vw;
 				/* box-shadow: 0.15vw 0.3vw 0.3vw hsl(0deg 0% 0% / 0.44); */
 				box-shadow: 0 0.05vw 0.05vw hsl(0deg 0% 0% / 0.075),
     				0 0.1vw 0.1vw hsl(0deg 0% 0% / 0.075),
