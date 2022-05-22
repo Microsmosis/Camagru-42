@@ -21,17 +21,17 @@
 	$stmt->execute();
 	$conn = null;
 	$stamp = imagecreatefrompng('../images/wow.png');
-		$img = imagecreatefromjpeg($file);
+	$img = imagecreatefromjpeg($file);
 	
-		$margin_r = 10;
-		$margin_b = 10;
-	
-		$sx = imagesx($stamp);
-		$sy = imagesy($stamp);
-	
-		imagecopy($img, $stamp, imagesx($img) - $sx - $margin_r, imagesy($img) - $sy - $margin_b, 0, 0, imagesx($stamp), imagesy($stamp));
-		header('Content-type: image/png');
-		imagepng($img);
-		imagedestroy($img);
+	$margin_r = 10;
+	$margin_b = 10;
+
+	$sx = imagesx($stamp);
+	$sy = imagesy($stamp);
+
+	imagecopy($img, $stamp, imagesx($img) - $sx - $margin_r, imagesy($img) - $sy - $margin_b, 0, 0, imagesx($stamp), imagesy($stamp));
+	header('Content-type: image/png');
+	imagejpeg($img, $file, 100);
+	imagedestroy($img);
 	/* header('Refresh: 2; user_gallery.php'); */
 ?>
