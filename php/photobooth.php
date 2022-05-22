@@ -23,10 +23,11 @@
 			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
 				<input id="submittor" type="submit" value="Add">
 				<input type="hidden" id="crazy" name="new_pic" value="">
+				<input type="hidden" id="stamp" name="stamp" value="">
 			</form>
-		</form>
 		<br>
 		<br>
+		<img id="first" onclick="stampPath()" src="../images/wow.png" width='200' height='200'>
 		<br>
 		<br>
 		<form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
@@ -47,6 +48,13 @@
 	let click_button = document.querySelector("#click-photo");
 	let canvas = document.querySelector("#canvas");
 	let new_pic = document.querySelector("#crazy");
+	let final_stamp = document.querySelector("#stamp");
+	let stamp_auth = 0;
+	
+	function stampPath() {
+		final_stamp.value = "../images/wow.png";
+		stamp_auth = 1;
+	}
 
 	camera_button.addEventListener('click', async function() {
 		let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
@@ -54,13 +62,12 @@
 	});
 
 	click_button.addEventListener('click', function() {
-		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-		let image_data_url = canvas.toDataURL('image/jpeg');
-		new_pic.value = image_data_url;
-		// data url of the image
-		//console.log(image_data_url);
-		// var image = new Image();
-		// image.src = image_data_url;
+		if (stamp_auth == 1)
+		{
+			canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+			let image_data_url = canvas.toDataURL('image/jpeg');
+			new_pic.value = image_data_url;
+		}
 	});
 	
-</script>
+	</script>
