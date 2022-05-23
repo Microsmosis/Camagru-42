@@ -76,7 +76,7 @@
 				echo $stmt . "<br>" . $e->getMessage();
 			}
 			$conn = null;
-			sendEmail($new_email, $acti_code);
+			sendEmail($new_email, $acti_code, 1);
 			?>
 			<!DOCTYPE html>
 				<html>

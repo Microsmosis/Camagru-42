@@ -36,9 +36,9 @@
 	}
 
 	// Allow certain file formats
-	if($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg" && $file_type != "gif" )
+	if($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg")
 	{
-		echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.\n";
+		echo "Sorry, only JPG, JPEG, PNG.\n";
 		$uploadOk = 0;
 	}
 
@@ -67,9 +67,23 @@
 			echo "Sorry, there was an error uploading your file.\n";
 		}
 	}
-	
-	// next we should insert the photo into the database, for that we have to create a new table with the info of who
-	// aka the $_SESSION['logged_in_user'] has uploaded what pic and the pic info ?? 
-	// so the setup.php has to be modified. add a new table creation. sounds like a plan
-	
+	if (isset($_POST['stamp']))
+	{
+		$stamp_path = $_POST['stamp'];
+		$stamp = imagecreatefrompng($stamp_path);
+		if ($file_type == "jpeg" || $file_type == "jpg")
+			$img = imagecreatefromjpeg($photo_file);
+		if ($file_type == "png")
+			$img = imagecreatefrompng($photo_file);
+
+		$margin_r = 1;
+		$margin_b = 1;
+
+		$sx = imagesx($stamp);
+		$sy = imagesy($stamp);
+
+		imagecopy($img, $stamp, imagesx($img) - $sx - $margin_r, imagesy($img) - $sy - $margin_b, 0, 0, imagesx($stamp), imagesy($stamp));
+		imagejpeg($img, $photo_file, 100);
+		imagedestroy($img);
+	}
 ?>

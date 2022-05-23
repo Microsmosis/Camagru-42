@@ -1,13 +1,12 @@
 <?php
 	require_once('connect.php');
-	/* require_once('add_stamp.php'); */
 	session_start();
 	// print $_SESSION['logged_in_user'];
 	$webcam_photo = $_POST['new_pic'];
 	if (isset($_POST['stamp']))
 		$stamp_path = $_POST['stamp'];
 	$photo_user = $_SESSION['logged_in_user'];
-
+	
 	$webcam_photo = str_replace('data:image/jpeg;base64,', '', $webcam_photo);
 	$webcam_photo = str_replace(' ', '+', $webcam_photo);
 	$data = base64_decode($webcam_photo);

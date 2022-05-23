@@ -27,11 +27,12 @@
 			</form>
 		<br>
 		<br>
-		<img id="first" onclick="stampPath()" src="../images/wow.png" width='200' height='200'>
+		<button><img id="first" onclick="stampPath()" src="../images/wow.png" width='200' height='200'></button>
 		<br>
 		<br>
 		<form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
 			Photo: <input type="file" name="photo">
+			<input type="hidden" id="stamp1" name="stamp" value="">
 			<br>
 			<br>
 			<input id="submittor" type="submit" value="Add">
@@ -49,10 +50,13 @@
 	let canvas = document.querySelector("#canvas");
 	let new_pic = document.querySelector("#crazy");
 	let final_stamp = document.querySelector("#stamp");
+	let final_stamp1 = document.querySelector("#stamp1");
+	
 	let stamp_auth = 0;
 	
 	function stampPath() {
 		final_stamp.value = "../images/wow.png";
+		final_stamp1.value = "../images/wow.png";
 		stamp_auth = 1;
 	}
 
