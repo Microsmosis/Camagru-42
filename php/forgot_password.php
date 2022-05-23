@@ -1,11 +1,28 @@
 <?php
 	require_once('send_mail.php');
+	require_once('connect.php');
 	session_start();
 	if(isset($_POST['email']) && isset($_POST['submit']))
 	{
-		sendEmail($new_email, 0, 2);
+		$email = $_POST['email'];
+		try
+		{
+			$conn = connect();
+			$sql = "SELECT userr_name, pass_word FROM user_info WHERE `email`='$email'";
+			$stmt = $conn->query($sql);
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			print_r($result);
+			$username = $result[0]['userr_name'];
+			$password = $result[0]['pass_word'];
+		}
+		catch(PDOException $e)
+		{
+			echo $stmt . "<br>" . $e->getMessage();
+		}
+		$conn = null;
+		sendEmail($email, 0, $username, $password, 2);
 		echo "Email for password reset sent!";
-		header('Refresh: 3; ../index.php');
+		/* header('Refresh: 3; ../index.php'); */
 	}
 	else
 	{

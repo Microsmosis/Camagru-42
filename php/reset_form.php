@@ -1,3 +1,38 @@
+<?php
+	require_once('connect.php');
+	session_start();
+	if(isset($_GET['key']) && isset($_GET['reset']))
+	{
+		$username = $_GET['key'];
+		$password = $_GET['reset'];
+		$email = $_GET['mail'];
+		try
+			{
+				$conn = connect();
+				$sql = "SELECT userr_name, pass_word FROM user_info WHERE `email`='$email'";
+				$stmt = $conn->query($sql);
+				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				if ($result[0]['userr_name'] == $username && $result[0]['pass_word'] == $password)
+						{
+							echo ""; // fix this into something proper bro :D
+						}
+						else
+						{
+							echo "something went wrong". PHP_EOL;
+						}
+			}
+			catch(PDOException $e)
+			{
+				echo $stmt . "<br>" . $e->getMessage();
+			}
+			$conn = null;
+	}
+	else
+	{
+		echo "something went wrong here too". PHP_EOL;
+	}
+?>
+
 <!DOCTYPE html>
 	<html>
 		<head>
@@ -194,16 +229,17 @@
 			<h1>CAMAGRU</h1>
 			<h1 id="h2">CAMAGRU</h1>
 		</div>
-		<div class="center">
-			<form class="daForm" action="../php/reset.php" method="POST">
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNEW PASSWORD: <input type="password" name="passwd" value=""/>
-				<br/>
-				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspVERIFY PASSWORD: <input type="password" name="re_passwd" value=""/>
-				</br>
-				<input class="submittor" type="submit" name="submit" value="OK"/>
-				<br/>
-			</form>
-			<a id="return" href="../php/gallery.php">RETURN</a>
-		</div>
+			<div class="center">
+				<form class="daForm" action="reset.php" method="POST">
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNEW PASSWORD: <input type="password" name="passwd" value=""/>
+					<br/>
+					&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspVERIFY PASSWORD: <input type="password" name="re_passwd" value=""/>
+					<input type="hidden" id="username" name="username" value='<?php echo $username;?>'>
+					</br>
+					<input class="submittor" type="submit" name="submit" value="OK"/>
+					<br/>
+				</form>
+				<a id="return" href="../php/gallery.php">RETURN</a>
+			</div>
 	</body>
 </html>
