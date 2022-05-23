@@ -19,7 +19,8 @@
 			echo $stmt . "<br>" . $e->getMessage();
 		}
 		$conn = null;
-		
+		echo "Password has been changed succesfully" . PHP_EOL;
+		header('Refresh: 3; ../index.php');
 	}
 	else
 	{
