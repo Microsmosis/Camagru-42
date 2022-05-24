@@ -21,8 +21,8 @@
 			<button id="click-photo">Take Photo</button>
 			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
 			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
-				<input id="submittor" type="submit" value="Add">
-				<input type="hidden" id="crazy" name="new_pic" value="">
+				<input id="submittor" type="submit" name="add" value="Add">
+				<input type="hidden" id="web_photo" name="new_pic" value="">
 				<input type="hidden" id="stamp" name="stamp" value="">
 			</form>
 		<br>
@@ -48,7 +48,7 @@
 	let video = document.querySelector("#video");
 	let click_button = document.querySelector("#click-photo");
 	let canvas = document.querySelector("#canvas");
-	let new_pic = document.querySelector("#crazy");
+	let new_pic = document.querySelector("#web_photo");
 	let final_stamp = document.querySelector("#stamp");
 	let final_stamp1 = document.querySelector("#stamp1");
 	
