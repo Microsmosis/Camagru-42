@@ -12,6 +12,7 @@
 			{
 				foreach($result as $k)
 				{
+					$img_id = $k['img_name'];
 					?>
 						<!DOCTYPE html>
 						<html>
@@ -25,9 +26,11 @@
 												Enter comment
 											</textarea>
 										</div>
+										<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 										<input type="submit" name="submit" value="Submit">
+										</form>
 										<?php
-											$sql0 = "SELECT msg FROM comments";
+											$sql0 = "SELECT msg FROM comments WHERE `img`='$img_id'";
 											$stmt0 = $conn->query($sql0);
 											$result0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
 											foreach($result0 as $k0)
@@ -42,7 +45,6 @@
 												<?php
 											}
 										?>
-									</form>
 								</div>
 							</body>
 						</html>

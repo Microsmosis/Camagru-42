@@ -5,13 +5,15 @@
 	{
 		$comment = $_POST['comments'];
 		$user = $_SESSION['logged_in_user'];
+		$img_id = $_POST['image_name'];
 		try
 		{
 			$conn = connect();
-			$stmt = $conn->prepare("INSERT INTO comments (user, msg)
-									VALUES (:user, :msg)");
+			$stmt = $conn->prepare("INSERT INTO comments (user, msg, img)
+									VALUES (:user, :msg, :img)");
 			$stmt->bindParam(':user', $user, PDO::PARAM_STR);
 			$stmt->bindParam(':msg', $comment, PDO::PARAM_STR);
+			$stmt->bindParam(':img', $img_id, PDO::PARAM_STR);
 			$stmt->execute();
 		}
 		catch(PDOException $e)
