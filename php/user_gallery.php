@@ -32,6 +32,7 @@
 											<input type="submit" name="like_button" value="LIKE">
 											<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
 											<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+											<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
 										</form>
 										<?php
 											$sql0 = "SELECT msg FROM comments WHERE `img`='$img_id'";

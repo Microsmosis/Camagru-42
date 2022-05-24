@@ -1,9 +1,11 @@
 <?php
 	require_once('connect.php');
+	require_once('send_mail.php');
 	session_start();
 	if(isset($_POST['liker']) && isset($_POST['like_button']))
 	{
 		$img_name = $_POST['image_name'];
+		$img_user = $_POST['image_user'];
 		try
 		{
 			$conn = connect();
@@ -48,9 +50,22 @@
 				echo $stmt . "<br>" . $e->getMessage();
 			}
 			$conn = null;
-			//sendEmail($new_email, $acti_code, 0, 0, 1);
+			
+			try
+			{
+				$conn = connect();
+				$sql = "SELECT email FROM user_info WHERE `userr_name`='$img_user'";
+				$stmt = $conn->query($sql);
+				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			}
+			catch(PDOException $e)
+			{
+				echo $stmt . "<br>" . $e->getMessage();
+			}
+			sendEmail($result[0]['email'], 0, 0, 0, 4);
+			$conn = null;
 			header('Location: ./user_gallery.php');
-		}
+			}
 		else
 		{
 			echo "well you have already liked this picture, and it would be propably better if developer would just make you to unlike the photo ...." . PHP_EOL;
