@@ -203,7 +203,6 @@
 				<br/>
 				<input class="submittor" type="submit" name="submit" value="LOG IN"/>
 				<br/>
-				<!-- <a href="html/create.html"><input class="submittor" type="button" name="submit" value="CREATE A ACCOUNT"/></a> -->
 			</form>
 			<a href="html/forgot_password.html">FORGOT PASSWORD?</a>
 			</br>

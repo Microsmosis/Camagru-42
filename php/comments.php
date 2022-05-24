@@ -3,7 +3,7 @@
 	session_start();
 	if(!empty($_POST['comments'])) // newline is not empty but will pass this if
 	{
-		$comment = $_POST['comments'];
+		$comment = strip_tags($_POST['comments']);
 		$user = $_SESSION['logged_in_user'];
 		$img_id = $_POST['image_name'];
 		try
@@ -21,6 +21,7 @@
 			echo $stmt . "<br>" . $e->getMessage();
 		}
 		$conn = null;
+		header('Location: ./user_gallery.php');
 	}
 	else
 	{

@@ -1,7 +1,7 @@
 <?php
 	require_once('connect.php');
 	session_start();
-	//print $_SESSION['logged_in_user'];
+
 	try
 		{
 			$conn = connect();
@@ -22,9 +22,7 @@
 									<img class="gallery cropped1" src=<?php echo $k['img_path'];?>>
 									<form action="comments.php" method="post">
 										<div>
-											<textarea name="comments" id="comments">
-												Enter comment
-											</textarea>
+											<textarea name="comments" id="comments">Enter comment</textarea>
 										</div>
 										<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 										<input type="submit" name="submit" value="Submit">
