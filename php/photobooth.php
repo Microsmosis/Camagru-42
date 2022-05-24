@@ -50,13 +50,12 @@
 	let canvas = document.querySelector("#canvas");
 	let new_pic = document.querySelector("#web_photo");
 	let final_stamp = document.querySelector("#stamp");
-	let final_stamp1 = document.querySelector("#stamp1");
+	let gabor = document.querySelector("#first");
 	
 	let stamp_auth = 0;
 	
 	function stampPath() {
-		final_stamp.value = "../images/wow.png";
-		final_stamp1.value = "../images/wow.png";
+		final_stamp.value = first.src;
 		stamp_auth = 1;
 	}
 
@@ -73,5 +72,5 @@
 			new_pic.value = image_data_url;
 		}
 	});
-	
-	</script>
+
+</script>

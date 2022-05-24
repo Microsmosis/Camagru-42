@@ -5,7 +5,7 @@
 	try
 		{
 			$conn = connect();
-			$sql = "SELECT img_path, img_name FROM user_images";
+			$sql = "SELECT img_path, img_name, img_user FROM user_images";
 			$stmt = $conn->query($sql);
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if($result)
@@ -25,6 +25,7 @@
 											<textarea name="comments" id="comments">Enter comment</textarea>
 										</div>
 										<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+										<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
 										<input type="submit" name="submit" value="Submit">
 										</form>
 										<?php

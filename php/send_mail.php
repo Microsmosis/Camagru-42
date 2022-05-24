@@ -17,5 +17,13 @@
 			mail($to, $subject, $message);
 			
 		}
+		else if ($email_type == 3)
+		{
+			$to = $email_adrs;
+			$subject = 'Someone Commented Your Image!';
+			$message = 'Someone has something to say about your post, Go and check it out!' . PHP_EOL . "http://localhost:8080/guru4";
+			mail($to, $subject, $message);
+			
+		}
 	}
 ?>

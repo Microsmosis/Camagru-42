@@ -1,11 +1,13 @@
 <?php
 	require_once('connect.php');
+	require_once('send_mail.php');
 	session_start();
 	if(!empty($_POST['comments'])) // newline is not empty but will pass this if
 	{
 		$comment = strip_tags($_POST['comments']);
 		$user = $_SESSION['logged_in_user'];
 		$img_id = $_POST['image_name'];
+		$img_user = $_POST['image_user'];
 		try
 		{
 			$conn = connect();
@@ -20,6 +22,20 @@
 		{
 			echo $stmt . "<br>" . $e->getMessage();
 		}
+		$conn = null;
+		
+		try
+		{
+			$conn = connect();
+			$sql = "SELECT email FROM user_info WHERE `userr_name`='$img_user'";
+			$stmt = $conn->query($sql);
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		}
+		catch(PDOException $e)
+		{
+			echo $stmt . "<br>" . $e->getMessage();
+		}
+		sendEmail($result[0]['email'], 0, 0, 0, 3);
 		$conn = null;
 		header('Location: ./user_gallery.php');
 	}
