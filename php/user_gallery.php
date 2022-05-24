@@ -19,12 +19,31 @@
 								<div id="backPanel"></div>
 								<div class="mainPic">
 									<img class="gallery cropped1" src=<?php echo $k['img_path'];?>>
-									<!-- input type="text" id="comment-box" placeholder="Enter comment">
-									<button id="post">Post</button>
-									<div id="unordered"></div> -->
+									<form action="comments.php" method="post">
+										<div>
+											<textarea name="comments" id="comments">
+												Enter comment
+											</textarea>
+										</div>
+										<input type="submit" name="submit" value="Submit">
+										<?php
+											$sql0 = "SELECT msg FROM comments";
+											$stmt0 = $conn->query($sql0);
+											$result0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
+											foreach($result0 as $k0)
+											{
+												?>
+												<!DOCTYPE html>
+													<html>
+														<body>
+															<p><?php echo $k0['msg'];?></p>
+														</body>
+													</html>
+												<?php
+											}
+										?>
+									</form>
 								</div>
-								
-								<!-- <script src="code.js"></script> -->
 							</body>
 						</html>
 					<?php
@@ -155,13 +174,6 @@
 				top: 5%;
 				left: 90%;
 			}
-			#comment-box, #post {
-				border: none;
-				border-radius: 1vw;
-			}
-			#post:hover{
-				background-color: lightblue;
-			}
 			#backPanel {
 				position: relative;
 				margin-top: 12vw;
@@ -210,15 +222,5 @@ function myFunction() {
 	header.classList.remove("sticky");
   }
 }
-// script for the comment box
-var post= document.getElementById("post");
-post.addEventListener("click", function(){
-	var commentBoxValue= document.getElementById("comment-box").value;
- 
-	var li = document.createElement("p");
-	var text = document.createTextNode(commentBoxValue);
-	li.appendChild(text);
-	document.getElementById("unordered").appendChild(li);
- 
-});
+
 </script>
