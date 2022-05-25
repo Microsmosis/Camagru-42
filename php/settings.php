@@ -72,20 +72,9 @@
 			.sticky + .content {
 			padding-top: 102px;
 			}
-			#settings {
+			.modForm {
 				position: fixed;
-				top: 5%;
-				left: 4%;
-			}
-			#photo {
-				position: fixed;
-				top: 5%;
-				left: 45%;
-			}
-			#logout {
-				position: fixed;
-				top: 5%;
-				left: 90%;
+				top: 10rem;
 			}
 		</style>
 	</head>
@@ -93,10 +82,26 @@
 		<div class="header sticky" id="myHeader">
 			<p id="hh"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
 			<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
-			<a id="settings" href="settings.php">SETTINGS</a>
-			<a id="photo" href="photobooth.php">ADD PHOTO</a>
-			<a id="logout" href="logout.php">LOG OUT</a>
 		</div>
+		<form class="modForm" action="modify_user.php" method="POST">
+				CHANGE E-MAIL: <input type="email" name="email" value=""/>
+				<br/>
+				<br/>
+				CHANGE USERNAME: <input type="text" name="login" value=""/>
+				<br/>
+				<br/>
+				CREATE NEW PASSWORD: <input type="password" name="passwd" value=""/>
+				<br/>
+				<br/>
+				VERIFY PASSWORD: <input type="password" name="re_passwd" value=""/>
+				</br>
+				<br/>
+				CURRENT PASSWORD TO SAVE CHANGES: <input type="password" name="re_passwd" value=""/>
+				</br>
+				<br/>
+				<input class="submittor" type="submit" name="submit" value="OK"/>
+				<br/>
+		</form>
 	</body>
 </html>
 
