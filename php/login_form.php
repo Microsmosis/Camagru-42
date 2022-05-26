@@ -187,8 +187,8 @@
 		</style>
 	</head>
 	<body>
-		<img id="wireframe" src="./images/wow.png">
-		<img id="wf2" src="./images/wow.png">
+		<img id="wireframe" src="../images/wow.png">
+		<img id="wf2" src="../images/wow.png">
 		<div class="anim">
 			<div id="sidePillar"></div>
 			<h1 id="h3">CAMAGRU</h1>
@@ -196,7 +196,7 @@
 			<h1 id="h2">CAMAGRU</h1>
 		</div>
 		<div class="center">
-			<form class="daForm" action="php/login.php" method="POST">
+			<form class="daForm" action="login.php" method="POST">
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp USERNAME: <input type="text" name="login" value=""/>
 				<br/>
 				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp PASSWORD: <input type="password" name="passwd" value=""/>
@@ -207,7 +207,7 @@
 			<a href="html/forgot_password.html">FORGOT PASSWORD?</a>
 			</br>
 			</br>
-			<a id="return" href="php/gallery.php">RETURN</a>
+			<a id="return" href="gallery.php">RETURN</a>
 		</div>
 	</body>
 </html>

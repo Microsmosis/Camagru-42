@@ -155,11 +155,11 @@
 			<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
 		</div>
 			<div class="redirects">
-				<a class="login" id="l1" href="../index_og.php">L</a>
-				<a class="login" id="l2" href="../index_og.php">O</a>
-				<a class="login" id="l3" href="../index_og.php">G</a>
-				<a class="login" id="l4" href="../index_og.php">I</a>
-				<a class="login" id="l5" href="../index_og.php">N</a>
+				<a class="login" id="l1" href="login_form.php">L</a>
+				<a class="login" id="l2" href="login_form.php">O</a>
+				<a class="login" id="l3" href="login_form.php">G</a>
+				<a class="login" id="l4" href="login_form.php">I</a>
+				<a class="login" id="l5" href="login_form.php">N</a>
 				<a class="login signup" id="s1" href="../html/create.html">S</a>
 				<a class="login signup" id="s2" href="../html/create.html">I</a>
 				<a class="login signup" id="s3" href="../html/create.html">G</a>

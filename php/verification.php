@@ -13,11 +13,11 @@
 				<html>
 					<body>
 						<p id="success">EMAIL VERIFIED! YOU WILL BE REDIRECTED TO THE LOG IN PAGE.</p>
-						<a id="return" href="../index_og.php">TO LOG IN</a><br />
+						<a id="return" href="login_form.php">TO LOG IN</a><br />
 					</body>
 				</html>
 			<?php
-			header('Refresh: 5; ../index_og.php');
+			header('Refresh: 5; login_form.php');
 		}
 		else
 		{

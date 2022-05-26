@@ -10,12 +10,12 @@
 	}
 	else if ($access == 1)
 	{
-		header('Refresh: 5; ../index_og.php');
+		header('Refresh: 5; login_form.php');
 		error_msg(10);
 	}
 	else if ($access == 0)
 	{
-		header('Refresh: 5; ../index_og.php');
+		header('Refresh: 5; login_form.php');
 		error_msg(11);
 	}
 ?>
