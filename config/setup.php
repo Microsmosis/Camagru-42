@@ -72,4 +72,22 @@
 		echo $sql . "<br>" . $e->getMessage();
 	}
 	$conn = null;
+	
+	try
+		{
+			$conn = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "CREATE TABLE IF NOT EXISTS `likes` (
+			id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+			user VARCHAR(50) NOT NULL,
+			img TEXT NOT NULL,
+			submit_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+			)";
+			$conn->exec($sql);
+		}
+		catch(PDOException $e)
+		{
+			echo $sql . "<br>" . $e->getMessage();
+		}
+		$conn = null;
 ?>
