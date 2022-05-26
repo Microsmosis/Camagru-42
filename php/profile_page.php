@@ -37,6 +37,7 @@
 									<form action="delete_img.php" method="post">
 										<input type="submit" name="del_button" value="DELETE">
 										<input type="hidden" name="image_path" value=<?php echo $k['img_path'];?>>
+										<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 									</form>
 										
 									<?php

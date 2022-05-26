@@ -73,6 +73,15 @@
 					$stmt = $conn->prepare("UPDATE user_info SET userr_name=:new_user WHERE userr_name='$user'");
 					$stmt-> bindParam(':new_user', $mod_user_name, PDO::PARAM_STR);
 					$stmt->execute();
+					$stmt = $conn->prepare("UPDATE user_images SET img_user=:img_user WHERE img_user='$user'");
+					$stmt-> bindParam(':img_user', $mod_user_name, PDO::PARAM_STR);
+					$stmt->execute();
+					$stmt = $conn->prepare("UPDATE likes SET user=:user WHERE user='$user'");
+					$stmt-> bindParam(':user', $mod_user_name, PDO::PARAM_STR);
+					$stmt->execute();
+					$stmt = $conn->prepare("UPDATE comments SET user=:user WHERE user='$user'");
+					$stmt-> bindParam(':user', $mod_user_name, PDO::PARAM_STR);
+					$stmt->execute();
 				}
 				catch(PDOException $e)
 				{

@@ -8,8 +8,14 @@
 		try
 		{
 			$image = $_POST['image_path'];
+			$name = $_POST['image_name'];
+			print_r($image);
 			$conn = connect();
 			$sql = "DELETE FROM user_images WHERE img_path='$image'";
+			$conn->exec($sql);
+			$sql = "DELETE FROM comments WHERE img='$name'";
+			$conn->exec($sql);
+			$sql = "DELETE FROM likes WHERE img='$name'";
 			$conn->exec($sql);
 			unlink($image);
 			echo "Image deleted succesfully!" . PHP_EOL;
