@@ -43,8 +43,6 @@
 	require_once('error_msg.php');
 	require_once('error_flag.php');
 	session_start();
-	if($_SESSION['logged_in_user'] == "")
-		header('Location: ./gallery.php');
 	$new_email = $_POST['email'];
 	$new_user = strip_tags($_POST['login']);
 	$new_pw = $_POST['passwd'];

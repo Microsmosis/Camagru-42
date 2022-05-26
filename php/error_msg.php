@@ -54,7 +54,15 @@
 		}
 		else if($flag === 12)
 		{
-			$message = "PASSWORD IS TOO SHORT! (MIN 8 CHARACTERS)";
+			$message = "PASSWORD IS TOO SHORT! (MIN 10 CHARACTERS)";
+		}
+		else if($flag === 13)
+		{
+			$message = "PASSWORD MUST CONTAIN AT LEAST 1 NUMBER";
+		}
+		else if($flag === 14)
+		{
+			$message = "PASSWORD MUST CONTAIN AT LEAST 1 SPECIAL CHARACTER";
 		}
 		?>
 			<!DOCTYPE html>
