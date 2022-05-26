@@ -29,7 +29,7 @@
 		{
 			$to = $email_adrs;
 			$subject = 'Someone Liked Your Image!';
-			$message = 'Someone gave like to your post!' . PHP_EOL . "http://localhost:8080/guru4";
+			$message = 'Someone gave a like to your post!' . PHP_EOL . "http://localhost:8080/guru4";
 			mail($to, $subject, $message);
 			
 		}

@@ -1,7 +1,72 @@
 <?php
+	require_once('connect.php');
 	session_start();
 	if($_SESSION['logged_in_user'] == "")
 		header('Location: ./gallery.php');
+	try
+	{
+		$conn = connect();
+		$sql = "SELECT img_path, img_name, img_user FROM user_images";
+		$stmt = $conn->query($sql);
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		if($result)
+		{
+			foreach($result as $k)
+			{
+				$img_id = $k['img_name'];
+				?>
+					<!DOCTYPE html>
+					<html>
+						<body>
+							<div class="mainPic">
+								<img class="gallery cropped1" src=<?php echo $k['img_path'];?>>
+								<form action="comments.php" method="post">
+									<div>
+										<textarea name="comments" id="comments">Enter comment</textarea>
+									</div>
+									<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+									<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
+									<input type="submit" name="submit" value="Submit">
+									</form>
+									<form action="likes.php" method="post">
+										<input type="submit" name="like_button" value="LIKE">
+										<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
+										<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+										<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
+									</form>
+									<form action="delete_img.php" method="post">
+										<input type="submit" name="del_button" value="DELETE">
+										<input type="hidden" name="image_path" value=<?php echo $k['img_path'];?>>
+									</form>
+										
+									<?php
+										$sql0 = "SELECT msg FROM comments WHERE `img`='$img_id'";
+										$stmt0 = $conn->query($sql0);
+										$result0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
+										foreach($result0 as $k0)
+										{
+											?>
+											<!DOCTYPE html>
+												<html>
+													<body>
+														<p><?php echo $k0['msg'];?></p>
+													</body>
+													</html>
+											<?php
+										}
+									?>
+							</div>
+						</body>
+					</html>
+				<?php
+			}
+		}
+	}
+	catch(PDOException $e)
+	{
+		echo $stmt . "<br>" . $e->getMessage();
+	}
+	$conn = null;
 ?>
 
 <html>
@@ -72,6 +137,27 @@
 			/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
 			.sticky + .content {
 			padding-top: 102px;
+			}
+			.mainPic {
+				position: relative;
+				margin-bottom: 23vw;
+				margin-left: 38.7vw;
+			}
+			img {
+				box-shadow: 0.1vw 0.2vw 0.2vw hsl(0deg 0% 0% / 0.44);
+				border-radius: 0.1vw;
+			}
+			.gallery {
+				margin-top: 20vw;
+				display: table-cell;
+    			vertical-align: middle;
+    			text-align:center
+			}
+			.cropped1 {
+				width: 23vw; 
+				height: 23vw; 
+				object-fit: cover;
+				border: 0.1vw white;
 			}
 			#settings {
 				position: fixed;
