@@ -1,6 +1,7 @@
 <?php
 	session_start();
-	//print $_SESSION['logged_in_user'];
+	if($_SESSION['logged_in_user'] == "")
+		header('Location: ./gallery.php');
 ?>
 
 <html>
@@ -80,7 +81,12 @@
 			#photo {
 				position: fixed;
 				top: 5%;
-				left: 45%;
+				left: 32%;
+			}
+			#gallery {
+				position: fixed;
+				top: 5%;
+				left: 62%;
 			}
 			#logout {
 				position: fixed;
@@ -95,6 +101,7 @@
 			<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
 			<a id="settings" href="settings.php">SETTINGS</a>
 			<a id="photo" href="photobooth.php">ADD PHOTO</a>
+			<a id="gallery" href="user_gallery.php">GALLERY</a>
 			<a id="logout" href="logout.php">LOG OUT</a>
 		</div>
 	</body>

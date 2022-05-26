@@ -4,6 +4,8 @@
 	require_once('connect.php');
 	require_once('send_mail.php');
 	session_start();
+	if($_SESSION['logged_in_user'] == "")
+		header('Location: ./gallery.php');
 	if(isset($_POST['liker']) && isset($_POST['like_button']))
 	{
 		$img_name = $_POST['image_name'];

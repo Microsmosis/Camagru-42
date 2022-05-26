@@ -43,11 +43,14 @@
 	require_once('error_msg.php');
 	require_once('error_flag.php');
 	session_start();
+	if($_SESSION['logged_in_user'] == "")
+		header('Location: ./gallery.php');
 	$new_email = $_POST['email'];
 	$new_user = strip_tags($_POST['login']);
 	$new_pw = $_POST['passwd'];
 	$re_pw = $_POST['re_passwd'];
 	$status = 0;
+	$notif = 1;
 	$acti_code = md5($new_email.time()); // random string for activation code
 	if(error_msg(error_flag($new_email, $new_user, $new_pw, $re_pw)) !== 420)
 	{
@@ -62,13 +65,14 @@
 			try
 			{
 				$conn = connect();
-				$stmt = $conn->prepare("INSERT INTO user_info (email, userr_name, pass_word, activation_code, acti_stat)
-										VALUES (:new_email, :new_user, :new_pw, :acti_code, :acti_stat)");
+				$stmt = $conn->prepare("INSERT INTO user_info (email, userr_name, pass_word, activation_code, acti_stat, notif_stat)
+										VALUES (:new_email, :new_user, :new_pw, :acti_code, :acti_stat, :notif_stat)");
 				$stmt->bindParam(':new_email', $new_email, PDO::PARAM_STR);
 				$stmt->bindParam(':new_user', $new_user, PDO::PARAM_STR);
 				$stmt->bindParam(':new_pw', $new_pw, PDO::PARAM_STR);
 				$stmt->bindParam(':acti_code', $acti_code, PDO::PARAM_STR);
 				$stmt->bindParam(':acti_stat', $status, PDO::PARAM_STR);
+				$stmt->bindParam(':notif_stat', $notif, PDO::PARAM_STR);
 				$stmt->execute();
 			}
 			catch(PDOException $e)

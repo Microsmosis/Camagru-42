@@ -2,6 +2,8 @@
 	require_once('connect.php');
 	require_once('send_mail.php');
 	session_start();
+	if($_SESSION['logged_in_user'] == "")
+		header('Location: ./gallery.php');
 	if(!empty($_POST['comments'])) // newline is not empty but will pass this if
 	{
 		$comment = strip_tags($_POST['comments']);
@@ -27,7 +29,7 @@
 		try
 		{
 			$conn = connect();
-			$sql = "SELECT email FROM user_info WHERE `userr_name`='$img_user'";
+			$sql = "SELECT email, notif_stat FROM user_info WHERE `userr_name`='$img_user'";
 			$stmt = $conn->query($sql);
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
@@ -35,7 +37,8 @@
 		{
 			echo $stmt . "<br>" . $e->getMessage();
 		}
-		sendEmail($result[0]['email'], 0, 0, 0, 3);
+		if($result[0]['notif_stat'] == 1)
+			sendEmail($result[0]['email'], 0, 0, 0, 3);
 		$conn = null;
 		header('Location: ./user_gallery.php');
 	}

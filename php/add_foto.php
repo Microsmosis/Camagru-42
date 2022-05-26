@@ -1,6 +1,8 @@
 <?php
 	require_once('connect.php');
 	session_start();
+	if($_SESSION['logged_in_user'] == "")
+		header('Location: ./gallery.php');
 	$photo_user = $_SESSION['logged_in_user'];
 	$photos_dir = "../uploads/";
 	$photo_name = basename($_FILES["photo"]["name"]);
@@ -25,7 +27,7 @@
 
 	if(file_exists($photo_file))
 	{
-		echo "Sorry, file already exists.\n";
+		echo "Filename is in use, please choose an other one.\n";
 		$uploadOk = 0;
 	}
 

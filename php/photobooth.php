@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	if($_SESSION['logged_in_user'] == "")
+		header('Location: ./gallery.php');
 	//print $_SESSION['logged_in_user'];
 ?>
 

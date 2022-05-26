@@ -1,6 +1,7 @@
 <?php
 	session_start();
-	//print $_SESSION['logged_in_user'];
+	if($_SESSION['logged_in_user'] == "")
+		header('Location: ./gallery.php');
 ?>
 
 <html>
@@ -76,6 +77,10 @@
 				position: fixed;
 				top: 10rem;
 			}
+			.modForm1 {
+				position: fixed;
+				top: 30rem;
+			}
 		</style>
 	</head>
 	<body>
@@ -96,11 +101,14 @@
 				VERIFY PASSWORD: <input type="password" name="re_passwd" value=""/>
 				</br>
 				<br/>
-				CURRENT PASSWORD TO SAVE CHANGES: <input type="password" name="re_passwd" value=""/>
+				CURRENT PASSWORD TO SAVE CHANGES: <input type="password" name="current" value=""/>
 				</br>
 				<br/>
-				<input class="submittor" type="submit" name="submit" value="OK"/>
+				<input type="submit" name="submit" value="OK"/>
 				<br/>
+		</form>
+		<form class="modForm1" action="notifications.php" method="POST">
+			EMAIL NOTIFICATIONS <input type="submit" name="off" value="OFF"/>&nbsp<input type="submit" name="on" value="ON"/>
 		</form>
 	</body>
 </html>

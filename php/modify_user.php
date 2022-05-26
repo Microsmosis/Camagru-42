@@ -2,6 +2,8 @@
 	require_once('auth.php');
 	require_once('connect.php');
 	session_start();
+	if($_SESSION['logged_in_user'] == "")
+		header('Location: ./gallery.php');
 	// isset or empty checks here ?? 
 	$mod_email = $_POST['email'];
 	$mod_user_name = $_POST['login'];
@@ -28,6 +30,8 @@
 					echo $stmt . "<br>" . $e->getMessage();
 				}
 				$conn = null;
+				echo "E-mail changed succesfully!" . PHP_EOL; 
+				header('Refresh: 3; ./profile_page.php');
 			}
 			else
 			{
@@ -51,6 +55,8 @@
 					echo $stmt . "<br>" . $e->getMessage();
 				}
 				$conn = null;
+				echo "Password changed succesfully!" . PHP_EOL; 
+				header('Refresh: 3; ./profile_page.php');
 			}
 			else
 			{
@@ -73,6 +79,9 @@
 					echo $stmt . "<br>" . $e->getMessage();
 				}
 				$conn = null;
+				$_SESSION['logged_in_user'] = $mod_user_name;
+				echo "User name changed succesfully!" . PHP_EOL; 
+				header('Refresh: 3; ./profile_page.php');
 			}
 			else
 			{

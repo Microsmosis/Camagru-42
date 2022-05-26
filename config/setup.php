@@ -25,6 +25,7 @@
 		pass_word VARCHAR(1000) NOT NULL,
 		activation_code VARCHAR(255) NOT NULL,
 		acti_stat int(11) NOT NULL,
+		notif_stat int(11) NOT NULL,
 		reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 		)";
 		$conn->exec($sql);
