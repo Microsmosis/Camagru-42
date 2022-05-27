@@ -18,22 +18,21 @@
 						<!DOCTYPE html>
 						<html>
 							<body>
-								<!-- <div class="image"> -->
-										<img class="image" src=<?php echo $k['img_path'];?>>
-									<!-- <form action="comments.php" method="post">
-										<div>
-											<textarea name="comments" id="comments">Enter comment</textarea>
-										</div>
-										<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
-										<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
-										<input type="submit" name="submit" value="Submit">
+									<img class="image" src=<?php echo $k['img_path'];?>>
+										<form action="comments.php" method="post">
+												<div>
+													<textarea name="comments" id="comments">Enter comment</textarea>
+												</div>
+											<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+											<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
+											<input type="submit" name="submit" value="Submit">
 										</form>
 										<form action="likes.php" method="post">
 											<input type="submit" name="like_button" value="LIKE">
 											<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
 											<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 											<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
-										</form> -->
+										</form>
 										<?php
 											$sql0 = "SELECT user, msg FROM comments WHERE `img`='$img_id'";
 											$stmt0 = $conn->query($sql0);
@@ -44,13 +43,12 @@
 												<!DOCTYPE html>
 													<html>
 														<body>
-															<p><?php echo $k0['user'];?> : <?php echo $k0['msg'];?></p>
+															<p class="commentPos"><?php echo $k0['user'];?> : <?php echo $k0['msg'];?></p>
 														</body>
 													</html>
 												<?php
 											}
 										?>
-								</div>
 							</body>
 						</html>
 					<?php

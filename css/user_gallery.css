@@ -1,21 +1,35 @@
 body {
 	background: white;
 }
+
+textarea {
+	resize: none;
+}
+
 .image {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 200px;
 }
+
 @media screen and (min-width: 376px) and (max-width: 500px) {
 	.image {
 		width: 500px;
 		margin-left: -8px;
 	}
 }
+
 @media screen and (min-width: 300px) and (max-width: 375px) {
 	.image {
 		width: 375px;
 		margin-left: -8px;
 	}
+}
+
+.commentBox {
+	width: 420px;
+	height: 200px;
+	padding: 10px;
+	background-color: #d0e2bc;
 }
