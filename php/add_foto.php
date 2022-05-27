@@ -64,9 +64,9 @@
 			$conn = null;
 			if ($file_type == "jpeg" || $file_type == "jpg")
 				$img = imagecreatefromjpeg($photo_file);
-			if ($file_type == "png")
+			else if ($file_type == "png")
 				$img = imagecreatefrompng($photo_file);
-			$scaled_img = imagescale($img, 460, -1, IMG_BILINEAR_FIXED);
+			$scaled_img = imagescale($img, 500, -1, IMG_BILINEAR_FIXED);
 			imagejpeg($scaled_img, $photo_file, 100);
 			imagedestroy($img);
 			imagedestroy($scaled_img);
@@ -93,7 +93,7 @@
 		$sy = imagesy($stamp);
 
 		imagecopy($img, $stamp, imagesx($img) - $sx - $margin_r, imagesy($img) - $sy - $margin_b, 0, 0, imagesx($stamp), imagesy($stamp));
-		$scaled_img = imagescale($img, 460, -1, IMG_BILINEAR_FIXED);
+		$scaled_img = imagescale($img, 500, -1, IMG_BILINEAR_FIXED);
 		imagejpeg($scaled_img, $photo_file, 100);
 		imagedestroy($img);
 		imagedestroy($scaled_img);

@@ -18,8 +18,8 @@
 						<!DOCTYPE html>
 						<html>
 							<body>
-								
-									<img class="image" src=<?php echo $k['img_path'];?>>
+								<!-- <div class="image"> -->
+										<img class="image" src=<?php echo $k['img_path'];?>>
 									<!-- <form action="comments.php" method="post">
 										<div>
 											<textarea name="comments" id="comments">Enter comment</textarea>
@@ -50,7 +50,7 @@
 												<?php
 											}
 										?>
-							
+								</div>
 							</body>
 						</html>
 					<?php
