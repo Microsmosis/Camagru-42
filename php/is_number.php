@@ -1,5 +1,4 @@
 <?php
-
 	function is_number($string)
 	{
 		$i = 0;

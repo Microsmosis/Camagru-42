@@ -17,7 +17,6 @@
 		<style>
 			body {
 				background: white;
-				animation: fadeInFromNone 2s ease-out;
 			}
 			.fotoform {
 				position: absolute;
@@ -43,22 +42,6 @@
 				font-size: 0.88vw;
 				color: black;
 				opacity: 0.7;
-			}
-			@keyframes fadeInFromNone {
-						0% {
-					display: none;
-					opacity: 0;
-				}
-
-				1% {
-					display: block;
-					opacity: 0;
-				}
-
-				100% {
-					display: block;
-					opacity: 1;
-				}
 			}
 			.login {
 				position: absolute;

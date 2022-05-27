@@ -62,6 +62,14 @@
 			$stmt->bindParam(':img_user', $photo_user, PDO::PARAM_STR);
 			$stmt->execute();
 			$conn = null;
+			if ($file_type == "jpeg" || $file_type == "jpg")
+				$img = imagecreatefromjpeg($photo_file);
+			if ($file_type == "png")
+				$img = imagecreatefrompng($photo_file);
+			$scaled_img = imagescale($img, 470, -1, IMG_BILINEAR_FIXED);
+			imagejpeg($scaled_img, $photo_file, 100);
+			imagedestroy($img);
+			imagedestroy($scaled_img);
 			header('Refresh: 2; ./user_gallery.php');
 		}
 		else
@@ -85,7 +93,9 @@
 		$sy = imagesy($stamp);
 
 		imagecopy($img, $stamp, imagesx($img) - $sx - $margin_r, imagesy($img) - $sy - $margin_b, 0, 0, imagesx($stamp), imagesy($stamp));
-		imagejpeg($img, $photo_file, 100);
+		$scaled_img = imagescale($img, 470, -1, IMG_BILINEAR_FIXED);
+		imagejpeg($scaled_img, $photo_file, 100);
 		imagedestroy($img);
+		imagedestroy($scaled_img);
 	}
 ?>
