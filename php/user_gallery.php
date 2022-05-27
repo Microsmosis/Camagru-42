@@ -75,34 +75,9 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+		<link href="../css/user_gallery.css" rel="stylesheet">
 		<style>
-			body {
-				background: white;
-			}
-			.image {
-				display: block;
-				margin-left: 400px;
-				margin-top: 200px;
-			}
-			@media screen and (min-width: 350px) and (max-width: 1300px) {
-
-				.image {
-					display: block;
-					margin-left: auto;
-  					margin-right: auto;
-					margin-top: 200px;
-				}
-			}
-			@media screen and (min-width: 350px) and (max-width: 450px) {
-
-				.image {
-					display: block;
-					margin-left: auto;
-					margin-right: auto;
-					margin-top: 200px;
-					width: 99%;
-				}
-			}
+			
 		</style>
 	</head>
 	<body>
