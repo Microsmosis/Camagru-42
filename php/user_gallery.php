@@ -19,7 +19,7 @@
 						<html>
 							<body>
 									<img class="image" src=<?php echo $k['img_path'];?>>
-										<form action="comments.php" method="post">
+										<!-- <form action="comments.php" method="post">
 												<div>
 													<textarea name="comments" id="comments">Enter comment</textarea>
 												</div>
@@ -32,7 +32,7 @@
 											<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
 											<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 											<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
-										</form>
+										</form> -->
 										<?php
 											$sql0 = "SELECT user, msg FROM comments WHERE `img`='$img_id'";
 											$stmt0 = $conn->query($sql0);
@@ -79,6 +79,6 @@
 		</style>
 	</head>
 	<body>
-	
+
 	</body>
 </html>
