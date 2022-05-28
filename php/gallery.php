@@ -41,14 +41,21 @@
 			.sticky + .content {
 			padding-top: 102px;
 			}
+			.imagee {
+				position: fixed;
+				top: 10;
+				right: 25;
+				width: 50px;
 
+				}
 		</style>
 	</head>
 	<body>
-
+	
 			<div class="redirects header ">
 				<a class="login sticky" href="login_form.php">LOG IN</a>
 					<a class="signup stickyB" href="../html/create.html">SIGN UP</a>
+					<img class="imagee" src="../images/wow.png">
 		</div>
 	</body>
 </html>
