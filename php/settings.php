@@ -9,125 +9,135 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Camagru</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+		
 		<style>
-			body {
+			#wireframe {
+					position: fixed;
+					top: 1;
+					left: 0vw;
+					width: 100vw;
+					height: 100vw;
+					opacity: 0.1;
+					-webkit-animation:spin 60s linear infinite;
+					-moz-animation:spin 60s linear infinite;
+					animation:spin 60s linear infinite;
+				}
+			#wf2 {
+				position: fixed;
+					top: 60vw;
+					width: 100vw;
+					height: 100vw;
+					opacity: 0.1;
+					-webkit-animation:spin 60s linear infinite;
+					-moz-animation:spin 60s linear infinite;
+					animation:spin 60s linear infinite;
+				}
+			#wf3 {
+				position: fixed;
+					top: 120vw;
+					width: 100vw;
+					height: 100vw;
+					opacity: 0.1;
+					-webkit-animation:spin 60s linear infinite;
+					-moz-animation:spin 60s linear infinite;
+					animation:spin 60s linear infinite;
+				}
+			@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+			@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+			@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+			.backpanel {
+				display: block;
+				margin-top: 150px;
+				margin-left: auto;
+				margin-right: auto;
+				background: linear-gradient(-180deg, #ffffff, #eaeaea,  #a7a7a8, #7a7a7afe);
+				width: 240px;
+				height: 560px;
+				border-radius: 7px;
+				box-shadow: 0.15vw 0.3vw 0.3vw hsl(0deg 0% 0% / 0.44);
+				
+			}
+			@media screen and (min-width: 350px) and (max-width: 400px) {
+				.backpanel {
+					margin-top: 50px;
+				}
+			}
+			.form {
+				position: relative;
+				font-family: ;
+				margin-left: 40;
+				margin-bottom: 35px;
+				font-size: 0.6rem;
+				font-family: 'Roboto', sans-serif;
+			}
+			.submit {
+				
+				width: 70px;
+				height: 60px;
+				border-radius: 30px;
 				background: white;
-				animation: fadeInFromNone 2s ease-out;
+				box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.44);
+				margin-top: 30px;
 			}
-			#hh {
-				position: fixed;
-				top: 0;
-				left: 1.8%;
-				font-family: 'Rubik Glitch', cursive;
-				font-size: 0.88vw;
-				color: black;
-				opacity: 0.7;
+			.notif {
+				width: 70px;
+				height: 20px;
+				border-radius: 30px;
+				background: white;
+				box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.44);
+				
 			}
-			#hf {
-				position: fixed;
-				bottom: 0;
-				left: 1.8%;
-				font-family: 'Rubik Glitch', cursive;
-				font-size: 0.88vw;
-				color: black;
-				opacity: 0.7;
-			}
-			@keyframes fadeInFromNone {
-						0% {
-					display: none;
-					opacity: 0;
-				}
+			.notifOn {
+				width: 70px;
+				height: 20px;
+				border-radius: 30px;
+				background: white;
+				box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.44);
 
-				1% {
-					display: block;
-					opacity: 0;
-				}
-
-				100% {
-					display: block;
-					opacity: 1;
-				}
 			}
-			
-			/* Style the header */
-			.header {
-/* 			padding: 10px 16px; */
-			background: rgb(255, 255, 255);
-			color: #f1f1f1;
+			.return {
+				margin-left: 100px;
+				color: white;
 			}
-
-			/* The sticky class is added to the header with JS when it reaches its scroll position */
-			.sticky {
-			position: fixed;
-			top: 0;
-			width: 100%
+			.forgot {
+				margin-left: 66px;
+				color: white;
 			}
-
-			/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-			.sticky + .content {
-			padding-top: 102px;
+			.unpw {
+				border-radius: 5px;
 			}
-			.modForm {
-				position: fixed;
-				top: 10rem;
-			}
-			.modForm1 {
-				position: fixed;
-				top: 30rem;
+			.e {
+				color: white;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="header sticky" id="myHeader">
-			<p id="hh"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
-			<p id="hf"> CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU    CAMAGRU   CAMAGRU   CAMAGRU   CAMAGRU</p>
+		<img id="wireframe" src="../images/wow.png">
+		<img id="wf2" src="../images/wow.png">
+		<img id="wf3" src="../images/wow.png">
+		<div class="backpanel">
+			<form class="form" action="modify_user.php" method="POST">
+					CHANGE E-MAIL: <input class="unpw" type="email" name="email" value=""/>
+					<br/>
+					<br/>
+					CHANGE USERNAME: <input class="unpw" type="text" name="login" value=""/>
+					<br/>
+					<br/>
+					CREATE NEW PASSWORD: <input class="unpw" type="password" name="passwd" value=""/>
+					<br/>
+					<br/>
+					VERIFY PASSWORD: <input class="unpw" type="password" name="re_passwd" value=""/>
+					</br>
+					<br/>
+					CURRENT PASSWORD TO SAVE CHANGES: <input class="unpw" type="password" name="current" value=""/>
+					</br>
+					<br/>
+					<input class="form submit" type="submit" name="submit" value="OK"/>
+					<br/>
+			</form>
+		<form class="form e" action="notifications.php" method="POST">
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEMAIL NOTIFICATIONS</br></br><input class="notif" type="submit" name="off" value="OFF"/>&nbsp<input class="notifOn" type="submit" name="on" value="ON"/>
+		</form>
 		</div>
-		<form class="modForm" action="modify_user.php" method="POST">
-				CHANGE E-MAIL: <input type="email" name="email" value=""/>
-				<br/>
-				<br/>
-				CHANGE USERNAME: <input type="text" name="login" value=""/>
-				<br/>
-				<br/>
-				CREATE NEW PASSWORD: <input type="password" name="passwd" value=""/>
-				<br/>
-				<br/>
-				VERIFY PASSWORD: <input type="password" name="re_passwd" value=""/>
-				</br>
-				<br/>
-				CURRENT PASSWORD TO SAVE CHANGES: <input type="password" name="current" value=""/>
-				</br>
-				<br/>
-				<input type="submit" name="submit" value="OK"/>
-				<br/>
-		</form>
-		<form class="modForm1" action="notifications.php" method="POST">
-			EMAIL NOTIFICATIONS <input type="submit" name="off" value="OFF"/>&nbsp<input type="submit" name="on" value="ON"/>
-		</form>
 	</body>
 </html>
-
-<script>// When the user scrolls the page, execute myFunction
-window.onscroll = function() {myFunction()};
-
-// Get the header
-var header = document.getElementById("myHeader");
-
-// Get the offset position of the navbar
-var sticky = header.offsetTop;
-
-// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-</script>

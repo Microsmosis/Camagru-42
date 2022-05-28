@@ -1,10 +1,8 @@
 <?php
 	session_start();
 	require_once("config/setup.php");
-	if ($_SESSION['logged_in_user'] == "")
-		header('Refresh: 3.8; ./php/gallery.php');
-	else
-		header('Refresh: 3.8; ./php/user_gallery.php');
+	if ($_SESSION['logged_in_user'] != "")
+		header('Location: ./php/user_gallery.php');
 ?>
 
 <html>
@@ -14,101 +12,74 @@
 		<title>Camagru</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 		<style>
+				a {
+					text-decoration: none;
+					color: black;
+				}
 				body {
-					-webkit-animation: fadeOut 4s;
-					animation: fadeOut 4s;
-					animation-fill-mode: forwards;
+					padding: 0;
+					margin: 0;
+					height: 100vh;
 					overflow-x: hidden;
-					overflow-y: hidden;
 				}
-				h1 {
-				position: absolute;
-				top: 10vw;
-				left: 24vw;
-				font-family: 'Rubik Glitch', cursive;
-				font-size: 10vw;
-				/* text-shadow: 0 0.5vw 0.15vw black; */
-				color: black;
-				opacity: 0.95;
-				}
-				#h2 {
+				#camagru {
+					font-family: 'Averia Serif Libre', cursive;
+					font-size: 4rem;
 					position: absolute;
-					top: 9.1vw;
-					left: 25.3vw;
-					font-size: 9.8vw;
-					text-shadow: 0.4vw 0.2vw 0.2vw black;
-					color: white;
-					opacity: 1;
+					transform: translate(-0%, -0%);
+					transition: 1.1s ease-out;
 				}
-				#h3 {
-					position: absolute;
-					top: 7.5vw;
-					left: 22.8vw;
-					font-size: 10.2vw;
-					/* text-shadow: 0.2vw 0.2vw 0.2vw black; */
-					color: gray;
-					opacity: 0.8;
-				}
-				@-webkit-keyframes fadeOut {
-					0% { opacity: 1;}
-					99% { opacity: 0.01;width: 100%; height: 100%;}
-					100% { opacity: 0;width: 0; height: 0;}
-				}
-				@-moz-keyframes fadeOut {
-					0% { opacity: 1;}
-					99% { opacity: 0.01;width: 100%; height: 100%;}
-					100% { opacity: 0;width: 0; height: 0;}
-				}
-				@keyframes fadeOut {
-					0% { opacity: 1;}
-					99% { opacity: 0.01;width: 100%; height: 100%;}
-					100% { opacity: 0;width: 0; height: 0;}
-				}
-				#wireframe {
+			
+				.image {
+					width: 100px;
 					position: fixed;
-					top: 1;
-					left: 0vw;
-					width: 100vw;
-					height: 100vw;
-					opacity: 0.5;
-					-webkit-animation:spin 60s linear infinite;
-					-moz-animation:spin 60s linear infinite;
-					animation:spin 60s linear infinite;
 				}
-			#wf2 {
-				position: fixed;
-					top: 60vw;
-					width: 100vw;
-					height: 100vw;
-					opacity: 0.5;
-					-webkit-animation:spin 60s linear infinite;
-					-moz-animation:spin 60s linear infinite;
-					animation:spin 60s linear infinite;
-				}
-				@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-				@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-				@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-				#sidePillar { 
-				position: absolute;
-				background: linear-gradient(-90deg, #1336cf, #81d7ff, #ab34e2c7, #a908d1be);
-				width: 100vw;
-				height: 7vw;
-				left: 0vw;
-				top: 18vw;
-				opacity: 0.3;
-				border-radius: 0vw;
-				box-shadow: 0vw 0.1vw 1vw white;
+				
+				.box {
+					width: 700px;
+					color: white;
 				}
 		</style>
 	</head>
 	<body>
-		<img id="wireframe" src="images/wow.png">
-		<img id="wf2" src="images/wow.png">
-		<div id="sidePillar"></div>
-		<h1 id="h3">CAMAGRU</h1>
-		<h1>CAMAGRU</h1>
-		<h1 id="h2">CAMAGRU</h1>
+		<div id="camagru">
+			<a href="php/gallery.php">CAMAGRU<img class="image" src="images/wow.png"></a>
+		</div>
 	</body>
 </html>
+
+<script>
+let myDiv = document.getElementById("camagru");
+//Detect touch device
+function isTouchDevice() {
+  try {
+    //We try to create TouchEvent. It would fail for desktops and throw error
+    document.createEvent("TouchEvent");
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+const move = (e) => {
+  //Try, catch to avoid any errors for touch screens (Error thrown when user doesn't move his finger)
+  try {
+    //PageX and PageY return the position of client's cursor from top left of screen
+    var x = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
+    var y = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
+  } catch (e) {}
+  //set left and top of div based on mouse position
+  myDiv.style.left = x - 50 + "px";
+  myDiv.style.top = y - 50 + "px";
+};
+//For mouse
+document.addEventListener("mousemove", (e) => {
+  move(e);
+});
+//For touch
+document.addEventListener("touchmove", (e) => {
+  move(e);
+});
+
+</script>

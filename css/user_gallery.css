@@ -1,19 +1,19 @@
-body {
-	background: white;
-}
 
 textarea {
 	resize: none;
 }
-
+ a {
+	text-decoration: none;
+ }
 .image {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 200px;
+	margin-bottom: 5px;
 }
 
-@media screen and (min-width: 376px) and (max-width: 500px) {
+@media screen and (min-width: 376px) and (max-width: 510px) {
 	.image {
 		width: 500px;
 		margin-left: -8px;
@@ -27,9 +27,74 @@ textarea {
 	}
 }
 
-.commentBox {
-	width: 420px;
-	height: 200px;
-	padding: 10px;
-	background-color: #d0e2bc;
+.commentsArea {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
+.commentBox {
+	width: 444px;
+	height: 62px;
+	padding: 10px;
+	border-radius: 2px;
+	background-color: #fffff8;
+	font-family: 'Roboto Mono', monospace;
+	font-weight: bold;
+	margin-bottom: 2px;
+}
+
+.submitButton {
+	height: 62px;
+	padding: 10px;
+	border-radius: 4px;
+	font-family: 'Roboto Mono', monospace;
+	margin-bottom: 2px;
+}
+
+.allCommentsPos{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.allComments{
+	width: 500px;
+	padding: 17px;
+	border-radius: 1px;
+	background-color: #fffff8;
+	font-family: 'Roboto Mono', monospace;
+	margin-bottom: 2px;
+
+}
+
+.likeButton {
+	height: 52px;
+	padding: 10px;
+	border-radius: 4px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+
+.redirects {
+	font-size: 2rem;
+	font-family: 'Roboto', sans-serif;
+}
+
+.login {
+
+	display: flex;
+	align-items: left;
+	justify-content: left;
+	width: 120px;
+	
+}
+.signupBox {
+	position:relative;
+}
+  .signup {
+	position: absolute;
+	bottom: 5;
+	right: -14;
+	width: 150px;
+  }

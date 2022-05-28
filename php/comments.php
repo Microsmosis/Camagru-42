@@ -1,4 +1,4 @@
-<?php
+ <?php
 	require_once('connect.php');
 	require_once('send_mail.php');
 	session_start();
