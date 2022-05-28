@@ -12,7 +12,9 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
-		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 		<style>
 			body {
 				background: white;
@@ -29,6 +31,7 @@
 				position: fixed;
 				top: 10;
 				width: 100%
+
 			}
 
 			.stickyB {
@@ -39,15 +42,17 @@
 				width: 100%
 			}
 			.sticky + .content {
-			padding-top: 102px;
+				padding-top: 102px;
 			}
 			.imagee {
 				position: fixed;
 				top: 10;
 				right: 25;
 				width: 50px;
-
-				}
+			}
+			a {
+				font-family: 'Averia Serif Libre', cursive;
+			}
 		</style>
 	</head>
 	<body>

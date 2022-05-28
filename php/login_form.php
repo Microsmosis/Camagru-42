@@ -57,7 +57,7 @@
 			@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 			.backpanel {
 				display: block;
-				margin-top: 125px;
+				margin-top: 250px;
 				margin-left: auto;
 				margin-right: auto;
 				background: linear-gradient(-180deg, #ffffff, #eaeaea,  #a7a7a8, #7a7a7afe);
@@ -65,11 +65,12 @@
 				height: 360px;
 				border-radius: 7px;
 				box-shadow: 0.15vw 0.3vw 0.3vw hsl(0deg 0% 0% / 0.44);
-				/* box-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
-    				0 2px 2px hsl(0deg 0% 0% / 0.075),
-    				0 4px 4px hsl(0deg 0% 0% / 0.075),
-   					0 8px 8px hsl(0deg 0% 0% / 0.075),
-    				0 16px 16px hsl(0deg 0% 0% / 0.075) */
+			
+			}
+			@media screen and (min-width: 350px) and (max-width: 400px) {
+				.backpanel {
+					margin-top: 120px;
+				}
 			}
 			.form {
 				position: relative;
