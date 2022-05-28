@@ -11,6 +11,9 @@
 		<title>Camagru</title>
 		
 		<style>
+			a {
+				text-decoration: none;
+			}
 			#wireframe {
 					position: fixed;
 					top: 1;
@@ -138,6 +141,7 @@
 		<form class="form e" action="notifications.php" method="POST">
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEMAIL NOTIFICATIONS</br></br><input class="notif" type="submit" name="off" value="OFF"/>&nbsp<input class="notifOn" type="submit" name="on" value="ON"/>
 		</form>
+		<a class="form e" href="profile_page.php">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRETURN</a>
 		</div>
 	</body>
 </html>
