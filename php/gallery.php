@@ -8,7 +8,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="../css/user_gallery.css">
+		<link rel="stylesheet" href="../css/gallery.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
@@ -18,9 +18,7 @@
 		<style>
 			body {
 				background: white;
-
 				overflow-x: hidden;
-	
 			}
 			.header {
 				background: rgb(255, 255, 255);
@@ -61,15 +59,38 @@
 			a {
 				font-family: 'Averia Serif Libre', cursive;
 			}
+			.login {
+				display: flex;
+				align-items: left;
+				justify-content: left;
+				width: 120px;
+			}
+			hr {
+				width: 2000px;
+				height: 0px;
+				background: black;
+				position: fixed;
+				top: 60px;
+				right: -1px;
+			}
+			.meta {
+				width: 2000px;
+				height: 80px;
+				background: white;
+				position: fixed;
+				top: -10px;
+				right: 0px;
+			}
 		</style>
 	</head>
 	<body>
-	
-			<div class="redirects header ">
-				<a class="login sticky" href="login_form.php">LOG IN</a>
-					<a class="signup stickyB" href="../html/create.html">SIGN UP</a>
-					<img class="imagee" src="../images/wow.png">
+		<div class="meta"></div>
+		<div class="redirects header ">
+			<a class="login sticky" href="login_form.php">LOG IN</a>
+			<a class="signup stickyB" href="../html/create.html">SIGN UP</a>
+			<img class="imagee" src="../images/wow.png">
 		</div>
+		<hr>
 	</body>
 </html>
 
