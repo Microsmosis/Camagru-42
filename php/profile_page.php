@@ -204,14 +204,32 @@
 			font-size: 1rem;
 			font-family: 'Roboto', sans-serif;
 		}
+		hr {
+			width: 2000px;
+			height: 0px;
+			background: black;
+			position: fixed;
+			top: 60px;
+			right: -1px;
+		}
+		.meta {
+			width: 2000px;
+			height: 80px;
+			background: white;
+			position: fixed;
+			top: -10px;
+			right: 0px;
+		}
 		</style>
 	</head>
 	<body>
+		<div class="meta"></div>
 		<div class="redirects">
 			<a id="settings" href="settings.php">SETTINGS</a>
 			<a id="photo" href="photobooth.php">ADD PHOTO</a>
 			<a id="gallery" href="user_gallery.php">GALLERY</a>
 			<a id="logout" href="logout.php">LOG OUT</a>
 		</div>
+		<hr>
 	</body>
 </html>

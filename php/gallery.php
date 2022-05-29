@@ -16,71 +16,7 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 		<style>
-			body {
-				background: white;
-				overflow-x: hidden;
-			}
-			.header {
-				background: rgb(255, 255, 255);
-				color: #f1f1f1;
-			}
-
-			.sticky {
-				position: fixed;
-				top: 10;
-				width: 100%
-
-			}
-
-			.stickyB {
-				position: fixed;
-				display: flex;
-				align-items: right;
-				justify-content: right:
-				width: 100%
-			}
-			.sticky + .content {
-				padding-top: 102px;
-			}
-			.imagee {
-				position: fixed;
-				top: 10;
-				right: 25;
-				width: 50px;
-			}
-			.imagee:hover {
-				-webkit-animation:spin 2s linear infinite;
-					-moz-animation:spin 2s linear infinite;
-					animation:spin 2s linear infinite;
-			}
-			@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-			@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-			@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-			a {
-				font-family: 'Averia Serif Libre', cursive;
-			}
-			.login {
-				display: flex;
-				align-items: left;
-				justify-content: left;
-				width: 120px;
-			}
-			hr {
-				width: 2000px;
-				height: 0px;
-				background: black;
-				position: fixed;
-				top: 60px;
-				right: -1px;
-			}
-			.meta {
-				width: 2000px;
-				height: 80px;
-				background: white;
-				position: fixed;
-				top: -10px;
-				right: 0px;
-			}
+			
 		</style>
 	</head>
 	<body>

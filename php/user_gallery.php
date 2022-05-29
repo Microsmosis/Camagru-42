@@ -34,14 +34,33 @@
 				font-size: 1rem;
 				font-family: 'Roboto', sans-serif;
 			}
+
+hr {
+	width: 2000px;
+	height: 0px;
+	background: black;
+	position: fixed;
+	top: 60px;
+	right: -1px;
+}
+.meta {
+	width: 2000px;
+	height: 80px;
+	background: white;
+	position: fixed;
+	top: -10px;
+	right: 0px;
+}
 			</style>
 		</head>
 		<body>
+		<div class="meta"></div>
 			<div class="redirects">
 				<a id="profile" href="profile_page.php">PROFILE</a>
 				<a id="addphoto" href="photobooth.php">ADD PHOTO</a>
 				<a id="logout" href="logout.php">LOG OUT</a>
 			</div>
+			<hr>
 		</body>
 	</html>
 <?php
