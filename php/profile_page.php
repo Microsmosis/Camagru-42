@@ -1,13 +1,9 @@
-
-
 <?php
 	require_once('connect.php');
 	session_start();
 	if($_SESSION['logged_in_user'] == "")
 		header('Location: ./gallery.php');
-	
 ?>
-
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -115,8 +111,10 @@
 			border-radius: 20px;
 			margin-left: 5px;
 			background-color: white;
-			font-family: 'Roboto Mono', monospace;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 400;
 			overflow: hidden;
+			font-size: 15px;
 		}
 		.user_name_comment {
 			font-weight: 800;

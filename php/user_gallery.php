@@ -109,8 +109,10 @@
 					border-radius: 20px;
 					margin-left: 5px;
 					background-color: white;
-					font-family: 'Roboto Mono', monospace;
+					font-family: 'Montserrat', sans-serif;
+					font-weight: 400;
 					overflow: hidden;
+					font-size: 15px;
 				}
 				.user_name_comment {
 					font-weight: 800;
