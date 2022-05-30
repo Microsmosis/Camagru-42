@@ -5,8 +5,9 @@
 		header('Location: ./gallery.php');
 	try
 	{
+		$user = $_SESSION['logged_in_user'];
 		$conn = connect();
-		$sql = "SELECT img_path, img_name, img_user FROM user_images";
+		$sql = "SELECT img_path, img_name, img_user FROM user_images WHERE img_user='$user' ORDER BY id DESC";
 		$stmt = $conn->query($sql);
 		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		if($result)
@@ -25,20 +26,20 @@
 													<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 													<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
 													<input class="submitButton" type="submit" name="submit" value="Send">
+												</form>
+												<!-- <form action="likes.php" method="post">
+													<input class="likeButton" type="submit" name="like_button" value="LIKE">
+													<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
+													<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+													<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
+												</form> -->
+												<form action="delete_img.php" method="post"> <!-- could add a onclick function to check if user really wants to delete -->
+													<input class="delButton" type="submit" name="del_button" value="Delete"> 
+													<input type="hidden" name="image_path" value=<?php echo $k['img_path'];?>>
+													<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+										</form>
 												</div>
-											</form>
-											<!-- <form action="likes.php" method="post">
-												<input class="likeButton" type="submit" name="like_button" value="LIKE">
-												<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
-												<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
-												<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
-											</form> -->
-											<!-- <form action="delete_img.php" method="post">
-												<input type="submit" name="del_button" value="DELETE">
-												<input type="hidden" name="image_path" value=<?php echo $k['img_path'];?>>
-												<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
-											</form> -->
-										<?php
+									<?php
 									$sql0 = "SELECT user, msg FROM comments WHERE `img`='$img_id'";
 									$stmt0 = $conn->query($sql0);
 									$result0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
@@ -173,7 +174,7 @@
 
 			}
 
-			.likeButton {
+			.delButton {
 				height: 52px;
 				padding: 10px;
 				border-radius: 4px;
@@ -182,22 +183,22 @@
 
 			#settings {
 				position: fixed;
-				top: 2%;
-				left: 4%;
+				top: 0.7%;
+				left: 62%;
 			}
 			#photo {
 				position: fixed;
-				top: 2%;
+				top: 0.7%;
 				left: 32%;
 			}
 			#gallery {
 				position: fixed;
-				top: 2%;
-				left: 62%;
+				top: 0.7%;
+				left: 4%;
 			}
 			#logout {
 				position: fixed;
-				top: 2%;
+				top: 0.7%;
 				left: 90%;
 			}
 			.redirects {
@@ -205,15 +206,16 @@
 			font-family: 'Roboto', sans-serif;
 		}
 		hr {
-			width: 2580px;
+			width: 2600px;
 			height: 0px;
 			background: black;
 			position: fixed;
 			top: 60px;
+			right: 0px;
 			
 		}
 		.meta {
-			width: 2000px;
+			width: 2580px;
 			height: 80px;
 			background: white;
 			position: fixed;
@@ -225,10 +227,10 @@
 	<body>
 		<div class="meta"></div>
 		<div class="redirects">
-			<a id="settings" href="settings.php">SETTINGS</a>
-			<a id="photo" href="photobooth.php">ADD PHOTO</a>
-			<a id="gallery" href="user_gallery.php">GALLERY</a>
-			<a id="logout" href="logout.php">LOG OUT</a>
+			<a id="gallery" href="user_gallery.php"><img src="../images/globe.png" width="50"></a>
+			<a id="photo" href="photobooth.php"><img src="../images/camera.png"></a>
+			<a id="settings" href="settings.php"><img src="../images/settings.png"></a>
+			<a id="logout" href="logout.php"><img src="../images/logout.png"></a>
 		</div>
 		<hr>
 	</body>

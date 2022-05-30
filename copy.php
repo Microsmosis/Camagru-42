@@ -64,102 +64,54 @@
 				justify-content: center;
 				margin-top: 10px;
 			}
-			#return {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-			hr {
-			width: 2600px;
-			height: 0px;
-			background: black;
-			position: fixed;
-			top: 60px;
-			right: 0px;
-			
-			}
-			.meta {
-				width: 2580px;
-				height: 80px;
-				background: white;
-				position: fixed;
-				top: -10px;
-				right: 0px;
-			}
-			#profile {
-				position: fixed;
-				top: 0.7%;
-				left: 4%;
-			}
-			#gallery {
-				position: fixed;
-				top: 0.7%;
-				left: 47%;
-			}
-			#logout {
-				position: fixed;
-				top: 0.7%;
-				left: 92%;
-			}
-			.redirects {
-			font-size: 1rem;
-			font-family: 'Roboto', sans-serif;
-		}
 		</style>
 	</head>
 	<body>
-		<div class="meta"></div>
-		<div class="redirects">
-			<a id="profile" href="profile_page.php"><img src="../images/profile.png"></a>
-			<a id="gallery" href="user_gallery.php"><img src="../images/globe.png"></a>
-			<a id="logout" href="logout.php"><img src="../images/logout.png"></a>
-		</div>
 		<video id="video" width="320" height="240" autoplay></video>
 		<button id="start-camera">Start Camera</button><button id="click-photo">Take Photo</button>
-			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
-			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
-				<input id="web_add" type="submit" name="add" value="Add Snapshot">
-				<input type="hidden" id="web_photo" name="new_pic" value="">
-				<input type="hidden" id="stamp" name="stamp" value="">
-			</form>
+		<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
+		<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
+			<input id="web_add" type="submit" name="add" value="Add Snapshot">
+			<input type="hidden" id="web_photo" name="new_pic" value="">
+			<input type="hidden" id="stamp" name="stamp" value="">
+		</form>
+
 		<div class="image">
-		<?php
-			try
-		{
-			$user = $_SESSION['logged_in_user'];
-			$snap_stat = 1;
-			$conn = connect();
-			$sql = "SELECT img_path, snap_shot FROM user_images WHERE img_user='$user'";
-			$stmt = $conn->query($sql);
-			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			if($result)
+			<?php
+				try
 			{
-				foreach($result as $k)
+				$user = $_SESSION['logged_in_user'];
+				$snap_stat = 1;
+				$conn = connect();
+				$sql = "SELECT img_path, snap_shot FROM user_images WHERE img_user='$user'";
+				$stmt = $conn->query($sql);
+				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				if($result)
 				{
-					if ($k['snap_shot'] == 1)
+					foreach($result as $k)
 					{
-						$img_id = $k['img_name'];
-						?>
-							<!DOCTYPE html>
-								<html>
-									<body>
-										<img id="img_size" src=<?php echo $k['img_path'];?>>&nbsp
-									</body>
-							</html>
-						<?php
+						if ($k['snap_shot'] == 1)
+						{
+							$img_id = $k['img_name'];
+							?>
+								<!DOCTYPE html>
+									<html>
+										<body>
+											<img id="img_size" src=<?php echo $k['img_path'];?>>&nbsp
+										</body>
+								</html>
+							<?php
+						}
 					}
 				}
 			}
-		}
-		catch(PDOException $e)
-		{
-			echo $stmt . "<br>" . $e->getMessage();
-		}
-		$conn = null;
-		?>
+			catch(PDOException $e)
+			{
+				echo $stmt . "<br>" . $e->getMessage();
+			}
+			$conn = null;
+			?>
 		</div>
-		<br>
-		<br>
 		<div class="stamps">
 			<button><img id="first" onclick="stampPath1()" src="../images/kuruma.png" width='200' height='100'></button>
 			<button><img id="second" onclick="stampPath2()" src="../images/shenron1.png" width='70' height='100'></button>
@@ -173,8 +125,6 @@
 				<input type="hidden" id="stamp1" name="stamp" value="">
 			</form>
 		</div>
-		<br>
-		<hr>
 	</body>
 </html>
 <script> 

@@ -96,7 +96,6 @@
 				border-radius: 30px;
 				background: white;
 				box-shadow: 4px 8px 8px hsl(0deg 0% 0% / 0.44);
-
 			}
 			.return {
 				margin-left: 100px;
@@ -132,7 +131,7 @@
 					VERIFY PASSWORD: <input class="unpw" type="password" name="re_passwd" value=""/>
 					</br>
 					<br/>
-					CURRENT PASSWORD TO SAVE CHANGES: <input class="unpw" type="password" name="current" value=""/>
+					OLD PW TO SAVE CHANGES: <input class="unpw" type="password" name="current" value=""/>
 					</br>
 					<br/>
 					<input class="form submit" type="submit" name="submit" value="OK"/>

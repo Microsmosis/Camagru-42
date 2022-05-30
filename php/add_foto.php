@@ -8,6 +8,7 @@
 	$photo_name = basename($_FILES["photo"]["name"]);
 	$photo_file = $photos_dir . basename($_FILES["photo"]["name"]);
 	$uploadOk = 1;
+	$snap_stat = 0;
 	$file_type = strtolower(pathinfo($photo_file, PATHINFO_EXTENSION));
 
 	if(isset($_POST["add"]))
@@ -53,13 +54,14 @@
 	{
 		if(move_uploaded_file($_FILES["photo"]["tmp_name"], $photo_file))
 		{
-			echo "The file ". htmlspecialchars(basename( $_FILES["photo"]["name"])). " has been uploaded.\n";
+
 			$conn = connect();
-			$stmt = $conn->prepare("INSERT INTO user_images (img_path, img_name, img_user)
-									VALUES (:img_path, :img_name, :img_user)");
+			$stmt = $conn->prepare("INSERT INTO user_images (img_path, img_name, img_user, snap_shot)
+									VALUES (:img_path, :img_name, :img_user, :snap_shot)");
 			$stmt->bindParam(':img_path', $photo_file, PDO::PARAM_STR);
 			$stmt->bindParam(':img_name', $photo_name, PDO::PARAM_STR);
 			$stmt->bindParam(':img_user', $photo_user, PDO::PARAM_STR);
+			$stmt->bindParam(':snap_shot', $snap_stat, PDO::PARAM_STR);
 			$stmt->execute();
 			$conn = null;
 			if ($file_type == "jpeg" || $file_type == "jpg")
@@ -70,7 +72,7 @@
 			imagejpeg($scaled_img, $photo_file, 100);
 			imagedestroy($img);
 			imagedestroy($scaled_img);
-			header('Refresh: 2; ./user_gallery.php');
+			header('Location: user_gallery.php');
 		}
 		else
 		{

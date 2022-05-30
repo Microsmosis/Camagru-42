@@ -18,14 +18,13 @@
 			$sql = "DELETE FROM likes WHERE img='$name'";
 			$conn->exec($sql);
 			unlink($image);
-			echo "Image deleted succesfully!" . PHP_EOL;
 		}
 		catch(PDOException $e)
 		{
 			echo $sql . "<br>" . $e->getMessage();
 		}
 		$conn = null;
-		header('Refresh: 3; ./profile_page.php');
+		header('Location: profile_page.php');
 	}
 	else
 	{

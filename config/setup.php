@@ -44,7 +44,8 @@
 		id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 		img_path TEXT NOT NULL,
 		img_name TEXT NOT NULL,
-		img_user VARCHAR(50) NOT NULL
+		img_user VARCHAR(50) NOT NULL,
+		snap_shot INT(11) NOT NULL
 		)";
 		$conn->exec($sql);
 	}

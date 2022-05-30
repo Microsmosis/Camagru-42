@@ -38,7 +38,7 @@
 	try
 		{
 			$conn = connect();
-			$sql = "SELECT img_path, img_name, img_user FROM user_images";
+			$sql = "SELECT img_path, img_name, img_user FROM user_images ORDER BY id DESC";
 			$stmt = $conn->query($sql);
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 			if($result)

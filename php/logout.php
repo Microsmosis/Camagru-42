@@ -4,6 +4,6 @@
 		header('Location: ./gallery.php');
 
 	$_SESSION['logged_in_user'] = "";
-	echo "You have logged out!";
-	header('Refresh: 2; ../index.php');
+	echo "Bye Bye";
+	header('Refresh: 1; ../index.php');
 ?>

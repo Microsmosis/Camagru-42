@@ -9,6 +9,7 @@
 		$webcam_photo = $_POST['new_pic'];
 		$stamp_path = $_POST['stamp'];
 		$photo_user = $_SESSION['logged_in_user'];
+		$snap_stat = 1;
 		$_POST = array();
 		$webcam_photo = str_replace('data:image/jpeg;base64,', '', $webcam_photo);
 		$webcam_photo = str_replace(' ', '+', $webcam_photo);
@@ -17,11 +18,12 @@
 		$file = "../uploads/" . uniqid() . '.jpeg';
 		$success = file_put_contents($file, $data);
 		$conn = connect();
-		$stmt = $conn->prepare("INSERT INTO user_images (img_path, img_name, img_user)
-									VALUES (:img_path, :img_name, :img_user)");
+		$stmt = $conn->prepare("INSERT INTO user_images (img_path, img_name, img_user, snap_shot)
+									VALUES (:img_path, :img_name, :img_user, :snap_shot)");
 		$stmt->bindParam(':img_path', $file, PDO::PARAM_STR);
 		$stmt->bindParam(':img_name', $photo_name, PDO::PARAM_STR);
 		$stmt->bindParam(':img_user', $photo_user, PDO::PARAM_STR);
+		$stmt->bindParam(':snap_shot', $snap_stat, PDO::PARAM_STR);
 		$stmt->execute();
 		$conn = null;
 		$stamp = imagecreatefrompng($stamp_path);
@@ -37,11 +39,11 @@
 		header('Content-type: image/png');
 		imagejpeg($img, $file, 95);
 		imagedestroy($img);
+		header('Location: user_gallery.php');
 	}
 	else
 	{
-		echo "Please take an image and choose a sticker for it! :)" . PHP_EOL;
+		echo "Please take an image and choose a sticker for it!" . PHP_EOL;
 		header('Refresh: 2; photobooth.php');
 	}
-	/* header('Refresh: 2; user_gallery.php'); */
 ?>
