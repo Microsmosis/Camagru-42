@@ -17,40 +17,41 @@
 				}
 				#profile {
 				position: fixed;
-				top: 5%;
+				top: 2%;
 				left: 4%;
-			}
-			#addphoto {
-				position: fixed;
-				top: 5%;
-				left: 42%;
-			}
-			#logout {
-				position: fixed;
-				top: 5%;
-				left: 88%;
-			}
-			.redirects {
-				font-size: 1rem;
-				font-family: 'Roboto', sans-serif;
-			}
+				}
+				#addphoto {
+					position: fixed;
+					top: 2%;
+					left: 42%;
+				}
+				#logout {
+					position: fixed;
+					top: 2%;
+					left: 88%;
+				}
+				.redirects {
+					font-size: 1rem;
+					font-family: 'Roboto', sans-serif;
+					
+				}
 
-hr {
-	width: 2000px;
-	height: 0px;
-	background: black;
-	position: fixed;
-	top: 60px;
-	right: -1px;
-}
-.meta {
-	width: 2000px;
-	height: 80px;
-	background: white;
-	position: fixed;
-	top: -10px;
-	right: 0px;
-}
+				hr {
+					width: 2580px;
+					height: 0px;
+					background: black;
+					position: fixed;
+					top: 60px;
+					right: -1px;
+				}
+				.meta {
+					width: 2000px;
+					height: 80px;
+					background: white;
+					position: fixed;
+					top: -10px;
+					right: 0px;
+				}
 			</style>
 		</head>
 		<body>
@@ -83,39 +84,39 @@ hr {
 						<!DOCTYPE html>
 						<html>
 							<body>
-									<img class="image" src=<?php echo $k['img_path'];?>>
-										<form action="comments.php" method="post">
-												<div class="commentsArea">
-													<textarea class="commentBox" name="comments">Enter comment</textarea>
-													<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
-													<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
-													<input class="submitButton" type="submit" name="submit" value="Send">
-												</div>
-											</form>
-											<!-- <form action="likes.php" method="post">
-												<input class="likeButton" type="submit" name="like_button" value="LIKE">
-												<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
+								<img class="image" src=<?php echo $k['img_path'];?>>
+									<form action="comments.php" method="post">
+											<div class="commentsArea">
+												<textarea class="commentBox" name="comments">Enter comment</textarea>
 												<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 												<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
-											</form> -->
-										<?php
-											$sql0 = "SELECT user, msg FROM comments WHERE `img`='$img_id'";
-											$stmt0 = $conn->query($sql0);
-											$result0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
-											foreach($result0 as $k0)
-											{
-												?>
-												<!DOCTYPE html>
-													<html>
-														<body>
-															<div class="commentsArea">
-																<textarea class="allComments"><?php echo $k0['user'];?>     <?php echo $k0['msg'];?></textarea>
-															</div>
-														</body>
-													</html>
-												<?php
-											}
-										?>
+												<input class="submitButton" type="submit" name="submit" value="Send">
+											</div>
+										</form>
+										<!-- <form action="likes.php" method="post">
+											<input class="likeButton" type="submit" name="like_button" value="LIKE">
+											<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
+											<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+											<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
+										</form> -->
+									<?php
+										$sql0 = "SELECT user, msg FROM comments WHERE `img`='$img_id'";
+										$stmt0 = $conn->query($sql0);
+										$result0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
+										foreach($result0 as $k0)
+										{
+											?>
+											<!DOCTYPE html>
+												<html>
+													<body>
+														<div class="commentsArea">
+															<textarea class="allComments"><?php echo $k0['user'];?>     <?php echo $k0['msg'];?></textarea>
+														</div>
+													</body>
+												</html>
+											<?php
+										}
+									?>
 							</body>
 						</html>
 					<?php

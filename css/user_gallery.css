@@ -75,12 +75,6 @@ textarea {
 	font-family: 'Roboto Mono', monospace;
 }
 
-
-.redirects {
-	font-size: 2rem;
-	font-family: 'Roboto', sans-serif;
-}
-
 .login {
 	display: flex;
 	align-items: left;

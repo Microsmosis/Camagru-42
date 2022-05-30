@@ -182,22 +182,22 @@
 
 			#settings {
 				position: fixed;
-				top: 5%;
+				top: 2%;
 				left: 4%;
 			}
 			#photo {
 				position: fixed;
-				top: 5%;
+				top: 2%;
 				left: 32%;
 			}
 			#gallery {
 				position: fixed;
-				top: 5%;
+				top: 2%;
 				left: 62%;
 			}
 			#logout {
 				position: fixed;
-				top: 5%;
+				top: 2%;
 				left: 90%;
 			}
 			.redirects {
@@ -205,12 +205,12 @@
 			font-family: 'Roboto', sans-serif;
 		}
 		hr {
-			width: 2000px;
+			width: 2580px;
 			height: 0px;
 			background: black;
 			position: fixed;
 			top: 60px;
-			right: -1px;
+			
 		}
 		.meta {
 			width: 2000px;

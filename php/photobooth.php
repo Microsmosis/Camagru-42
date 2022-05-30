@@ -14,33 +14,73 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 		<style>
-			
+			#video {
+				display: block;
+				margin-top: 150px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#start-camera {
+				display: block;
+				margin-top: 10px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#click-photo {
+				display: block;
+				margin-top: 10px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#canvas {
+				display: block;
+				margin-top: 10px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#web_add {
+				display: block;
+				margin-top: 10px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.stamps {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.img_add {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-top: 10px;
+			}
 		</style>
 	</head>
 	<body>
-			<button id="start-camera">Start Camera</button>
-			<video id="video" width="320" height="240" autoplay></video>
-			<button id="click-photo">Take Photo</button>
+		<video id="video" width="320" height="240" autoplay></video>
+		<button id="start-camera">Start Camera</button><button id="click-photo">Take Photo</button>
 			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
 			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
-				<input type="submit" name="add" value="Add">
+				<input id="web_add" type="submit" name="add" value="Add Snapshot">
 				<input type="hidden" id="web_photo" name="new_pic" value="">
 				<input type="hidden" id="stamp" name="stamp" value="">
 			</form>
 		<br>
 		<br>
-		<button><img id="first" onclick="stampPath()" src="../images/wow.png" width='200' height='200'></button>
-		<br>
-		<br>
-		<form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
-			Photo: <input type="file" name="photo">
-			<input type="hidden" id="stamp1" name="stamp" value="">
-			<br>
-			<br>
-			<input type="submit" value="Add">
-		</form>
-		<br>
-		<br>
+		<div class="stamps">
+			<button><img id="first" onclick="stampPath1()" src="../images/kuruma.png" width='200' height='100'></button>
+			<button><img id="second" onclick="stampPath2()" src="../images/shenron1.png" width='70' height='100'></button>
+			<button><img id="third" onclick="stampPath3()" src="../images/gamabunta.png" width='100' height='100'></button>
+			<button><img id="fourth" onclick="stampPath4()" src="../images/sharingan.png" width='100' height='100'></button>
+			<button><img id="fifth" onclick="stampPath5()" src="../images/wow.png" width='100' height='100'></button>
+		</div>
+		<div class="img_add">
+			<form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
+				Photo: <input type="file" name="photo"><input type="submit" value="Add">
+				<input type="hidden" id="stamp1" name="stamp" value="">
+			</form>
+		</div>
 		<br>
 		<br>
 	</body>
@@ -51,13 +91,43 @@
 	let click_button = document.querySelector("#click-photo");
 	let canvas = document.querySelector("#canvas");
 	let new_pic = document.querySelector("#web_photo");
-	let final_stamp = document.querySelector("#stamp");
+	let final_stamp_web = document.querySelector("#stamp");
+	let final_stamp_add = document.querySelector("#stamp1");
 	let first = document.querySelector("#first");
+	let second = document.querySelector("#second");
+	let third = document.querySelector("#third");
+	let fourth = document.querySelector("#fourth");
+	let fifth = document.querySelector("#fifth");
 	
 	let stamp_auth = 0;
 	
-	function stampPath() {
-		final_stamp.value = first.src;
+	function stampPath1() {
+		final_stamp_web.value = first.src;
+		final_stamp_add.value = first.src;
+		stamp_auth = 1;
+	}
+	
+	function stampPath2() {
+		final_stamp_web.value = second.src;
+		final_stamp_add.value = second.src;
+		stamp_auth = 1;
+	}
+	
+	function stampPath3() {
+		final_stamp_web.value = third.src;
+		final_stamp_add.value = third.src;
+		stamp_auth = 1;
+	}
+	
+	function stampPath4() {
+		final_stamp_web.value = fourth.src;
+		final_stamp_add.value = fourth.src;
+		stamp_auth = 1;
+	}
+	
+	function stampPath5() {
+		final_stamp_web.value = fifth.src;
+		final_stamp_add.value = fifth.src;
 		stamp_auth = 1;
 	}
 
