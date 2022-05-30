@@ -14,11 +14,11 @@
 			<title>Camagru</title>
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-			<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
-			<link rel="preconnect" href="https://fonts.googleapis.com">
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-			<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
 			<style>
+				html {
+					background: rgb(249, 249, 249);
+				}
 				textarea {
 					resize: none;
 				}
@@ -62,13 +62,18 @@
 					font-family: 'Roboto', sans-serif;
 					
 				}
-				hr {
+				#hrNavbar {
 					width: 2600px;
 					height: 0px;
 					background: black;
 					position: fixed;
 					top: 60px;
 					right: -1px;
+				}
+				#hrcomment {
+					width: 498.5px;	
+					border: 0.5px solid rgba(0, 0, 0, 0.132);
+					margin-top: -30px;
 				}
 				.meta {
 					width: 2000px;
@@ -100,15 +105,12 @@
 				.commentBox {
 					width: 380px;
 					height: 32px;
-					padding: 10px;
+					padding: 12px;
 					border-radius: 20px;
 					margin-left: 5px;
 					background-color: white;
 					font-family: 'Roboto Mono', monospace;
 					overflow: hidden;
-				}
-				.comment {
-					
 				}
 				.user_name_comment {
 					font-weight: 800;
@@ -122,11 +124,11 @@
 					display: flex;
 					align-items: center;
 					flex-direction: column;
-					width: 500px;
+					width: 499.5px;
 					min-height: 500px;
 					margin-top: 200px;
 					border-radius: 2px;
-					box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.44);
+					border: 1px solid rgba(0, 0, 0, 0.132);
 					background-color: white;
 				}
 				.test2 {
@@ -135,7 +137,9 @@
 					margin-left: 25px;
 				}
 				.test3 {
+					font-family: 'Montserrat', sans-serif;
 					display: flex;
+					font-weight: 200;
 				}
 			</style>
 		</head>
@@ -147,72 +151,73 @@
 				<a id="logout" href="logout.php"><img src="../images/logout.png"></a>
 			</div>
 			<div class="test1">
-			<?php
-				try
-				{
-					$conn = connect();
-					$sql = "SELECT img_path, img_name, img_user FROM user_images ORDER BY id DESC";
-					$stmt = $conn->query($sql);
-					$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-					if($result)
+				<?php
+					try
 					{
-						foreach($result as $k)
+						$conn = connect();
+						$sql = "SELECT img_path, img_name, img_user FROM user_images ORDER BY id DESC";
+						$stmt = $conn->query($sql);
+						$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						if($result)
 						{
-							$img_id = $k['img_name'];
-							?>
-								<!DOCTYPE html>
-								<html>
-									<body>
-									<div class="test">
-										<img class="image" src=<?php echo $k['img_path'];?>>
-											<form action="comments.php" method="post">
-													<div class="commentsArea">
-														<textarea class="commentBox" name="comments">...</textarea>
-														<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
-														<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
-														<button class="submitButton" type="submit" name="submit" value="Send"><img src="../images/send.png" width="25"></button>
-													</form>
-													<form action="likes.php" method="post">
-														<button class="likeButton" type="submit" name="like_button" value="Like"><img src="../images/like.png" width="25"></button>
-														<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
-														<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
-														<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
-													</form>
+							foreach($result as $k)
+							{
+								$img_id = $k['img_name'];
+								?>
+									<!DOCTYPE html>
+									<html>
+										<body>
+										<div class="test">
+											<img class="image" src=<?php echo $k['img_path'];?>>
+												<form action="comments.php" method="post">
+														<div class="commentsArea">
+															<textarea class="commentBox" name="comments">...</textarea>
+															<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+															<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
+															<button class="submitButton" type="submit" name="submit" value="Send"><img src="../images/send.png" width="25"></button>
+														</form>
+														<form action="likes.php" method="post">
+															<button class="likeButton" type="submit" name="like_button" value="Like"><img src="../images/like.png" width="25"></button>
+															<input type="hidden" name="liker" value=<?php echo $_SESSION['logged_in_user'];?>>
+															<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
+															<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
+														</form>
+													</div>
+													<hr id="hrcomment">
+													<div class="test2">
+														<?php
+															$sql0 = "SELECT user, msg FROM comments WHERE `img`='$img_id'";
+															$stmt0 = $conn->query($sql0);
+															$result0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
+															foreach($result0 as $k0)
+															{
+																?>
+																<!DOCTYPE html>
+																	<html>
+																		<body>
+																			<div class="test3">
+																				<p><div class="user_name_comment"><?php echo $k0['user'];?></div>&nbsp<?php echo $k0['msg'];?></p>
+																			</div>
+																		</body>
+																	</html>
+																<?php
+															}
+														?>
+													</div>
 												</div>
-												<div class="test2">
-													<?php
-														$sql0 = "SELECT user, msg FROM comments WHERE `img`='$img_id'";
-														$stmt0 = $conn->query($sql0);
-														$result0 = $stmt0->fetchAll(PDO::FETCH_ASSOC);
-														foreach($result0 as $k0)
-														{
-															?>
-															<!DOCTYPE html>
-																<html>
-																	<body>
-																		<div class="test3">
-																			<p class="comment"><div class="user_name_comment"><?php echo $k0['user'];?></div>&nbsp<?php echo $k0['msg'];?></p>
-																		</div>
-																	</body>
-																</html>
-															<?php
-														}
-													?>
-												</div>
-											</div>
-									</body>
-								</html>
-							<?php
+										</body>
+									</html>
+								<?php
+							}
 						}
 					}
-				}
-				catch(PDOException $e)
-				{
-					echo $stmt . "<br>" . $e->getMessage();
-				}
-				$conn = null;
-				?>
+					catch(PDOException $e)
+					{
+						echo $stmt . "<br>" . $e->getMessage();
+					}
+					$conn = null;
+					?>
 				</div>
-			<hr>
+			<hr id="hrNavbar">
 		</body>
 	</html>

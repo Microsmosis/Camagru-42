@@ -15,74 +15,78 @@
 		<title>Camagru</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
 		<style>
+			html {
+					background: rgb(249, 249, 249);
+				}
 			textarea {
-					resize: none;
-				}
-				a {
-					text-decoration: none;
-				}
+				resize: none;
+			}
+			a {
+				text-decoration: none;
+			}
+			.image {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			@media screen and (min-width: 376px) and (max-width: 510px) {
 				.image {
-					display: block;
-					margin-left: auto;
-					margin-right: auto;
+					width: 500px;
+					margin-left: -8px;
 				}
-				@media screen and (min-width: 376px) and (max-width: 510px) {
-					.image {
-						width: 500px;
-						margin-left: -8px;
-					}
+			}
+			@media screen and (min-width: 300px) and (max-width: 375px) {
+				.image {
+					width: 375px;
+					margin-left: -8px;
 				}
-				@media screen and (min-width: 300px) and (max-width: 375px) {
-					.image {
-						width: 375px;
-						margin-left: -8px;
-					}
-				}
-			.deleteButton {
-				padding: 10px;
-					background: white;
-					border-style: solid;
-					border-color: white;
-					margin-top: 16px;
 			}
-
-			#settings {
-				position: fixed;
-				top: 0.7%;
-				left: 62%;
-			}
-			#photo {
-				position: fixed;
-				top: 0.7%;
-				left: 32%;
-			}
-			#gallery {
-				position: fixed;
-				top: 0.7%;
-				left: 4%;
-			}
-			#logout {
-				position: fixed;
-				top: 0.7%;
-				left: 90%;
-			}
-			.redirects {
-			font-size: 1rem;
-			font-family: 'Roboto', sans-serif;
+		.deleteButton {
+			padding: 10px;
+				background: white;
+				border-style: solid;
+				border-color: white;
+				margin-top: 16px;
 		}
-		hr {
+
+		#settings {
+		position: fixed;
+		top: 0.7%;
+			left: 62%;
+		}
+		#photo {
+			position: fixed;
+			top: 0.7%;
+			left: 32%;
+		}
+		#gallery {
+			position: fixed;
+			top: 0.7%;
+			left: 4%;
+		}
+		#logout {
+			position: fixed;
+			top: 0.7%;
+			left: 90%;
+		}
+		.redirects {
+		font-size: 1rem;
+		font-family: 'Roboto', sans-serif;
+		}
+		#hrNavbar {
 			width: 2600px;
 			height: 0px;
 			background: black;
 			position: fixed;
 			top: 60px;
-			right: 0px;
-			
+			right: -1px;
+		}
+		#hrcomment {
+			width: 498.5px;	
+			border: 0.5px solid rgba(0, 0, 0, 0.132);
+			margin-top: -30px;
 		}
 		.meta {
 			width: 2580px;
@@ -93,57 +97,56 @@
 			right: 0px;
 		}
 		.submitButton {
-					padding: 10px;
-					background: white;
-					border-style: solid;
-					border-color: white;
-				}
-				.commentsArea {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					margin-top: -15px;
-				}
-				.commentBox {
-					width: 380px;
-					height: 32px;
-					padding: 10px;
-					border-radius: 20px;
-					margin-left: 5px;
-					background-color: white;
-					font-family: 'Roboto Mono', monospace;
-					overflow: hidden;
-				}
-				.comment {
-					
-				}
-				.user_name_comment {
-					font-weight: 800;
-				}
-				.test1 {
-					display: flex;
-					align-items: center;
-					flex-direction: column;
-				}
-				.test {
-					display: flex;
-					align-items: center;
-					flex-direction: column;
-					width: 500px;
-					min-height: 500px;
-					margin-top: 200px;
-					border-radius: 2px;
-					box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.44);
-					background-color: white;
-				}
-				.test2 {
-					display: block;
-					margin-right: auto;
-					margin-left: 25px;
-				}
-				.test3 {
-					display: flex;
-				}
+			padding: 10px;
+			background: white;
+			border-style: solid;
+			border-color: white;
+		}
+		.commentsArea {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-top: -15px;
+		}
+		.commentBox {
+			width: 380px;
+			height: 32px;
+			padding: 10px;
+			border-radius: 20px;
+			margin-left: 5px;
+			background-color: white;
+			font-family: 'Roboto Mono', monospace;
+			overflow: hidden;
+		}
+		.user_name_comment {
+			font-weight: 800;
+		}
+		.test1 {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+		}
+		.test {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			width: 499.5px;
+			min-height: 500px;
+			margin-top: 200px;
+			border-radius: 2px;
+			border: 1px solid rgba(0, 0, 0, 0.132);
+			background-color: white;
+		}
+		.test2 {
+			display: block;
+			margin-right: auto;
+			margin-left: 25px;
+		}
+		.test3 {
+			font-family: 'Montserrat', sans-serif;
+			display: flex;
+			font-weight: 200;
+		}
 		</style>
 	</head>
 	<body>
@@ -186,6 +189,7 @@
 																<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 													</form>
 												</div>
+												<hr id="hrcomment">
 												<div class="test2">
 													<?php
 														$sql0 = "SELECT user, msg FROM comments WHERE `img`='$img_id'";
@@ -220,6 +224,6 @@
 				$conn = null;
 				?>
 				</div>
-		<hr>
+		<hr id="hrNavbar">
 	</body>
 </html>
