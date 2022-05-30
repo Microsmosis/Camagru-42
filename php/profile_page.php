@@ -152,7 +152,7 @@
 	<body>
 		<div class="meta"></div>
 		<div class="redirects">
-			<a id="gallery" href="user_gallery.php"><img src="../images/globe.png" width="50"></a>
+			<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
 			<a id="photo" href="photobooth.php"><img src="../images/camera.png"></a>
 			<a id="settings" href="settings.php"><img src="../images/settings.png"></a>
 			<a id="logout" href="logout.php"><img src="../images/logout.png"></a>

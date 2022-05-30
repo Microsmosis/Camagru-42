@@ -14,8 +14,8 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 		<style>
-			#img_size {
-				width: 150px;
+			html {
+					background: rgb(249, 249, 249);
 			}
 			.image {
 				display: flex;
@@ -34,12 +34,23 @@
 				margin-top: 10px;
 				margin-left: auto;
 				margin-right: auto;
+				border-style: none;
+				background: white;
+				padding: 10px;
+				border-radius: 50px;
+				box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.44);
+				margin-bottom: 20px;
 			}
 			#click-photo {
 				display: block;
 				margin-top: 10px;
 				margin-left: auto;
 				margin-right: auto;
+				border-style: none;
+				background: white;
+				padding: 7px;
+				border-radius: 10px;
+				box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.44);
 			}
 			#canvas {
 				display: block;
@@ -70,13 +81,12 @@
 				justify-content: center;
 			}
 			hr {
-			width: 2600px;
-			height: 0px;
-			background: black;
-			position: fixed;
-			top: 60px;
-			right: 0px;
-			
+				width: 2600px;
+				height: 0px;
+				background: black;
+				position: fixed;
+				top: 60px;
+				right: 0px;
 			}
 			.meta {
 				width: 2580px;
@@ -94,7 +104,7 @@
 			#gallery {
 				position: fixed;
 				top: 0.7%;
-				left: 47%;
+				left: 47.8%;
 			}
 			#logout {
 				position: fixed;
@@ -111,11 +121,11 @@
 		<div class="meta"></div>
 		<div class="redirects">
 			<a id="profile" href="profile_page.php"><img src="../images/profile.png"></a>
-			<a id="gallery" href="user_gallery.php"><img src="../images/globe.png"></a>
+			<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
 			<a id="logout" href="logout.php"><img src="../images/logout.png"></a>
 		</div>
 		<video id="video" width="320" height="240" autoplay></video>
-		<button id="start-camera">Start Camera</button><button id="click-photo">Take Photo</button>
+		<button id="start-camera"><img src="../images/snapshot.png" width="50"></button><button id="click-photo"><img src="../images/capture.png" width="50"></button>
 			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
 			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
 				<input id="web_add" type="submit" name="add" value="Add Snapshot">

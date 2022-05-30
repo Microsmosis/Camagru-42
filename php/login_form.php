@@ -119,7 +119,7 @@
 				<input class="form submit" type="submit" name="submit" value="LOG IN"/>
 				<br/>
 			</form>
-			<a class="form forgot" href="html/forgot_password.html">FORGOT PASSWORD?</a>
+			<a class="form forgot" href="../html/forgot_password.html">FORGOT PASSWORD?</a>
 			</br>
 			</br>
 			<a class="form return" id="return" href="gallery.php">RETURN</a>
