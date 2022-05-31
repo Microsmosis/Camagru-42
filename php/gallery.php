@@ -1,3 +1,7 @@
+<?php
+	require_once('connect.php');
+	session_start();
+?>
 
 <html>
 	<head>
@@ -193,6 +197,35 @@
 			<a class="signup stickyB" href="../html/create.html">SIGN UP</a>
 			<img class="imagee" src="../images/wow.png">
 		</div>
+		<?php
+			try
+			{
+				$conn = connect();
+				$sql = "SELECT img_path, img_name, img_user FROM user_images ORDER BY id DESC";
+				$stmt = $conn->query($sql);
+				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				if($result)
+				{
+					foreach($result as $k)
+					{
+						$img_id = $k['img_name'];
+						?>
+							<!DOCTYPE html>
+							<html>
+								<body>
+										<img class="image" src=<?php echo $k['img_path'];?>>
+								</body>		
+							</html>	
+						<?php		
+					}
+				}	
+			}	
+			catch(PDOException $e)
+			{
+				echo $stmt . "<br>" . $e->getMessage();
+			}	
+			$conn = null;
+		?>
 		<hr id="hrNavbar">
 		<hr>
 		<div class="footer">
@@ -200,37 +233,3 @@
 		</div>
 	</body>
 </html>
-
-
-
-<?php
-	require_once('connect.php');
-	session_start();
-	try
-		{
-			$conn = connect();
-			$sql = "SELECT img_path, img_name, img_user FROM user_images ORDER BY id DESC";
-			$stmt = $conn->query($sql);
-			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			if($result)
-			{
-				foreach($result as $k)
-				{
-					$img_id = $k['img_name'];
-					?>
-						<!DOCTYPE html>
-						<html>
-							<body>
-									<img class="image" src=<?php echo $k['img_path'];?>>
-							</body>		
-						</html>	
-					<?php		
-				}
-			}	
-		}	
-		catch(PDOException $e)
-		{
-			echo $stmt . "<br>" . $e->getMessage();
-		}	
-		$conn = null;
-?>		
