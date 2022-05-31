@@ -13,6 +13,9 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 		<style>
 			html {
 					background: rgb(249, 249, 249);
@@ -80,13 +83,13 @@
 				justify-content: center;
 				margin-top: 10px;
 			}
-			hr {
+			#hrNavbar {
 				width: 2600px;
 				height: 0px;
 				background: black;
 				position: fixed;
 				top: 60px;
-				right: 0px;
+				right: -1px;
 			}
 			.meta {
 				width: 2580px;
@@ -125,6 +128,13 @@
 			}
 			#inputTag {
 				display: none;
+			}
+			.footer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: 'Averia Serif Libre', cursive;
+				font-size: 1rem;
 			}
 		</style>
 	</head>
@@ -196,7 +206,11 @@
 			</form>
 		</div>
 		<br>
+		<hr id="hrNavbar">
 		<hr>
+		<div class="footer">
+			<p>CAMAGRU<img src="../images/wow.png" width="20"></p>
+		</div>
 	</body>
 </html>
 <script> 

@@ -161,8 +161,8 @@
 				justify-content: left;
 				width: 120px;
 			}
-			hr {
-				width: 2000px;
+			#hrNavbar {
+				width: 2600px;
 				height: 0px;
 				background: black;
 				position: fixed;
@@ -177,6 +177,13 @@
 				top: -10px;
 				right: 0px;
 			}
+			.footer {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-family: 'Averia Serif Libre', cursive;
+				font-size: 1rem;
+			}
 		</style>
 	</head>
 	<body>
@@ -186,7 +193,11 @@
 			<a class="signup stickyB" href="../html/create.html">SIGN UP</a>
 			<img class="imagee" src="../images/wow.png">
 		</div>
+		<hr id="hrNavbar">
 		<hr>
+		<div class="footer">
+			<p>CAMAGRU<img src="../images/wow.png" width="20"></p>
+		</div>
 	</body>
 </html>
 

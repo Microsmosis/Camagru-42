@@ -12,6 +12,9 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 		<style>
 			html {
 					background: rgb(249, 249, 249);
@@ -146,6 +149,13 @@
 			font-size: 0.7rem;
 			font-family: 'Montserrat', sans-serif;
 		}
+		.footer {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Averia Serif Libre', cursive;
+			font-size: 1rem;
+		}
 		</style>
 	</head>
 	<body>
@@ -228,5 +238,9 @@
 				?>
 				</div>
 		<hr id="hrNavbar">
+		<hr>
+		<div class="footer">
+			<p>CAMAGRU<img src="../images/wow.png" width="20"></p>
+		</div>
 	</body>
 </html>

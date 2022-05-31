@@ -145,6 +145,13 @@
 					font-size: 0.7rem;
 					font-family: 'Montserrat', sans-serif;
 				}
+				.footer {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-family: 'Averia Serif Libre', cursive;
+					font-size: 1rem;
+				}
 			</style>
 		</head>
 		<body>
@@ -228,5 +235,9 @@
 					?>
 				</div>
 			<hr id="hrNavbar">
+			<hr>
+			<div class="footer">
+				<p>CAMAGRU<img src="../images/wow.png" width="20"></p>
+			</div>
 		</body>
 	</html>
