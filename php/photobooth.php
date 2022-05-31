@@ -143,9 +143,9 @@
 		<a id="profile" href="profile_page.php"><img src="../images/profile.png"width="50"></a>
 		<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
 		<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
-		<video id="video" width="375" height="250" autoplay></video>
+		<video id="video" width="340" height="240" autoplay></video>
 		<button id="start-camera"><img src="../images/snapshot.png" width="50"></button><button id="click-photo"><p>CHOOSE STICKER TO TAKE PHOTO</p><img src="../images/capture.png" width="50"></button>
-			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
+			<canvas id="canvas" width="375" height="280" value="canvas"></canvas>
 			<form class="form" action="add_webcam.php" method="POST" enctype="multipart/form-data">
 				<button id="web_add" type="submit" name="add" value=""><img src="../images/add.png" width="50"></button>
 				<input type="hidden" id="web_photo" name="new_pic" value="">
