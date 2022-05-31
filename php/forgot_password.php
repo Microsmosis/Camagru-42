@@ -20,7 +20,28 @@
 		}
 		$conn = null;
 		sendEmail($email, 0, $username, $password, 2);
-		echo "Email for password reset sent!";
+		?>
+			<!DOCTYPE html>
+			<html>
+				<head>
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
+				</head>
+				<style>
+						#message {
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							font-size: 2rem;
+							font-family: 'Averia Serif Libre', cursive;
+						}
+				</style>
+				<body>
+					<p id="message"><?php echo "A LINK TO RESET THE PASSWORD HAS BEEN SENT TO GIVEN E-MAIL!";?></p>
+				</body>
+			</html>
+		<?php
 		header('Refresh: 3; ../index.php');
 	}
 	else

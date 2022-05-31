@@ -10,12 +10,12 @@
 	}
 	else if ($access == 1)
 	{
-		header('Refresh: 5; login_form.php');
+		header('Refresh: 3; login_form.php');
 		error_msg(10);
 	}
 	else if ($access == 0)
 	{
-		header('Refresh: 5; login_form.php');
+		header('Refresh: 3; login_form.php');
 		error_msg(11);
 	}
 ?>
@@ -27,20 +27,18 @@
 		<title>Camagru</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 		<style>
 			body {
-				background: linear-gradient(-90deg, #ffffff, #8ad8fc, #ffffff, #c678f7);
-				width: 100%;
 				overflow-x: hidden;
 				overflow-y: hidden;
 			}
 			#error {
-				position: absolute;
-				top: 2vw;
-				left: 3vw;
-				font-size: 5vw;
-				font-family: 'Fredoka One', cursive;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+				font-family: 'Averia Serif Libre', cursive;
 			}
 		</style>
 	</head>

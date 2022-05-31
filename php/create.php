@@ -5,29 +5,30 @@
 			<title>Camagru</title>
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-			<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 			<style>
 				body {
-					background: linear-gradient(-90deg, #ffffff, #8ad8fc, #ffffff, #c678f7);
-					width: 100%;
-					overflow-x: hidden;
-					overflow-y: hidden;
-				}
-				#error {
-					text-align-last: center;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					height: 30vw;
-					font-size: 5vw;
-					font-family: 'Fredoka One', cursive;
-				}
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+			a {
+				text-decoration: none;
+				color: red;
+			}
+			#error {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 2rem;
+				font-family: 'Averia Serif Libre', cursive;
+			}
 				#return {
-					position: absolute;
-					font-size: 4vw;
-					font-family: 'Fredoka One', cursive;
-					top: 36vw;
-					left: 42vw;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 3vw;
+					font-family: 'Averia Serif Libre', cursive;
+
 				}
 			</style>
 		</head>
