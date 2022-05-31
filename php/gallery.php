@@ -8,7 +8,6 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="../css/gallery.css">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
@@ -32,6 +31,7 @@
 
 			@media screen and (min-width: 376px) and (max-width: 510px) {
 				.image {
+					
 					width: 500px;
 					margin-left: -8px;
 				}
@@ -134,8 +134,6 @@
 				position: fixed;
 				display: flex;
 				align-items: right;
-				/* justify-content: right:
-				width: 100% */
 			}
 			.sticky + .content {
 				padding-top: 102px;

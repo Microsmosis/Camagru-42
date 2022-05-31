@@ -32,7 +32,7 @@
 		$uploadOk = 0;
 	}
 
-	if($_FILES["photo"]["size"] > 4000000)
+	if($_FILES["photo"]["size"] > 7000000)
 	{
 		echo "Sorry, your file is too large.\n";
 		$uploadOk = 0;
@@ -68,7 +68,7 @@
 				$img = imagecreatefromjpeg($photo_file);
 			else if ($file_type == "png")
 				$img = imagecreatefrompng($photo_file);
-			$scaled_img = imagescale($img, 500, -1, IMG_BILINEAR_FIXED);
+			$scaled_img = imagescale($img, 375, -1, IMG_BILINEAR_FIXED);
 			imagejpeg($scaled_img, $photo_file, 100);
 			imagedestroy($img);
 			imagedestroy($scaled_img);
@@ -95,7 +95,7 @@
 		$sy = imagesy($stamp);
 
 		imagecopy($img, $stamp, imagesx($img) - $sx - $margin_r, imagesy($img) - $sy - $margin_b, 0, 0, imagesx($stamp), imagesy($stamp));
-		$scaled_img = imagescale($img, 500, -1, IMG_BILINEAR_FIXED);
+		$scaled_img = imagescale($img, 375, -1, IMG_BILINEAR_FIXED);
 		imagejpeg($scaled_img, $photo_file, 100);
 		imagedestroy($img);
 		imagedestroy($scaled_img);

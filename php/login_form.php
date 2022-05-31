@@ -10,6 +10,9 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 	<style>
 			body {
 					overflow-x: hidden;
@@ -72,7 +75,7 @@
 			.form {
 				position: relative;
 				margin-left: 40;
-				margin-bottom: 35px;
+				margin-bottom: 0px;
 				font-size: 0.6rem;
 				font-family: 'Roboto', sans-serif;
 			}
@@ -95,10 +98,18 @@
 			.unpw {
 				border-radius: 5px;
 			}
-			
+			#camagru {
+				font-family: 'Averia Serif Libre', cursive;
+				font-size: 1rem;
+				margin-left: 71px;
+			}
+			.image {
+				width: 20px;
+			}
 		</style>
 	</head>
 	<body>
+
 		<img id="wireframe" src="../images/wow.png">
 		<img id="wf2" src="../images/wow.png">
 		<img id="wf3" src="../images/wow.png">
@@ -115,10 +126,12 @@
 				<input class="form submit" type="submit" name="submit" value="LOG IN"/>
 				<br/>
 			</form>
+			<p id="camagru">CAMAGRU<img class="image" src="../images/wow.png"></p>
 			<a class="form forgot" href="../html/forgot_password.html">FORGOT PASSWORD?</a>
 			</br>
 			</br>
 			<a class="form return" id="return" href="gallery.php">RETURN</a>
 		</div>
+
 	</body>
 </html>

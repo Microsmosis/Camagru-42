@@ -33,12 +33,7 @@
 					margin-left: -8px;
 				}
 			}
-			@media screen and (min-width: 300px) and (max-width: 375px) {
-				.image {
-					width: 375px;
-					margin-left: -8px;
-				}
-			}
+
 		.deleteButton {
 			padding: 10px;
 			background: white;
@@ -50,22 +45,22 @@
 		#settings {
 		position: fixed;
 		top: 0.7%;
-			left: 62%;
+			left: 58%;
 		}
 		#photo {
 			position: fixed;
 			top: 0.7%;
-			left: 32%;
+			left: 37%;
 		}
 		#gallery {
 			position: fixed;
 			top: 0.7%;
-			left: 4%;
+			left: 14%;
 		}
 		#logout {
 			position: fixed;
 			top: 0.7%;
-			left: 90%;
+			left: 82%;
 		}
 		.redirects {
 		font-size: 1rem;
@@ -151,9 +146,9 @@
 		<div class="meta"></div>
 		<div class="redirects">
 			<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
-			<a id="photo" href="photobooth.php"><img src="../images/camera.png"></a>
-			<a id="settings" href="settings.php"><img src="../images/settings.png"></a>
-			<a id="logout" href="logout.php"><img src="../images/logout.png"></a>
+			<a id="photo" href="photobooth.php"><img src="../images/camera.png" width="50"></a>
+			<a id="settings" href="settings.php"><img src="../images/settings.png" width="100"></a>
+			<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
 		</div>
 		<div class="test1">
 			<?php
@@ -176,7 +171,7 @@
 										<img class="image" src=<?php echo $k['img_path'];?>>
 											<form action="comments.php" method="post">
 													<div class="commentsArea">
-														<textarea class="commentBox" name="comments">...</textarea>
+														<textarea class="commentBox" name="comments" placeholder="..."></textarea>
 														<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 														<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
 														<button class="submitButton" type="submit" name="submit" value="Send"><img src="../images/send.png" width="25"></button>

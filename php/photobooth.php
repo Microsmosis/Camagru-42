@@ -124,17 +124,20 @@
 				box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.44);
 				margin-bottom: 20px;
 			}
+			#img_size {
+				width: 150px;
+			}
 		</style>
 	</head>
 	<body>
 		<div class="meta"></div>
 		<div class="redirects">
-			<a id="profile" href="profile_page.php"><img src="../images/profile.png"></a>
+			<a id="profile" href="profile_page.php"><img src="../images/profile.png"width="50"></a>
 			<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
-			<a id="logout" href="logout.php"><img src="../images/logout.png"></a>
+			<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
 		</div>
-		<video id="video" width="320" height="240" autoplay></video>
-		<button id="start-camera"><img src="../images/snapshot.png" width="50"></button><button id="click-photo"><img src="../images/capture.png" width="50"></button>
+		<video id="video" width="375" height="250" autoplay></video>
+		<button id="start-camera"><img src="../images/snapshot.png" width="50"></button><button id="click-photo"><p>CHOOSE STICKER TO TAKE PHOTO</p><img src="../images/capture.png" width="50"></button>
 			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
 			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
 				<button id="web_add" type="submit" name="add" value=""><img src="../images/add.png" width="50"></button>

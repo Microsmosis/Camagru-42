@@ -31,6 +31,11 @@
 					transform: translate(-0%, -0%);
 					transition: 1.1s ease-out;
 				}
+				@media screen and (min-width: 300px) and (max-width: 510px) {
+					#camagru {
+						font-size: 2.5rem;
+					}
+				}
 			
 				.image {
 					width: 100px;

@@ -11,8 +11,9 @@
 		<title>Camagru</title>
 		
 		<style>
-			a {
-				text-decoration: none;
+			
+			html {
+					background: rgb(249, 249, 249);
 			}
 			#wireframe {
 					position: fixed;
@@ -55,7 +56,7 @@
 				margin-right: auto;
 				background: linear-gradient(-180deg, #ffffff, #eaeaea,  #a7a7a8, #7a7a7afe);
 				width: 240px;
-				height: 560px;
+				height: 500px;
 				border-radius: 7px;
 				box-shadow: 0.15vw 0.3vw 0.3vw hsl(0deg 0% 0% / 0.44);
 				
@@ -83,6 +84,7 @@
 				margin-top: 30px;
 			}
 			.notif {
+				margin-left: 5px;
 				width: 70px;
 				height: 20px;
 				border-radius: 30px;
@@ -111,9 +113,46 @@
 			.e {
 				color: white;
 			}
+			#hrNavbar {
+				width: 2600px;
+				height: 0px;
+				background: black;
+				position: fixed;
+				top: 60px;
+				right: -1px;
+			}
+			.meta {
+				width: 2000px;
+				height: 80px;
+				background: white;
+				position: fixed;
+				top: -10px;
+				right: 0px;
+			}
+			#profile {
+					position: fixed;
+				top: 0.7%;
+				left: 4%;
+			}
+			#addphoto {
+				position: fixed;
+				top: 0.7%;
+				left: 47.8%;
+			}
+			#logout {
+				position: fixed;
+				top: 0.7%;
+				left: 92%;
+			}
 		</style>
 	</head>
 	<body>
+		<div class="meta"></div>
+		<div class="redirects">
+				<a id="profile" href="profile_page.php"><img src="../images/profile.png" width="50"></a>
+				<a id="addphoto" href="photobooth.php"><img src="../images/camera.png" width="50"></a>
+				<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
+		</div>
 		<img id="wireframe" src="../images/wow.png">
 		<img id="wf2" src="../images/wow.png">
 		<img id="wf3" src="../images/wow.png">
@@ -140,7 +179,7 @@
 		<form class="form e" action="notifications.php" method="POST">
 		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEMAIL NOTIFICATIONS</br></br><input class="notif" type="submit" name="off" value="OFF"/>&nbsp<input class="notifOn" type="submit" name="on" value="ON"/>
 		</form>
-		<a class="form e" href="profile_page.php">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRETURN</a>
 		</div>
+		<hr id="hrNavbar">
 	</body>
 </html>

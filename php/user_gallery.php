@@ -15,6 +15,9 @@
 			<link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+			<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 			<style>
 				html {
 					background: rgb(249, 249, 249);
@@ -30,7 +33,7 @@
 					margin-left: auto;
 					margin-right: auto;
 				}
-				@media screen and (min-width: 376px) and (max-width: 510px) {
+				/* @media screen and (min-width: 376px) and (max-width: 510px) {
 					.image {
 						width: 500px;
 						margin-left: -8px;
@@ -41,26 +44,21 @@
 						width: 375px;
 						margin-left: -8px;
 					}
-				}
+				} */
 				#profile {
 					position: fixed;
 					top: 0.7%;
-					left: 4%;
+					left: 10%;
 				}
 				#addphoto {
 					position: fixed;
 					top: 0.7%;
-					left: 47%;
+					left: 47.8%;
 				}
 				#logout {
 					position: fixed;
 					top: 0.7%;
-					left: 92%;
-				}
-				.redirects {
-					font-size: 1rem;
-					font-family: 'Roboto', sans-serif;
-					
+					left: 84%;
 				}
 				#hrNavbar {
 					width: 2600px;
@@ -71,12 +69,12 @@
 					right: -1px;
 				}
 				#hrcomment {
-					width: 498.5px;	
+					width: 373.5px;	
 					border: 0.5px solid rgba(0, 0, 0, 0.132);
 					margin-top: -30px;
 				}
 				.meta {
-					width: 2000px;
+					width: 2800px;
 					height: 80px;
 					background: white;
 					position: fixed;
@@ -103,7 +101,7 @@
 					margin-top: -15px;
 				}
 				.commentBox {
-					width: 380px;
+					width: 270px;
 					height: 32px;
 					padding: 12px;
 					border-radius: 20px;
@@ -117,21 +115,21 @@
 				.user_name_comment {
 					font-weight: 800;
 				}
-				.test1 {
-					display: flex;
-					align-items: center;
-					flex-direction: column;
-				}
 				.test {
 					display: flex;
 					align-items: center;
 					flex-direction: column;
-					width: 499.5px;
+					width: 374.5px;
 					min-height: 500px;
 					margin-top: 200px;
 					border-radius: 2px;
 					border: 1px solid rgba(0, 0, 0, 0.132);
 					background-color: white;
+				}
+				.test1 {
+					display: flex;
+					align-items: center;
+					flex-direction: column;
 				}
 				.test2 {
 					display: block;
@@ -148,9 +146,9 @@
 		<body>
 		<div class="meta"></div>
 			<div class="redirects">
-				<a id="profile" href="profile_page.php"><img src="../images/profile.png"></a>
-				<a id="addphoto" href="photobooth.php"><img src="../images/camera.png"></a>
-				<a id="logout" href="logout.php"><img src="../images/logout.png"></a>
+				<a id="profile" href="profile_page.php"><img src="../images/profile.png" width="50"></a>
+				<a id="addphoto" href="photobooth.php"><img src="../images/camera.png" width="50"></a>
+				<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
 			</div>
 			<div class="test1">
 				<?php
@@ -173,7 +171,7 @@
 											<img class="image" src=<?php echo $k['img_path'];?>>
 												<form action="comments.php" method="post">
 														<div class="commentsArea">
-															<textarea class="commentBox" name="comments">...</textarea>
+															<textarea class="commentBox" name="comments" placeholder="..."></textarea>
 															<input type="hidden" name="image_name" value=<?php echo $k['img_name'];?>>
 															<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
 															<button class="submitButton" type="submit" name="submit" value="Send"><img src="../images/send.png" width="25"></button>
