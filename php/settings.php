@@ -61,11 +61,7 @@
 				box-shadow: 0.15vw 0.3vw 0.3vw hsl(0deg 0% 0% / 0.44);
 				
 			}
-			@media screen and (min-width: 350px) and (max-width: 400px) {
-				.backpanel {
-					margin-top: 50px;
-				}
-			}
+			
 			.form {
 				position: relative;
 				font-family: ;
@@ -132,7 +128,7 @@
 			#profile {
 					position: fixed;
 				top: 0.7%;
-				left: 4%;
+				left: 14%;
 			}
 			#addphoto {
 				position: fixed;
@@ -142,7 +138,7 @@
 			#logout {
 				position: fixed;
 				top: 0.7%;
-				left: 92%;
+				left: 80%;
 			}
 		</style>
 	</head>
@@ -158,6 +154,8 @@
 		<img id="wf3" src="../images/wow.png">
 		<div class="backpanel">
 			<form class="form" action="modify_user.php" method="POST">
+					<br/>
+					<br/>
 					CHANGE E-MAIL: <input class="unpw" type="email" name="email" value=""/>
 					<br/>
 					<br/>
