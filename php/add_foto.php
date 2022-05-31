@@ -14,41 +14,34 @@
 	if(isset($_POST["add"]))
 	{
 		$check = getimagesize($_FILES["photo"]["tmp_name"]);
-		if($check !== false)
+		if($check === false)
 		{
-		  echo "File is an image - " . $check["mime"] . ".";
-		  $uploadOk = 1;
-		}
-		else
-		{
-		  echo "File is not an image.\n";
+		  echo "File is not an image." . PHP_EOL;
 		  $uploadOk = 0;
 		}
 	}
 
 	if(file_exists($photo_file))
 	{
-		echo "Filename is in use, please choose an other one.\n";
+		echo "Filename is in use, please choose an other one." . PHP_EOL;
 		$uploadOk = 0;
 	}
 
 	if($_FILES["photo"]["size"] > 7000000)
 	{
-		echo "Sorry, your file is too large.\n";
+		echo "Sorry, your file is too large." . PHP_EOL;
 		$uploadOk = 0;
 	}
 
-	// Allow certain file formats
 	if($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg")
 	{
-		echo "Sorry, only JPG, JPEG, PNG.\n";
+		echo "Sorry, only JPG, JPEG, PNG." . PHP_EOL;
 		$uploadOk = 0;
 	}
 
-	// Check if $uploadOk is set to 0 by an error
 	if($uploadOk == 0)
 	{
-		echo "Sorry, your file was not uploaded.\n";
+		echo "Sorry, your file was not uploaded." . PHP_EOL;
 	}
 	else
 	{
