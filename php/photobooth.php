@@ -123,7 +123,9 @@
 			#img_size {
 				width: 150px;
 			}
-			
+			#inputTag {
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
@@ -186,7 +188,10 @@
 		</div>
 		<div class="img_add">
 			<form class="form" action="add_foto.php" method="POST" enctype="multipart/form-data">
-				ADD PHOTO FROM DEVICE : <input type="file" name="photo"><input type="submit" value="Add">
+				<label for="inputTag">
+					<input id="inputTag" type="file" name="photo">ADD PHOTO FROM DEVICE	<img id="file_button" src="../images/file.png" width="20">
+				</label>
+				<button id="web_add" type="submit" value="Add"><img src="../images/add.png" width="30"></button>
 				<input type="hidden" id="stamp1" name="stamp" value="">
 			</form>
 		</div>
