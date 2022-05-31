@@ -5,6 +5,8 @@
 		header('Location: ./gallery.php');
 	if(isset($_POST['del_button']) && isset($_POST['image_path']))
 	{
+		$image = $_POST['image_path'];
+		$name = $_POST['image_name'];
 		try
 		{
 			$conn = connect();
