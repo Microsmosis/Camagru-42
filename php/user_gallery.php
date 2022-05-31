@@ -38,17 +38,15 @@
 						width: 500px;
 						margin-left: -8px;
 					}
-				}
-				@media screen and (min-width: 300px) and (max-width: 375px) {
-					.image {
-						width: 375px;
-						margin-left: -8px;
-					}
+				} */
+				/* @media screen and (min-width: 300px) and (max-width: 376px) {
+		
+				
 				} */
 				#profile {
 					position: fixed;
 					top: 0.7%;
-					left: 10%;
+					left: 11%;
 				}
 				#addphoto {
 					position: fixed;
@@ -71,7 +69,7 @@
 				#hrcomment {
 					width: 373.5px;	
 					border: 0.5px solid rgba(0, 0, 0, 0.132);
-					margin-top: -30px;
+					margin-top: -10px;
 				}
 				.meta {
 					width: 2800px;
@@ -141,6 +139,12 @@
 					display: flex;
 					font-weight: 200;
 				}
+				.likes {
+					margin-right: 310px;
+					margin-top: -36px;
+					font-size: 0.7rem;
+					font-family: 'Montserrat', sans-serif;
+				}
 			</style>
 		</head>
 		<body>
@@ -163,6 +167,9 @@
 							foreach($result as $k)
 							{
 								$img_id = $k['img_name'];
+								$sql1 = "SELECT COUNT(*) FROM likes WHERE img='$img_id'";
+								$stmt1 = $conn->query($sql1);
+								$result1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
 								?>
 									<!DOCTYPE html>
 									<html>
@@ -183,6 +190,8 @@
 															<input type="hidden" name="image_user" value=<?php echo $k['img_user'];?>>
 														</form>
 													</div>
+													
+													<p class="likes"> LIKES : <?php echo $result1[0]['COUNT(*)'];?></p>
 													<hr id="hrcomment">
 													<div class="test2">
 														<?php

@@ -7,9 +7,6 @@
 	{
 		try
 		{
-			$image = $_POST['image_path'];
-			$name = $_POST['image_name'];
-			print_r($image);
 			$conn = connect();
 			$sql = "DELETE FROM user_images WHERE img_path='$image'";
 			$conn->exec($sql);

@@ -57,7 +57,19 @@
 			}
 		else
 		{
-			echo "well you have already liked this picture, and it would be propably better if developer would just make you to unlike the photo ...." . PHP_EOL;
+			try
+			{
+				$conn = connect();
+				$sql = "DELETE FROM likes WHERE img='$img_name' AND user='$img_user'";
+				$conn->exec($sql);
+				unlink($image);
+			}
+			catch(PDOException $e)
+			{
+				echo $sql . "<br>" . $e->getMessage();
+			}
+			$conn = null;
+			header('Location: ./user_gallery.php');
 		}
 	}
 	else

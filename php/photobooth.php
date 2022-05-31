@@ -16,6 +16,11 @@
 		<style>
 			html {
 					background: rgb(249, 249, 249);
+					overflow-x: hidden;
+			}
+			.form {
+				font-family: 'Roboto', sans-serif;
+				font-size: 0.8rem;
 			}
 			.image {
 				display: flex;
@@ -75,11 +80,6 @@
 				justify-content: center;
 				margin-top: 10px;
 			}
-			#return {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
 			hr {
 				width: 2600px;
 				height: 0px;
@@ -99,7 +99,7 @@
 			#profile {
 				position: fixed;
 				top: 0.7%;
-				left: 4%;
+				left: 15%;
 			}
 			#gallery {
 				position: fixed;
@@ -109,11 +109,7 @@
 			#logout {
 				position: fixed;
 				top: 0.7%;
-				left: 92%;
-			}
-			.redirects {
-			font-size: 1rem;
-			font-family: 'Roboto', sans-serif;
+				left: 80%;
 			}
 			#web_add {
 				background: white;
@@ -127,19 +123,18 @@
 			#img_size {
 				width: 150px;
 			}
+			
 		</style>
 	</head>
 	<body>
 		<div class="meta"></div>
-		<div class="redirects">
-			<a id="profile" href="profile_page.php"><img src="../images/profile.png"width="50"></a>
-			<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
-			<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
-		</div>
+		<a id="profile" href="profile_page.php"><img src="../images/profile.png"width="50"></a>
+		<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
+		<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
 		<video id="video" width="375" height="250" autoplay></video>
 		<button id="start-camera"><img src="../images/snapshot.png" width="50"></button><button id="click-photo"><p>CHOOSE STICKER TO TAKE PHOTO</p><img src="../images/capture.png" width="50"></button>
 			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
-			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
+			<form class="form" action="add_webcam.php" method="POST" enctype="multipart/form-data">
 				<button id="web_add" type="submit" name="add" value=""><img src="../images/add.png" width="50"></button>
 				<input type="hidden" id="web_photo" name="new_pic" value="">
 				<input type="hidden" id="stamp" name="stamp" value="">
@@ -183,15 +178,15 @@
 		<br>
 		<br>
 		<div class="stamps">
-			<button><img id="first" onclick="stampPath1()" src="../images/kuruma.png" width='200' height='100'></button>
-			<button><img id="second" onclick="stampPath2()" src="../images/shenron1.png" width='70' height='100'></button>
-			<button><img id="third" onclick="stampPath3()" src="../images/gamabunta.png" width='100' height='100'></button>
-			<button><img id="fourth" onclick="stampPath4()" src="../images/sharingan.png" width='100' height='100'></button>
-			<button><img id="fifth" onclick="stampPath5()" src="../images/wow.png" width='100' height='100'></button>
+			<button><img id="first" onclick="stampPath1()" src="../images/kuruma.png" width='100' height='50'></button>
+			<button><img id="second" onclick="stampPath2()" src="../images/shenron1.png" width='35' height='50'></button>
+			<button><img id="third" onclick="stampPath3()" src="../images/gamabunta.png" width='50' height='50'></button>
+			<button><img id="fourth" onclick="stampPath4()" src="../images/sharingan.png" width='50' height='50'></button>
+			<button><img id="fifth" onclick="stampPath5()" src="../images/wow.png" width='50' height='50'></button>
 		</div>
 		<div class="img_add">
-			<form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
-				Add Photo From Device : <input type="file" name="photo"><input type="submit" value="Add">
+			<form class="form" action="add_foto.php" method="POST" enctype="multipart/form-data">
+				ADD PHOTO FROM DEVICE : <input type="file" name="photo"><input type="submit" value="Add">
 				<input type="hidden" id="stamp1" name="stamp" value="">
 			</form>
 		</div>

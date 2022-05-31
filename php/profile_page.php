@@ -75,7 +75,7 @@
 			right: -1px;
 		}
 		#hrcomment {
-			width: 498.5px;	
+			width: 373.5px;	
 			border: 0.5px solid rgba(0, 0, 0, 0.132);
 			margin-top: -30px;
 		}
@@ -100,9 +100,9 @@
 			margin-top: -15px;
 		}
 		.commentBox {
-			width: 380px;
+			width: 270px;
 			height: 32px;
-			padding: 10px;
+			padding: 12px;
 			border-radius: 20px;
 			margin-left: 5px;
 			background-color: white;
@@ -114,21 +114,21 @@
 		.user_name_comment {
 			font-weight: 800;
 		}
-		.test1 {
-			display: flex;
-			align-items: center;
-			flex-direction: column;
-		}
 		.test {
 			display: flex;
 			align-items: center;
 			flex-direction: column;
-			width: 499.5px;
+			width: 374.5px;
 			min-height: 500px;
 			margin-top: 200px;
 			border-radius: 2px;
 			border: 1px solid rgba(0, 0, 0, 0.132);
 			background-color: white;
+		}
+		.test1 {
+			display: flex;
+			align-items: center;
+			flex-direction: column;
 		}
 		.test2 {
 			display: block;
