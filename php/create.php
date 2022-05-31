@@ -22,14 +22,13 @@
 				font-size: 2rem;
 				font-family: 'Averia Serif Libre', cursive;
 			}
-				#return {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					font-size: 3vw;
-					font-family: 'Averia Serif Libre', cursive;
-
-				}
+			#return {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 3vw;
+				font-family: 'Averia Serif Libre', cursive;
+			}
 			</style>
 		</head>
 		<body>

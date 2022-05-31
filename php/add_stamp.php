@@ -2,8 +2,7 @@
 	function stamp_to_img($img)
 	{
 		$stamp = imagecreatefrompng('../images/wow.png');
-		/* $img = imagecreatefromjpeg('../uploads/62876be4c35b1.jpeg'); */
-	
+
 		$margin_r = 10;
 		$margin_b = 10;
 	

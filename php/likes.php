@@ -74,6 +74,6 @@
 	}
 	else
 	{
-		echo "yo webmaster superrior overlord llonnrot, fix this error message :D" . PHP_EOL;
+		echo "A problem has occured, please contact the helpdesk!" . PHP_EOL;
 	}
 ?>

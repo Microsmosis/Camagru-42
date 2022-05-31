@@ -46,6 +46,6 @@
 	}
 	else
 	{
-		echo "E-Mail was not given or something went wrong. Contact superior web master llonnrot";
+		echo "E-Mail was not given or something went wrong. Please contact helpdesk.";
 	}
 ?>
