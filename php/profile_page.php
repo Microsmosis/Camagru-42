@@ -41,10 +41,10 @@
 			}
 		.deleteButton {
 			padding: 10px;
-				background: white;
-				border-style: solid;
-				border-color: white;
-				margin-top: 16px;
+			background: white;
+			border-style: solid;
+			border-color: white;
+			margin-top: 16px;
 		}
 
 		#settings {

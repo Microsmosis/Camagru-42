@@ -9,9 +9,6 @@
 		<title>Camagru</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@800&display=swap" rel="stylesheet">
 	<style>
 			body {
@@ -74,7 +71,6 @@
 			}
 			.form {
 				position: relative;
-				font-family: ;
 				margin-left: 40;
 				margin-bottom: 35px;
 				font-size: 0.6rem;

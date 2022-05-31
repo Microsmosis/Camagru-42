@@ -114,7 +114,16 @@
 			.redirects {
 			font-size: 1rem;
 			font-family: 'Roboto', sans-serif;
-		}
+			}
+			#web_add {
+				background: white;
+				border-style: solid;
+				border-color: white;
+				padding: 10px;
+				border-radius: 50px;
+				box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.44);
+				margin-bottom: 20px;
+			}
 		</style>
 	</head>
 	<body>
@@ -128,7 +137,7 @@
 		<button id="start-camera"><img src="../images/snapshot.png" width="50"></button><button id="click-photo"><img src="../images/capture.png" width="50"></button>
 			<canvas id="canvas" width="320" height="240" value="canvas"></canvas>
 			<form class="fotoform" action="add_webcam.php" method="POST" enctype="multipart/form-data">
-				<input id="web_add" type="submit" name="add" value="Add Snapshot">
+				<button id="web_add" type="submit" name="add" value=""><img src="../images/add.png" width="50"></button>
 				<input type="hidden" id="web_photo" name="new_pic" value="">
 				<input type="hidden" id="stamp" name="stamp" value="">
 			</form>
@@ -179,7 +188,7 @@
 		</div>
 		<div class="img_add">
 			<form class="fotoform" action="add_foto.php" method="POST" enctype="multipart/form-data">
-				Photo: <input type="file" name="photo"><input type="submit" value="Add">
+				Add Photo From Device : <input type="file" name="photo"><input type="submit" value="Add">
 				<input type="hidden" id="stamp1" name="stamp" value="">
 			</form>
 		</div>

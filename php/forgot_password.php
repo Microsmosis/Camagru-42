@@ -2,7 +2,7 @@
 	require_once('send_mail.php');
 	require_once('connect.php');
 	session_start();
-	if(isset($_POST['email']) && isset($_POST['submit']))
+	if(!empty($_POST['email']) && isset($_POST['submit']))
 	{
 		$email = $_POST['email'];
 		try
