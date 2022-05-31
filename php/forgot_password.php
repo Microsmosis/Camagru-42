@@ -38,7 +38,7 @@
 						}
 				</style>
 				<body>
-					<p id="message"><?php echo "A LINK TO RESET THE PASSWORD HAS BEEN SENT TO GIVEN E-MAIL!";?></p>
+					<p id="message">A LINK TO RESET THE PASSWORD HAS BEEN SENT TO GIVEN E-MAIL!</p>
 				</body>
 			</html>
 		<?php
