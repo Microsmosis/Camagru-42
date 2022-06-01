@@ -1,6 +1,7 @@
 <?php
 	require_once('acti_auth.php');
 	require_once('status_update.php');
+	require_once('msg_str.php');
 	if(!empty($_GET['code']) && isset($_GET['code']))
 	{
 		$code = $_GET['code'];
@@ -21,14 +22,12 @@
 		}
 		else
 		{
-			echo "error error beep boop think about all the edgecases!!!";
-			// if user has already activated account? does this even matter
-			// if activation code does not exist or is wrong
+			msg_str("error error beep boop ");
 		}
 	}
 	else
 	{
-		echo "No activation code was sent. Please contact web minister overlord llonnrot.";
+		msg_str("No activation code was sent. Please contact helpdesk");
 	}
 	?>
 	<html>

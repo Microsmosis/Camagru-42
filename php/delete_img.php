@@ -1,5 +1,6 @@
 <?php
 	require_once('connect.php');
+	require_once('msg_str.php');
 	session_start();
 	if($_SESSION['logged_in_user'] == "")
 		header('Location: ./gallery.php');
@@ -27,6 +28,6 @@
 	}
 	else
 	{
-		echo "hmmmm.. some sort of problems have occurred..." . PHP_EOL;
+		msg_str("hmmmm.. some sort of problems have occurred...");
 	}
 ?>

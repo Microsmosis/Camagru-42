@@ -1,5 +1,6 @@
 <?php
 	require_once('connect.php');
+	require_once('msg_str.php');
 	session_start();
 	if($_SESSION['logged_in_user'] == "")
 		header('Location: ./gallery.php');
@@ -16,180 +17,39 @@
 		$check = getimagesize($_FILES["photo"]["tmp_name"]);
 		if($check === false)
 		{
-			?>
-				<!DOCTYPE html>
-				<html>
-					<head>
-					<link rel="preconnect" href="https://fonts.googleapis.com">
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-					<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-					</head>
-					<style>
-						#error {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 2rem;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					#return {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 3vw;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					</style>
-					<body>
-						<p id="error">File is not an image.</p>
-
-					</body>
-				</html>
-			<?php
+			msg_str("File is not an image.");
 			header('Refresh: 3; photobooth.php');
 			return;
-			
 		}
 	}
 
 	if(file_exists($photo_file))
 	{
-		?>
-				<!DOCTYPE html>
-				<html>
-					<head>
-					<link rel="preconnect" href="https://fonts.googleapis.com">
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-					<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-					</head>
-					<style>
-					#error {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 4rem;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					#return {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 4rem;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					</style>
-					<body>
-						<p id="error">Filename is in use, please choose an other one or no file chosen.</p>
-					</body>
-				</html>
-			<?php
+		msg_str("Filename is in use, please choose an other one or no file chosen.");
 		header('Refresh: 3; photobooth.php');
 		return;
 	}
 
 	if($_FILES["photo"]["size"] > 7000000)
 	{
-		?>
-				<!DOCTYPE html>
-				<html>
-					<head>
-					<link rel="preconnect" href="https://fonts.googleapis.com">
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-					<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-					</head>
-					<style>
-					#error {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 2rem;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					#return {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 3vw;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					</style>
-					<body>
-						<p id="error">Sorry, your file is too large.</p>
-					</body>
-				</html>
-			<?php
+			msg_str("Sorry, your file is too large.");
 			header('Refresh: 3; photobooth.php');
 			return;
 	}
 
 	if($file_type != "jpg" && $file_type != "png" && $file_type != "jpeg")
 	{
-		?>
-			<!DOCTYPE html>
-				<html>
-					<head>
-					<link rel="preconnect" href="https://fonts.googleapis.com">
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-					<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-					</head>
-					<style>
-					#error {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 2rem;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					#return {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 3vw;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					</style>
-					<body>
-						<p id="error">Sorry, only JPG, JPEG, PNG.</p>
-					</body>
-				</html>
-			<?php
-			header('Refresh: 3; photobooth.php');
-			return;
+		msg_str("Sorry, only JPG, JPEG, PNG.");
+		header('Refresh: 3; photobooth.php');
+		return;
 	}
 
 	if($uploadOk == 0)
 	{
-		?>
-			<!DOCTYPE html>
-				<html>
-					<head>
-					<link rel="preconnect" href="https://fonts.googleapis.com">
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-					<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-					</head>
-					<style>
-					#error {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 2rem;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					#return {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 3vw;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					</style>
-					<body>
-						<p id="error">Sorry, your file was not uploaded.</p>
-					</body>
-				</html>
-			<?php
-			header('Refresh: 3; photobooth.php');
-			return;
+		
+		msg_str("Sorry, your file was not uploaded.");
+		header('Refresh: 3; photobooth.php');
+		return;
 	}
 	else
 	{
@@ -217,35 +77,7 @@
 		}
 		else
 		{
-			?>
-				<!DOCTYPE html>
-				<html>
-					<head>
-					<link rel="preconnect" href="https://fonts.googleapis.com">
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-					<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-					</head>
-					<style>
-					#error {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 2rem;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					#return {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						font-size: 3vw;
-						font-family: 'Averia Serif Libre', cursive;
-					}
-					</style>
-					<body>
-						<p id="error">Sorry, there was an error uploading your file.</p>
-					</body>
-				</html>
-			<?php
+			msg_str("Sorry, there was an error uploading your file.");
 		}
 	}
 	if (isset($_POST['stamp']))

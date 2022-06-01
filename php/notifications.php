@@ -1,5 +1,6 @@
 <?php
 	require_once('connect.php');
+	require_once('msg_str.php');
 	session_start();
 	if($_SESSION['logged_in_user'] == "")
 		header('Location: ./gallery.php');
@@ -22,7 +23,7 @@
 					echo $stmt . "<br>" . $e->getMessage();
 				}
 				$conn = null;
-				echo "Notifications turned off." . PHP_EOL;
+				msg_str("Notifications turned off.");
 				header('Refresh: 3; ./profile_page.php');
 		}
 		else if(isset($_POST['on']))
@@ -39,7 +40,7 @@
 					echo $stmt . "<br>" . $e->getMessage();
 				}
 				$conn = null;
-				echo "Notifications turned on." . PHP_EOL;
+				msg_str("Notifications turned on.");
 				header('Refresh: 3; ./profile_page.php');
 		}
 	}

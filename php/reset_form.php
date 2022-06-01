@@ -1,5 +1,6 @@
 <?php
 	require_once('connect.php');
+	require_once('msg_str.php');
 	session_start();
 	if(isset($_GET['key']) && isset($_GET['reset']))
 	{
@@ -34,40 +35,6 @@
 									a {
 										text-decoration: none;
 									}
-									#wireframe {
-											position: fixed;
-											top: 1;
-											left: 0vw;
-											width: 100vw;
-											height: 100vw;
-											opacity: 0.1;
-											-webkit-animation:spin 60s linear infinite;
-											-moz-animation:spin 60s linear infinite;
-											animation:spin 60s linear infinite;
-										}
-									#wf2 {
-										position: fixed;
-											top: 60vw;
-											width: 100vw;
-											height: 100vw;
-											opacity: 0.1;
-											-webkit-animation:spin 60s linear infinite;
-											-moz-animation:spin 60s linear infinite;
-											animation:spin 60s linear infinite;
-										}
-									#wf3 {
-										position: fixed;
-											top: 120vw;
-											width: 100vw;
-											height: 100vw;
-											opacity: 0.1;
-											-webkit-animation:spin 60s linear infinite;
-											-moz-animation:spin 60s linear infinite;
-											animation:spin 60s linear infinite;
-										}
-									@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-									@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-									@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 									.backpanel {
 										display: block;
 										margin-top: 250px;
@@ -129,9 +96,6 @@
 								</style>
 							</head>
 							<body>
-								<img id="wireframe" src="../images/wow.png">
-								<img id="wf2" src="../images/wow.png">
-								<img id="wf3" src="../images/wow.png">
 								<div class="backpanel">
 									<form class="form" action="reset.php" method="POST">
 										<br/>
@@ -158,7 +122,7 @@
 				}
 				else
 				{
-					echo "Something went wrong". PHP_EOL;
+					msg_str("Something went wrong");
 				}
 			}
 			catch(PDOException $e)
@@ -169,25 +133,6 @@
 	}
 	else
 	{
-		?>
-			<!DOCTYPE html>
-				<html>
-					<head>
-					<link rel="preconnect" href="https://fonts.googleapis.com">
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-					<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-						<style>
-							#errorMessage {
-								text-align: center;
-								font-size: 4rem;
-								font-family: 'Averia Serif Libre', cursive;
-								padding: 400px 0;
-							}
-						</style>
-					</head>
-					<body>
-						<p id="errorMessage">Something went wrong or you are not authorized to enter this page. Please try again or contact helpdesk.</p>
-					</body>
-		<?php
+		msg_str("Something went wrong or you are not authorized to enter this page. Please try again or contact helpdesk.");
 	}
 ?>

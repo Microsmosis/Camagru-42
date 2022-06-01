@@ -2,6 +2,7 @@
 
 	require_once('connect.php');
 	require_once('send_mail.php');
+	require_once('msg_str.php');
 	session_start();
 	if($_SESSION['logged_in_user'] == "")
 		header('Location: ./gallery.php');
@@ -59,6 +60,6 @@
 	}
 	else
 	{
-		echo "A problem has occured, please contact the helpdesk!" . PHP_EOL;
+		msg_str("A problem has occured, please contact the helpdesk!");
 	}
 ?>

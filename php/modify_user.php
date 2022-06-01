@@ -1,10 +1,10 @@
 <?php
 	require_once('auth.php');
 	require_once('connect.php');
+	require_once('msg_str.php');
 	session_start();
 	if($_SESSION['logged_in_user'] == "")
 		header('Location: ./gallery.php');
-	// isset or empty checks here ?? 
 	$mod_email = $_POST['email'];
 	$mod_user_name = $_POST['login'];
 	$mod_pw = $_POST['passwd'];
@@ -30,12 +30,13 @@
 					echo $stmt . "<br>" . $e->getMessage();
 				}
 				$conn = null;
-				echo "E-mail changed succesfully!" . PHP_EOL; 
+				msg_str("E-mail changed succesfully!"); 
 				header('Refresh: 3; ./profile_page.php');
 			}
 			else
 			{
-				echo "This E-mail is already in use!" . PHP_EOL;
+				msg_str("This E-mail is already in use!");
+				header('Refresh: 3; ./settings.php');
 			}
 		}
 		if(!empty($mod_pw))
@@ -55,12 +56,13 @@
 					echo $stmt . "<br>" . $e->getMessage();
 				}
 				$conn = null;
-				echo "Password changed succesfully!" . PHP_EOL; 
+				msg_str("Password changed succesfully!");
 				header('Refresh: 3; ./profile_page.php');
 			}
 			else
 			{
-				echo "The new passwords are not identical, please try again." . PHP_EOL;
+				msg_str("The new passwords are not identical, please try again.");
+				header('Refresh: 3; ./settings.php');
 			}
 		}
 		if(!empty($mod_user_name))
@@ -89,18 +91,20 @@
 				}
 				$conn = null;
 				$_SESSION['logged_in_user'] = $mod_user_name;
-				echo "User name changed succesfully!" . PHP_EOL; 
+				msg_str("User name changed succesfully!");
 				header('Refresh: 3; ./profile_page.php');
 			}
 			else
 			{
-				echo "This username is already in use!" . PHP_EOL;
+				msg_str("This username is already in use!");
+				header('Refresh: 3; ./settings.php');
 			}
 		}
 	}
 	else
 	{
-		echo "Password is incorrect, please try again." . PHP_EOL;
+		msg_str("Password is incorrect, please try again.");
+		header('Refresh: 3; ./settings.php');
 	}
 ?>
 

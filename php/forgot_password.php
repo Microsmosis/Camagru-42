@@ -1,6 +1,7 @@
 <?php
 	require_once('send_mail.php');
 	require_once('connect.php');
+	require_once('msg_str.php');
 	session_start();
 	if(!empty($_POST['email']) && isset($_POST['submit']))
 	{
@@ -20,32 +21,11 @@
 		}
 		$conn = null;
 		sendEmail($email, 0, $username, $password, 2);
-		?>
-			<!DOCTYPE html>
-			<html>
-				<head>
-				<link rel="preconnect" href="https://fonts.googleapis.com">
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-				<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-				</head>
-				<style>
-						#message {
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							font-size: 2rem;
-							font-family: 'Averia Serif Libre', cursive;
-						}
-				</style>
-				<body>
-					<p id="message">A LINK TO RESET THE PASSWORD HAS BEEN SENT TO GIVEN E-MAIL!</p>
-				</body>
-			</html>
-		<?php
+		msg_str("A LINK TO RESET THE PASSWORD HAS BEEN SENT TO GIVEN E-MAIL!");
 		header('Refresh: 3; ../index.php');
 	}
 	else
 	{
-		echo "E-Mail was not given or something went wrong. Please contact helpdesk.";
+		msg_str("E-Mail was not given or something went wrong. Please contact helpdesk.");
 	}
 ?>

@@ -1,5 +1,6 @@
 <?php
 	require_once('connect.php');
+	require_once('msg_str.php');
 	session_start();
 	if($_SESSION['logged_in_user'] == "")
 		header('Location: ./gallery.php');
@@ -43,28 +44,7 @@
 	}
 	else
 	{
-		?>
-			<!DOCTYPE html>
-			<html>
-				<head>
-				<link rel="preconnect" href="https://fonts.googleapis.com">
-				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-				<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
-				</head>
-				<style>
-					#error {
-					display: flex;
-					align-items: center;
-					justify-content: center;
-					font-size: 2rem;
-					font-family: 'Averia Serif Libre', cursive;
-				}
-				</style>
-				<body>
-					<p id="error">Please take an image and choose a sticker for it!</p>
-				</body>
-			</html>
-		<?php
+		msg_str("Please take an image and choose a sticker for it!");
 		header('Refresh: 2; photobooth.php');
 	}
 ?>
