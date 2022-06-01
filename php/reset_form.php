@@ -70,7 +70,6 @@
 										box-shadow: 0.15vw 0.3vw 0.3vw hsl(0deg 0% 0% / 0.44);
 									}
 									.return {
-										margin-left: 120px;
 										color: white;
 									}
 									.forgot {
