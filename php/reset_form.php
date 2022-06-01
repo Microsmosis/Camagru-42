@@ -53,7 +53,9 @@
 										}
 									}
 									.form {
-										position: relative;
+										display: flex;
+										align-items: center;
+										flex-direction: column;
 										margin-left: 40;
 										margin-bottom: 0px;
 										font-size: 0.6rem;
@@ -68,7 +70,7 @@
 										box-shadow: 0.15vw 0.3vw 0.3vw hsl(0deg 0% 0% / 0.44);
 									}
 									.return {
-										margin-left: 100px;
+										margin-left: 120px;
 										color: white;
 									}
 									.forgot {
@@ -86,34 +88,18 @@
 									.image {
 										width: 20px;
 									}
-									#errorMessage {
-										display: flex;
-										align-items: center;
-										justify-content: center;
-										font-size: 2rem;
-										font-family: 'Averia Serif Libre', cursive;
-									}
 								</style>
 							</head>
 							<body>
 								<div class="backpanel">
 									<form class="form" action="reset.php" method="POST">
-										<br/>
-										<br/>
-										<br/>
-										<br/>
-										NEW PASSWORD: <input class="unpw" type="password" name="passwd" value=""/>
-										<br/>
+										NEW PASSWORD: <br/><input class="unpw" type="password" name="passwd" value=""/>
 										<br/>
 										VERIFY PASSWORD: <input class="unpw" type="password" name="re_passwd" value=""/>
 										<input type="hidden" id="username" name="username" value='<?php echo $username;?>'>
 										<input class="form submit" type="submit" name="submit" value="OK"/>
-										<br/>
 									</form>
 									<p id="camagru">CAMAGRU<img class="image" src="../images/wow.png"></p>
-									<a class="form forgot" href="../html/forgot_password.html">FORGOT PASSWORD?</a>
-									</br>
-									</br>
 									<a class="form return" id="return" href="../php/gallery.php">RETURN</a>
 								</div>
 							</body>
@@ -123,6 +109,7 @@
 				else
 				{
 					msg_str("Something went wrong");
+					header('Refersh: 3; login_form.php');
 				}
 			}
 			catch(PDOException $e)
@@ -134,5 +121,6 @@
 	else
 	{
 		msg_str("Something went wrong or you are not authorized to enter this page. Please try again or contact helpdesk.");
+		header('Refersh: 3; login_form.php');
 	}
 ?>
