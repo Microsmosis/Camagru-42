@@ -181,6 +181,13 @@
 				font-family: 'Averia Serif Libre', cursive;
 				font-size: 1rem;
 			}
+			.pagination {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-top: 50px;
+				margin-bottom: 50px;
+			}
 		</style>
 	</head>
 	<body>
@@ -191,10 +198,29 @@
 			<img class="imagee" src="../images/wow.png">
 		</div>
 		<?php
+			$conn = connect();
+			if (isset($_GET['page_no']) && $_GET['page_no']!="")
+			{
+				$page_no = $_GET['page_no'];
+			}
+			else
+			{
+				$page_no = 1;
+			}
+			$total_records_per_page = 5;
+			$offset = ($page_no-1) * $total_records_per_page;
+			$previous_page = $page_no - 1;
+			$next_page = $page_no + 1;
+			$adjacents = "2";
+			$sql1 = "SELECT COUNT(*) FROM user_images";
+			$stmt1 = $conn->query($sql1);
+			$result1 = $stmt1->fetchAll(PDO::FETCH_ASSOC);
+			$total_records = $result1[0]['COUNT(*)'];
+			$total_no_of_pages = ceil($total_records / $total_records_per_page);
 			try
 			{
 				$conn = connect();
-				$sql = "SELECT img_path, img_name, img_user FROM user_images ORDER BY id DESC";
+				$sql = "SELECT img_path, img_name, img_user FROM user_images ORDER BY id DESC LIMIT $offset, $total_records_per_page";
 				$stmt = $conn->query($sql);
 				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 				if($result)
@@ -219,6 +245,10 @@
 			}	
 			$conn = null;
 		?>
+		<div class="pagination">
+			<a <?php if($page_no > 1){echo "href='?page_no=$previous_page'";} ?>>Previous</a>&nbsp&nbsp&nbsp&nbsp&nbsp
+			<a <?php if($page_no < $total_no_of_pages) {echo "href='?page_no=$next_page'";} ?>>Next</a>
+		</div>
 		<hr id="hrNavbar">
 		<hr>
 		<div class="footer">
