@@ -238,11 +238,10 @@
 		<br>
 		<br>
 		<div class="stamps">
-			<button><img id="first" onclick="stampPath1()" src="../images/kuruma.png" width='100' height='50'></button>
-			<button><img id="second" onclick="stampPath2()" src="../images/shenron1.png" width='35' height='50'></button>
-			<button><img id="third" onclick="stampPath3()" src="../images/gamabunta.png" width='50' height='50'></button>
+			<button><img id="first" onclick="stampPath1()" src="../images/sharingan1.png" width='50' height='50'></button>
+			<button><img id="second" onclick="stampPath2()" src="../images/sharingan2.png" width='50' height='50'></button>
+			<button><img id="third" onclick="stampPath3()" src="../images/sharingan3.png" width='50' height='50'></button>
 			<button><img id="fourth" onclick="stampPath4()" src="../images/sharingan.png" width='50' height='50'></button>
-			<button><img id="fifth" onclick="stampPath5()" src="../images/wow.png" width='50' height='50'></button>
 		</div>
 		<div class="img_add">
 			<form class="form" action="add_foto.php" method="POST" enctype="multipart/form-data">
@@ -272,38 +271,31 @@
 	, first = document.querySelector("#first")
 	, second = document.querySelector("#second")
 	, third = document.querySelector("#third")
-	, fourth = document.querySelector("#fourth")
-	, fifth = document.querySelector("#fifth");
-	
+	, fourth = document.querySelector("#fourth");
+
 	let stamp_auth = 0;
-	
+
 	function stampPath1() {
 		final_stamp_web.value = first.src;
 		final_stamp_add.value = first.src;
 		stamp_auth = 1;
 	}
-	
+
 	function stampPath2() {
 		final_stamp_web.value = second.src;
 		final_stamp_add.value = second.src;
 		stamp_auth = 1;
 	}
-	
+
 	function stampPath3() {
 		final_stamp_web.value = third.src;
 		final_stamp_add.value = third.src;
 		stamp_auth = 1;
 	}
-	
+
 	function stampPath4() {
 		final_stamp_web.value = fourth.src;
 		final_stamp_add.value = fourth.src;
-		stamp_auth = 1;
-	}
-	
-	function stampPath5() {
-		final_stamp_web.value = fifth.src;
-		final_stamp_add.value = fifth.src;
 		stamp_auth = 1;
 	}
 
