@@ -48,7 +48,7 @@
 					top: 0.7%;
 					left: 84%;
 				}
-				@media screen and (min-width: 300px) and (max-width: 550px) {
+				@media screen and (min-width: 300px) and (max-width: 450px) {
 					#profile {
 						position: fixed;
 						top: 0.7%;
@@ -63,6 +63,23 @@
 						position: fixed;
 						top: 0.7%;
 						left: 77%;
+					}
+				}
+				@media screen and (min-width: 1500px) and (max-width: 2800px) {
+					#profile {
+						position: fixed;
+						top: 0.7%;
+						left: 13%;
+					}
+					#addphoto {
+						position: fixed;
+						top: 0.7%;
+						left: 48.8%;
+					}
+					#logout {
+						position: fixed;
+						top: 0.7%;
+						left: 84%;
 					}
 				}
 				#hrNavbar {
