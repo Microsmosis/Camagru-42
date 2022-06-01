@@ -7,6 +7,7 @@
 		header('Location: ./gallery.php');
 	if(isset($_POST['liker']) && isset($_POST['like_button']))
 	{
+		header('Location: ./user_gallery.php');
 		$img_name = $_POST['image_name'];
 		$img_user = $_POST['image_user'];
 		
@@ -39,7 +40,6 @@
 				echo $stmt . "<br>" . $e->getMessage();
 			}
 			$conn = null;
-			header('Location: ./user_gallery.php');
 			}
 		else
 		{
@@ -55,7 +55,6 @@
 				echo $sql . "<br>" . $e->getMessage();
 			}
 			$conn = null;
-			header('Refresh: ./user_gallery.php');
 		}
 	}
 	else

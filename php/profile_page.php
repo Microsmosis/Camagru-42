@@ -39,43 +39,43 @@
 		}
 		#gallery {
 			position: fixed;
-			top: 1%;
+			top: 0.9%;
 			left: 8%;
 		}
 		#photo {
 			position: fixed;
-			top: 1%;
+			top: 0.7%;
 			left: 35%;
 		}
 		#settings {
 			position: fixed;
-			top: 0.7%;
+			top: 0.8%;
 			left: 60%;
 		}
 		#logout {
 			position: fixed;
-			top: 0.7%;
+			top: 1%;
 			left: 90%;
 		}
-		@media screen and (min-width: 300px) and (max-width: 550px) {
+		@media screen and (min-width: 300px) and (max-width: 450px) {
 			#gallery {
 				position: fixed;
-				top: 1%;
+				top: 1.2%;
 				left: 6%;
 			}
 			#photo {
 				position: fixed;
-				top: 1%;
+				top: 0.7%;
 				left: 30%;
 			}
 			#settings {
 				position: fixed;
-				top: 0.7%;
+				top: 1.2%;
 				left: 50%;
 			}
 			#logout {
 				position: fixed;
-				top: 0.7%;
+				top: 1.4%;
 				left: 80%;
 			}
 		}
@@ -173,9 +173,9 @@
 		<div class="navPanel"></div>
 		<div class="redirects">
 			<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
-			<a id="photo" href="photobooth.php"><img src="../images/camera.png" width="50"></a>
-			<a id="settings" href="settings.php"><img src="../images/settings.png" width="100"></a>
-			<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
+			<a id="photo" href="photobooth.php"><img src="../images/camera.png" width="55"></a>
+			<a id="settings" href="settings.php"><img src="../images/settings.png" width="95"></a>
+			<a id="logout" href="logout.php"><img src="../images/logout.png" width="45"></a>
 		</div>
 		<div class="test1">
 			<?php

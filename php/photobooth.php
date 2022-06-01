@@ -114,7 +114,7 @@
 				top: 0.7%;
 				left: 80%;
 			}
-			@media screen and (min-width: 300px) and (max-width: 500px) {
+			@media screen and (min-width: 300px) and (max-width: 45x0px) {
 				#profile {
 					position: fixed;
 					top: 0.7%;
@@ -131,6 +131,23 @@
 					left: 73%;
 				}
 			}
+			@media screen and (min-width: 1500px) and (max-width: 2800px) {
+				#profile {
+					position: fixed;
+					top: 0.7%;
+					left: 12%;
+				}
+				#gallery {
+					position: fixed;
+					top: 0.7%;
+					left: 48.8%;
+				}
+				#logout {
+					position: fixed;
+					top: 0.7%;
+					left: 80%;
+				}
+		}
 			#web_add {
 				background: white;
 				border-style: solid;
