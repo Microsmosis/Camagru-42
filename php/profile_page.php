@@ -55,7 +55,7 @@
 		#logout {
 			position: fixed;
 			top: 0.8%;
-			left: 90%;
+			left: 88%;
 		}
 		@media screen and (min-width: 300px) and (max-width: 450px) {
 			#gallery {
