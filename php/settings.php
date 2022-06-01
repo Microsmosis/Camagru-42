@@ -136,7 +136,7 @@
 				}
 				#logout {
 					position: fixed;
-					top: 1%;
+					top: 0.8%;
 					left: 80%;
 				}
 		}
