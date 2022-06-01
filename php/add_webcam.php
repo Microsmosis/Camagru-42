@@ -43,7 +43,28 @@
 	}
 	else
 	{
-		echo "Please take an image and choose a sticker for it!" . PHP_EOL;
+		?>
+			<!DOCTYPE html>
+			<html>
+				<head>
+				<link rel="preconnect" href="https://fonts.googleapis.com">
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+				<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
+				</head>
+				<style>
+					#error {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 2rem;
+					font-family: 'Averia Serif Libre', cursive;
+				}
+				</style>
+				<body>
+					<p id="error">Please take an image and choose a sticker for it!</p>
+				</body>
+			</html>
+		<?php
 		header('Refresh: 2; photobooth.php');
 	}
 ?>
