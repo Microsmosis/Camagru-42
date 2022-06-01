@@ -39,20 +39,6 @@
 				echo $stmt . "<br>" . $e->getMessage();
 			}
 			$conn = null;
-			
-			/* try THIS IS FOR EMAIL NOTIFICATIONS FOR LIKES, DECIDED NOT TO USE IT (NOT MANDATORY)
-			{
-				$conn = connect();
-				$sql = "SELECT email FROM user_info WHERE `userr_name`='$img_user'";
-				$stmt = $conn->query($sql);
-				$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			}
-			catch(PDOException $e)
-			{
-				echo $stmt . "<br>" . $e->getMessage();
-			}
-			sendEmail($result[0]['email'], 0, 0, 0, 4);
-			$conn = null; */
 			header('Location: ./user_gallery.php');
 			}
 		else
@@ -69,7 +55,7 @@
 				echo $sql . "<br>" . $e->getMessage();
 			}
 			$conn = null;
-			header('Location: ./user_gallery.php');
+			header('Refresh: ./user_gallery.php');
 		}
 	}
 	else

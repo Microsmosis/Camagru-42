@@ -16,27 +16,20 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,700&display=swap" rel="stylesheet">
 		<style>
-			html {
-					background: rgb(249, 249, 249);
-				}
-			textarea {
-				resize: none;
-			}
-			a {
-				text-decoration: none;
-			}
-			.image {
-				display: block;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			@media screen and (min-width: 376px) and (max-width: 510px) {
-				.image {
-					width: 500px;
-					margin-left: -8px;
-				}
-			}
-
+		html {
+			background: rgb(249, 249, 249);
+		}
+		textarea {
+			resize: none;
+		}
+		a {
+			text-decoration: none;
+		}
+		.image {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
 		.deleteButton {
 			padding: 10px;
 			background: white;
@@ -44,30 +37,47 @@
 			border-color: white;
 			margin-top: 16px;
 		}
-
-		#settings {
-		position: fixed;
-		top: 0.7%;
-			left: 58%;
+		#gallery {
+			position: fixed;
+			top: 1%;
+			left: 8%;
 		}
 		#photo {
 			position: fixed;
-			top: 0.7%;
-			left: 37%;
+			top: 1%;
+			left: 35%;
 		}
-		#gallery {
+		#settings {
 			position: fixed;
 			top: 0.7%;
-			left: 14%;
+			left: 60%;
 		}
 		#logout {
 			position: fixed;
 			top: 0.7%;
-			left: 82%;
+			left: 90%;
 		}
-		.redirects {
-		font-size: 1rem;
-		font-family: 'Roboto', sans-serif;
+		@media screen and (min-width: 300px) and (max-width: 550px) {
+			#gallery {
+				position: fixed;
+				top: 1%;
+				left: 6%;
+			}
+			#photo {
+				position: fixed;
+				top: 1%;
+				left: 30%;
+			}
+			#settings {
+				position: fixed;
+				top: 0.7%;
+				left: 50%;
+			}
+			#logout {
+				position: fixed;
+				top: 0.7%;
+				left: 80%;
+			}
 		}
 		#hrNavbar {
 			width: 2600px;
@@ -82,7 +92,7 @@
 			border: 0.5px solid rgba(0, 0, 0, 0.132);
 			margin-top: -10px;
 		}
-		.meta {
+		.navPanel {
 			width: 2580px;
 			height: 80px;
 			background: white;
@@ -149,6 +159,7 @@
 			font-size: 0.7rem;
 			font-family: 'Montserrat', sans-serif;
 		}
+		
 		.footer {
 			display: flex;
 			align-items: center;
@@ -159,7 +170,7 @@
 		</style>
 	</head>
 	<body>
-		<div class="meta"></div>
+		<div class="navPanel"></div>
 		<div class="redirects">
 			<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
 			<a id="photo" href="photobooth.php"><img src="../images/camera.png" width="50"></a>

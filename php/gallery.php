@@ -41,13 +41,6 @@
 				}
 			}
 
-			@media screen and (min-width: 300px) and (max-width: 375px) {
-				.image {
-					width: 375px;
-					margin-left: -8px;
-				}
-			}
-
 			.commentsArea {
 				display: flex;
 				align-items: center;

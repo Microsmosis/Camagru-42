@@ -33,20 +33,10 @@
 					margin-left: auto;
 					margin-right: auto;
 				}
-				/* @media screen and (min-width: 376px) and (max-width: 510px) {
-					.image {
-						width: 500px;
-						margin-left: -8px;
-					}
-				} */
-				/* @media screen and (min-width: 300px) and (max-width: 376px) {
-		
-				
-				} */
 				#profile {
 					position: fixed;
 					top: 0.7%;
-					left: 11%;
+					left: 13%;
 				}
 				#addphoto {
 					position: fixed;
@@ -58,8 +48,25 @@
 					top: 0.7%;
 					left: 84%;
 				}
+				@media screen and (min-width: 300px) and (max-width: 550px) {
+					#profile {
+						position: fixed;
+						top: 0.7%;
+						left: 13%;
+					}
+					#addphoto {
+						position: fixed;
+						top: 0.7%;
+						left: 44%;
+					}
+					#logout {
+						position: fixed;
+						top: 0.7%;
+						left: 77%;
+					}
+				}
 				#hrNavbar {
-					width: 2600px;
+					width: 2800px;
 					height: 0px;
 					background: black;
 					position: fixed;
@@ -71,7 +78,7 @@
 					border: 0.5px solid rgba(0, 0, 0, 0.132);
 					margin-top: -10px;
 				}
-				.meta {
+				.navPanel {
 					width: 2800px;
 					height: 80px;
 					background: white;
@@ -145,6 +152,7 @@
 					font-size: 0.7rem;
 					font-family: 'Montserrat', sans-serif;
 				}
+				
 				.footer {
 					display: flex;
 					align-items: center;
@@ -155,7 +163,7 @@
 			</style>
 		</head>
 		<body>
-		<div class="meta"></div>
+		<div class="navPanel"></div>
 			<div class="redirects">
 				<a id="profile" href="profile_page.php"><img src="../images/profile.png" width="50"></a>
 				<a id="addphoto" href="photobooth.php"><img src="../images/camera.png" width="50"></a>

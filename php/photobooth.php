@@ -91,7 +91,7 @@
 				top: 60px;
 				right: -1px;
 			}
-			.meta {
+			.navPanel {
 				width: 2580px;
 				height: 80px;
 				background: white;
@@ -114,6 +114,23 @@
 				top: 0.7%;
 				left: 80%;
 			}
+			@media screen and (min-width: 300px) and (max-width: 500px) {
+				#profile {
+					position: fixed;
+					top: 0.7%;
+					left: 11%;
+				}
+				#gallery {
+					position: fixed;
+					top: 0.7%;
+					left: 42%;
+				}
+				#logout {
+					position: fixed;
+					top: 0.7%;
+					left: 73%;
+				}
+			}
 			#web_add {
 				background: white;
 				border-style: solid;
@@ -123,7 +140,7 @@
 				box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.44);
 				margin-bottom: 20px;
 			}
-			#img_size {
+			.img_size {
 				width: 150px;
 			}
 			#inputTag {
@@ -136,10 +153,20 @@
 				font-family: 'Averia Serif Libre', cursive;
 				font-size: 1rem;
 			}
+			.slide-container {
+				width: 150px;
+				overflow: auto;
+			}
+			#image-container {
+				display:flex;
+				align-items: center;
+				min-width: 150px;
+				
+			}
 		</style>
 	</head>
 	<body>
-		<div class="meta"></div>
+		<div class="navPanel"></div>
 		<a id="profile" href="profile_page.php"><img src="../images/profile.png"width="50"></a>
 		<a id="gallery" href="user_gallery.php"><img src="../images/globe1.png" width="50"></a>
 		<a id="logout" href="logout.php"><img src="../images/logout.png" width="50"></a>
@@ -152,40 +179,44 @@
 				<input type="hidden" id="stamp" name="stamp" value="">
 			</form>
 		<div class="image">
-		<?php
-			try
-		{
-			$user = $_SESSION['logged_in_user'];
-			$snap_stat = 1;
-			$conn = connect();
-			$sql = "SELECT img_path, snap_shot FROM user_images WHERE img_user='$user'";
-			$stmt = $conn->query($sql);
-			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-			if($result)
-			{
-				foreach($result as $k)
-				{
-					if ($k['snap_shot'] == 1)
+			<div class="slide-container">
+				<div id="image-container">
+					<?php
+						try
 					{
-						$img_id = $k['img_name'];
-						?>
-							<!DOCTYPE html>
-								<html>
-									<body>
-										<img id="img_size" src=<?php echo $k['img_path'];?>>&nbsp
-									</body>
-							</html>
-						<?php
+						$user = $_SESSION['logged_in_user'];
+						$snap_stat = 1;
+						$conn = connect();
+						$sql = "SELECT img_path, snap_shot FROM user_images WHERE img_user='$user'";
+						$stmt = $conn->query($sql);
+						$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+						if($result)
+						{
+							foreach($result as $k)
+							{
+								if ($k['snap_shot'] == 1)
+								{
+									$img_id = $k['img_name'];
+									?>
+										<!DOCTYPE html>
+											<html>
+												<body>
+													<img class="img_size" src=<?php echo $k['img_path'];?>>&nbsp
+												</body>
+										</html>
+									<?php
+								}
+							}
+						}
 					}
-				}
-			}
-		}
-		catch(PDOException $e)
-		{
-			echo $stmt . "<br>" . $e->getMessage();
-		}
-		$conn = null;
-		?>
+					catch(PDOException $e)
+					{
+						echo $stmt . "<br>" . $e->getMessage();
+					}
+					$conn = null;
+					?>
+				</div>
+			</div>
 		</div>
 		<br>
 		<br>
@@ -214,18 +245,18 @@
 	</body>
 </html>
 <script> 
-	let camera_button = document.querySelector("#start-camera");
-	let video = document.querySelector("#video");
-	let click_button = document.querySelector("#click-photo");
-	let canvas = document.querySelector("#canvas");
-	let new_pic = document.querySelector("#web_photo");
-	let final_stamp_web = document.querySelector("#stamp");
-	let final_stamp_add = document.querySelector("#stamp1");
-	let first = document.querySelector("#first");
-	let second = document.querySelector("#second");
-	let third = document.querySelector("#third");
-	let fourth = document.querySelector("#fourth");
-	let fifth = document.querySelector("#fifth");
+	let camera_button = document.querySelector("#start-camera")
+	, video = document.querySelector("#video")
+	, click_button = document.querySelector("#click-photo")
+	, canvas = document.querySelector("#canvas")
+	, new_pic = document.querySelector("#web_photo")
+	, final_stamp_web = document.querySelector("#stamp")
+	, final_stamp_add = document.querySelector("#stamp1")
+	, first = document.querySelector("#first")
+	, second = document.querySelector("#second")
+	, third = document.querySelector("#third")
+	, fourth = document.querySelector("#fourth")
+	, fifth = document.querySelector("#fifth");
 	
 	let stamp_auth = 0;
 	
